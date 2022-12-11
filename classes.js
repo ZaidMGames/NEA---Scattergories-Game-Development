@@ -8,9 +8,11 @@ export class Inputs {
 }
 
 export class Category {
-  constructor(name) {
+  constructor(name,custom = false) {
     this.name = name;
+    this.link = 'www.google.com/' + name
     this.answers = {}
+    this.custom = custom
   }
 }
 
