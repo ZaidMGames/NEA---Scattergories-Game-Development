@@ -1,6 +1,6 @@
-import {Category} from './classes.js';
-import {Player} from './classes.js';
-import {Inputs} from './classes.js';
+import {Category} from './classes.js'
+import {Player} from './classes.js'
+import {Inputs} from './classes.js'
 
 
 function hydrateData(players, categories) {
@@ -32,5 +32,5 @@ function hydrateData(players, categories) {
     }
   }
   
-  let saif = Player("Saif", 50, ["Salmon", "Football"]);
-console.log(saif.name);
+  let Zaid = new Player("Zaid", 50, ["Salmon", "Football"]);
+console.log(Zaid.name);
