@@ -1,4 +1,5 @@
-function countdownTimer(seconds) {
+// async version of the countdown timer
+async function countdownTimerA(seconds) {
     // Calculate the end time
     let endTime = Date.now() + seconds * 1000;
 
@@ -8,14 +9,34 @@ function countdownTimer(seconds) {
         let secondsRemaining = Math.round((endTime - Date.now()) / 1000);
 
         // Display the number of seconds remaining
+        document.getElementById("Timer").innerHTML = secondsRemaining + 's'
         console.log(secondsRemaining);
 
         // Pause for one second
-        new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
     // Display a message indicating that the countdown has finished
     console.log("Countdown finished!");
+    document.getElementById("Timer").innerHTML = 'Timer Finished'
 }
 
-countdownTimer(10);
+countdownTimerA(10);
+
+
+// solution without async version
+// function countdownTimer(seconds) {
+//     let endTime = Date.now() + seconds * 1000;
+//     const timeout = () => {
+//       if (seconds > 0) {
+//         console.log(`${seconds} seconds left`}
+//         seconds--
+//         timeout()
+//       }
+//     }
+//     timeout()
+//     while (Date.now() < endTime);
+//     console.log("Countdown finished!");
+// }
+
+// countdownTimer(10);
