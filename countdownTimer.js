@@ -21,22 +21,4 @@ async function countdownTimerA(seconds) {
     document.getElementById("Timer").innerHTML = 'Timer Finished'
 }
 
-countdownTimerA(10);
-
-
-// solution without async version
-// function countdownTimer(seconds) {
-//     let endTime = Date.now() + seconds * 1000;
-//     const timeout = () => {
-//       if (seconds > 0) {
-//         console.log(`${seconds} seconds left`}
-//         seconds--
-//         timeout()
-//       }
-//     }
-//     timeout()
-//     while (Date.now() < endTime);
-//     console.log("Countdown finished!");
-// }
-
-// countdownTimer(10);
+countdownTimerA(100);
