@@ -1,36 +1,69 @@
-import {Category} from './classes.js'
-import {Player} from './classes.js'
-import {Inputs} from './classes.js'
+//Importing All Classes from the classes file
+import {Category, Player, Inputs} from './classes.js';
+//Importing all Functions from the functions file
+import {countdownTimerA, chooseLetter,hydrateData} from './functions.js'
 
 
-function hydrateData(players, categories) {
-    for (let i = 0; i < categories.length; i++) {
-      const category = categories[i]
-      for (const player of players) {
-        const answer = player.answers[i]
-        const input = new Inputs(player, answer, category.name)
-        category.answers[player.name] = input
-      }
-  
-      // filter out duplicates - REMOVE BOTH DUPLICATES
-      let entries = Object.entries(category.answers)
-          .map(([key, value]) => {
-            return ([key, value.answer])
-          }) // make 2D array of answers from { playername: answer (string) }
-  
-      // loop through key and value of new 2D array
-      for (let i = 0; i < entries.length; i++) {
-        const [key, value] = entries[i]
-        // if index of loop != FIRST index of occurence in list,
-        // must be a duplicate, use filter to remove all
-        if (i != entries.map(([k,v]) => v).indexOf(value)) {
-           entries = entries.filter(([k,v]) => v != value) 
-        }
-      }
-  
-      category.answers = Object.fromEntries(entries)
+
+//Storing all ElementIDs
+const keyLetterElement = document.getElementById("keyLetter");
+const playButton = document.getElementById("playButton");
+const chosenTimButton = document.getElementById('chosenTimButton')
+
+
+chosenTimButton.addEventListener('click',function() {
+  let chosenTimer = prompt('Choose a Timer ');
+  //Continously ask the user until their input is a number
+  let isNumber = /^\d+$/.test(chosenTimer);
+  while (!isNumber & number) {
+    chosenTimer = prompt("Time can only be set using intergers. Please enter a valid number:");
+    isNumber = /^\d+$/.test(chosenTimer);
+    let number = parseInt(chosenTimer);
+    if (number > 300){ ///something to fix here
+      chosenTimer = prompt("Time can only be less than 300s . Please enter a valid number:");
+    } else{
+      let number = false 
     }
   }
   
-  let Zaid = new Player("Zaid", 50, ["Salmon", "Football"]);
+//   let number = parseInt(chosenTimer);
+
+// // Check if the number is less than 1000
+//   while (number > 1000) {
+//     chosenTimer = prompt("Time can only be less than 300s . Please enter a valid number:");
+//     isNumber = /^\d+$/.test(chosenTimer);
+// } ;
+
+
+  window.chosenTimer = chosenTimer; 
+  console.log('Timer has now been changed to '+ chosenTimer + 's')
+});
+  
+let Zaid = new Player("Zaid", 50, ["Salmon", "Football"]);
 console.log(Zaid.name);
+
+
+//The Game will Only start when the button is clicked
+let clicked = false
+
+playButton.addEventListener("click", function() {
+  if (clicked) {
+    // Code to execute when the button is clicked again - to restart game
+    console.log("Button clicked again! Game should end here");
+  } else {
+    // Code to execute when the button is clicked for the first time
+      // Choose a letter
+    const keyLetter = chooseLetter();
+    //Start Countdown 
+    if (typeof chosenTimer !== "undefined") {
+      countdownTimerA(chosenTimer);
+    } else{
+      countdownTimerA()
+    }
+    clicked = true;
+
+  if (keyLetterElement) {
+    keyLetterElement.innerHTML = keyLetter;
+  }
+  }});
+
