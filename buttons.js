@@ -7,11 +7,11 @@ import {countdownTimerA, chooseLetter,hydrateData} from './functions.js'
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
   const playButton = document.getElementById("playButton");
-  const chosenTimButton = document.getElementById('chosenTimButton')
+  const chosenTimeButton = document.getElementById('chosenTimeButton')
 
 
 // Event Listner for when user wants to change length of rounds
-chosenTimButton.addEventListener('click',function() {
+chosenTimeButton.addEventListener('click',function() {
     let chosenTimer = prompt('Choose a Timer ');
   
     while (true) {
