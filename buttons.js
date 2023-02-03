@@ -15,7 +15,7 @@ chosenTimeButton.addEventListener('click',function() {
     let chosenTimer = prompt('Choose a Timer ');
   
     while (true) {
-      if (chosenTimer == "") {
+      if (!chosenTimer.length) {
         return
       }
       // Check if chosenTimer is a number
