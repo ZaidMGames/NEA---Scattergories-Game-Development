@@ -17,7 +17,7 @@ function CategorySelector(arr, size) {
 }
 
 
-numOfCategories = 12; //Default number of categories unless button is pressed
+let numOfCategories = 12; //Default number of categories unless button is pressed
 if (document.getElementById('changeCategorySize').onclick) {
   let input = prompt("Please input an answer"); //Category size must be higher than 5
   while(input <5 || input > listOfCategories.length){
