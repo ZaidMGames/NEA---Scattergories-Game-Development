@@ -27,7 +27,7 @@ if (document.getElementById('changeCategorySize').onclick) {
   numOfCategories = input;
 }
 
-CategorySelector(ListOfCategories, numOfCategories);
+chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
 chosenCategoryDiv = document.getElementById ( "chosenCategoryDiv " ). innerHTML = items .join ( "<br>" ); // Display all chosen categories 
 
 
