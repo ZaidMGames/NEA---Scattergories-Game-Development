@@ -20,7 +20,7 @@ chosenTimeButton.addEventListener('click',function() {
   
       // If chosenTimer is not a number, prompt the user again
       if (!isNumber) {
-        chosenTimer = prompt("Time can only be set using intergers. Please enter a valid number:");
+        chosenTimer = prompt("Time can only be set using integers. Please enter a valid number:");
         continue;
       }
   
@@ -57,11 +57,12 @@ playButton.addEventListener("click", function() {
       // Choose a letter
     const keyLetter = chooseLetter();
     //Start Countdown 
-    if (typeof chosenTimer !== "undefined") {
-      countdownTimerA(chosenTimer);
-    } else{
-      countdownTimerA()
-    }
+    // if (chosenTimer) {
+    //   countdownTimerA(chosenTimer);
+    // } else{
+    //   countdownTimerA()
+    // }
+    countdownTimerA(chosenTimer);
     clicked = true;
 
   if (keyLetterElement) {
