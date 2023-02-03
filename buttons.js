@@ -63,7 +63,7 @@ playButton.addEventListener("click", function() {
     // } else{
     //   countdownTimerA()
     // }
-    countdownTimerA(chosenTimer || 60);
+    countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60);
     clicked = true;
 
   if (keyLetterElement) {
