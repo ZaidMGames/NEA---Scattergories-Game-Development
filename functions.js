@@ -8,15 +8,14 @@ const ListOfCategories = [
 
 function CategorySelector(arr, size) {
   //The code above creates a copy of the original array, then it loops through the new array and swaps each element with a random element in the array.
-  var shuffled = arr.slice(0), i = arr.length, temp, index; 
-  while (i--) {
-      index = Math.floor((i + 1) * Math.random());
-      temp = shuffled[index];
-      shuffled[index] = shuffled[i];
-      shuffled[i] = temp;
+  const shuffled = arr.slice(0, arr.length)
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
-  return shuffled.slice(0, size);
+  return shuffled.slice(0, Math.min(shuffled.length, size))
 }
+
 
 numOfCategories = 12; //Default number of categories unless button is pressed
 if (document.getElementById('changeCategorySize').onclick) {
@@ -27,11 +26,11 @@ if (document.getElementById('changeCategorySize').onclick) {
   numOfCategories = input;
 }
 
+
+const shuffled = CategorySelector(ListOfCategories, 12) // List of Category class instances
+
 chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
-chosenCategoryDiv = document.getElementById ( "chosenCategoryDiv " ). innerHTML = items .join ( "<br>" ); // Display all chosen categories 
-
-
-
+chosenCategoryDiv = document.getElementById ( "ListOfCategories " ). innerHTML = shuffled.map(c=>c.name) .join ( "<br>" ); // Display all chosen categories 
 
 //countdown Timer Algorithm 
 export async function countdownTimerA(seconds = 60) {
