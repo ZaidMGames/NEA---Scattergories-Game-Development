@@ -15,17 +15,14 @@ chosenTimeButton.addEventListener('click',function() {
     let chosenTimer = prompt('Choose a Timer ');
   
     while (true) {
-      // Check if chosenTimer is a number
-      let isNumber = /^\d+$/.test(chosenTimer);
-  
-      // If chosenTimer is not a number, prompt the user again
-      if (!isNumber) {
-        chosenTimer = prompt("Time can only be set using integers. Please enter a valid number:");
-        continue;
-      }
-  
       if (chosenTimer == "") {
         return
+      }
+      // Check if chosenTimer is a number
+      // If chosenTimer is not a number, prompt the user again
+      if (isNaN(chosenTimer)) {
+        chosenTimer = prompt("Time can only be set using integers. Please enter a valid number:");
+        continue;
       }
 
       // Parse chosenTimer to an integer
