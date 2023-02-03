@@ -24,6 +24,10 @@ chosenTimeButton.addEventListener('click',function() {
         continue;
       }
   
+      if (chosenTimer == "") {
+        return
+      }
+
       // Parse chosenTimer to an integer
       let number = parseInt(chosenTimer);
   
