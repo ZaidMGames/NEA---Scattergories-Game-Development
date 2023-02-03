@@ -1,3 +1,38 @@
+import { Category } from "./classes"
+
+const ListOfCategories = [
+  new Category("students"),
+  new Category("whatever"),
+  new Category("this"),
+]
+
+function CategorySelector(arr, size) {
+  //The code above creates a copy of the original array, then it loops through the new array and swaps each element with a random element in the array.
+  var shuffled = arr.slice(0), i = arr.length, temp, index; 
+  while (i--) {
+      index = Math.floor((i + 1) * Math.random());
+      temp = shuffled[index];
+      shuffled[index] = shuffled[i];
+      shuffled[i] = temp;
+  }
+  return shuffled.slice(0, size);
+}
+
+numOfCategories = 12; //Default number of categories unless button is pressed
+if (document.getElementById('changeCategorySize').onclick) {
+  let input = prompt("Please input an answer"); //Category size must be higher than 5
+  while(input <5 || input > listOfCategories.length){
+      let input = prompt("Please input an answer");
+  };
+  numOfCategories = input;
+}
+
+CategorySelector(ListOfCategories, numOfCategories);
+chosenCategoryDiv = document.getElementById ( "chosenCategoryDiv " ). innerHTML = items .join ( "<br>" ); // Display all chosen categories 
+
+
+
+
 //countdown Timer Algorithm 
 export async function countdownTimerA(seconds = 60) {
     // Calculate the end time

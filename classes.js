@@ -8,7 +8,7 @@ export class Inputs {
 }
 
 export class Category {
-  constructor(name,custom = false) {
+  constructor(name, custom = false) {
     this.name = name;
     this.link = 'www.google.com/' + name
     this.answers = {}
