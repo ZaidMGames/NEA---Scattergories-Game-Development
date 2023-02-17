@@ -58,6 +58,7 @@ for (let i = 0; i < chosenCategories.length; i++)
 
 // chosenCategoryDiv = document.getElementById ( "ListOfCategories " ). innerHTML = shuffled.map(c=>c.name) .join ( "<br>" ); // Display all chosen categories 
 
+export let  stopTimer = false;
 
 //countdown Timer Algorithm 
 export async function countdownTimerA(seconds = 60) {
@@ -66,18 +67,23 @@ export async function countdownTimerA(seconds = 60) {
 
     // Loop until the current time is greater than or equal to the end time
     while (Date.now() < endTime) {
-        // Calculate the number of seconds remaining
-        let secondsRemaining = Math.round((endTime - Date.now()) / 1000);
+      // Exit early if the stop button has been clicked
+      if (stopTimer) {
+            console.log('Timer has now been stopped')
+            return;
+        }
+      // Calculate the number of seconds remaining
+      let secondsRemaining = Math.round((endTime - Date.now()) / 1000);
 
-        // Display the number of seconds remaining
-        let timerText = document.getElementById("timerText")
-        if (timerText) {
-          timerText.innerHTML = secondsRemaining + 's';
-          }
-        console.log(secondsRemaining);
+      // Display the number of seconds remaining
+      let timerText = document.getElementById("timerText")
+      if (timerText) {
+        timerText.innerHTML = secondsRemaining + 's';
+        }
+      console.log(secondsRemaining);
 
-        // Pause for one second
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      // Pause for one second
+      await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
     // Display a message indicating that the countdown has finished

@@ -1,14 +1,7 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData} from './functions.js'
-
-
-
-let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer} from './functions.js'
 
 
   //Storing all ElementIDs
@@ -79,13 +72,41 @@ playButton.addEventListener("click", function() {
   if (clicked) {
     // Code to execute when the button is clicked again - to restart game
     console.log("Button clicked again! Game should end here");
+    chosenTimeButton.disabled = false;
+    numOfCategoriesButton.disabled = false;
+    changeLetterButton.disabled = false;
+    playButton.classList.remove('btn-danger');
+    playButton.classList.add('btn-success');
+    playButton.innerHTML = 'Play';
     clicked = false;
+    stopTimer= true; 
+    // stopTimer.value= true; // Set the stopTimer flag to stop the timer
   } else {
 
+    chosenTimeButton.disabled = true;
+    numOfCategoriesButton.disabled = true;
+    changeLetterButton.disabled = true;
 
-    countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60);
+    playButton.classList.remove('btn-success');
+    playButton.classList.add('btn-danger');
+    playButton.innerHTML = 'Stop';
+
+    // Start the countdown timer
+    stopTimer= false; 
+    countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
+      .then(() => {
+          // Code to execute when the countdown finishes
+          console.log("Countdown finished!");
+          document.getElementById("Timer").innerHTML = 'Timer Finished';
+          playButton.classList.remove('btn-danger');
+          playButton.classList.add('btn-success');
+          playButton.innerHTML = 'Play';
+          chosenTimeButton.disabled = false;
+          numOfCategoriesButton.disabled = false;
+          changeLetterButton.disabled = false;
+      });
+
     clicked = true;
-
     if (keyLetter == ''){
       keyLetter = chooseLetter();
    if (keyLetterElement) {
