@@ -1,26 +1,63 @@
-import { Category } from "./classes"
+import {Category, Player, Inputs} from './classes.js';
+
 
 const ListOfCategories = [
-  new Category("students"),
-  new Category("whatever"),
+  new Category("Football Team"),
+  new Category("Anime"),
+  new Category("Car Brand"),
+  new Category("School Subject"),
+  new Category("Country"),
+  new Category("Sport"),
+  new Category("zfdf"),
+  new Category("whaasdfdfstever"),
   new Category("this"),
+  new Category("studesafdasdfnts"),
+  new Category("whatever"),
+  new Category("thisdffds"),
+  new Category("studeasdfsnts"),
+  new Category("whsfasdfsdftever"),
+  new Category("thissdf"),
 ]
+
+/**
+ * Shuffles an array of categories and returns a subset of a specified size.
+ * @param {Array} arr - The input array of categories to shuffle.
+ * @param {Number} size - The number of categories to select from the shuffled array.
+ * @returns {Array} - The shuffled array of categories of size `size`.
+ */
 
 export function CategorySelector(arr, size) {
   //The code above creates a copy of the original array, then it loops through the new array and swaps each element with a random element in the array.
+  if (!Array.isArray(arr)) {
+    throw new TypeError('Input parameter `arr` must be an array.')
+  }
+
+  if (typeof size !== 'number' || size < 0) {
+    throw new TypeError('Input parameter `size` must be a non-negative number.')
+  }
+
   const shuffled = arr.slice(0, arr.length)
   for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    let j = Math.floor(Math.random() * (i + 1))
+    const temp = shuffled[i];
+    shuffled[i] = shuffled[j];
+    shuffled[j] = temp;
   }
   return shuffled.slice(0, Math.min(shuffled.length, size))
 }
 
+let numOfCategories = 6;
 
-const shuffled = CategorySelector(ListOfCategories, 12) // List of Category class instances
 
-chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
+let chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
+console.log(chosenCategories)
+
+for (let i = 0; i < chosenCategories.length; i++)
+  console.log(chosenCategories[i].link)
+
+
 // chosenCategoryDiv = document.getElementById ( "ListOfCategories " ). innerHTML = shuffled.map(c=>c.name) .join ( "<br>" ); // Display all chosen categories 
+
 
 //countdown Timer Algorithm 
 export async function countdownTimerA(seconds = 60) {
@@ -33,9 +70,9 @@ export async function countdownTimerA(seconds = 60) {
         let secondsRemaining = Math.round((endTime - Date.now()) / 1000);
 
         // Display the number of seconds remaining
-        let timerDiv = document.getElementById("Timer")
-        if (timerDiv) {
-            timerDiv.innerHTML = secondsRemaining + 's';
+        let timerText = document.getElementById("timerText")
+        if (timerText) {
+          timerText.innerHTML = secondsRemaining + 's';
           }
         console.log(secondsRemaining);
 
@@ -52,7 +89,8 @@ export async function countdownTimerA(seconds = 60) {
 //Chosen Letter Algorithm
 export function chooseLetter() {
     const asciiCode = Math.floor(Math.random() * 26) + 97;
-    return String.fromCharCode(asciiCode);
+    console.log('A letter has been chosen')
+    return String.fromCharCode(asciiCode- 32);
   }
 
 
@@ -86,3 +124,7 @@ export function hydrateData(players, categories) {
       category.answers = Object.fromEntries(entries)
     }
   }
+
+
+
+

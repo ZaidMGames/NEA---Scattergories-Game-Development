@@ -4,15 +4,24 @@ import {Category, Player, Inputs} from './classes.js';
 import {countdownTimerA, chooseLetter,hydrateData} from './functions.js'
 
 
+
+let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
+
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
   const playButton = document.getElementById("playButton");
   const chosenTimeButton = document.getElementById('chosenTimeButton')
   const numOfCategoriesButton = document.getElementById('changeCategorySize')
+  const changeLetterButton = document.getElementById('changeLetterButton')
   console.log(chosenTimeButton);
 
 
 // Event Listner for when user wants to change length of rounds
+let chosenTimer = 0
 chosenTimeButton?.addEventListener('click',function() {
     let chosenTimer = prompt('Choose a Timer ');
   
@@ -46,6 +55,21 @@ chosenTimeButton?.addEventListener('click',function() {
 
 
 
+  let keyLetter = ''
+
+  if (keyLetterElement) {
+    keyLetterElement.innerHTML = keyLetter;
+  }
+
+changeLetterButton.addEventListener("click", function(){
+   keyLetter = chooseLetter();
+   if (keyLetterElement) {
+    keyLetterElement.innerHTML = keyLetter;
+}})
+
+
+
+
 
 
   //The Game will Only start when the button is clicked
@@ -55,23 +79,19 @@ playButton.addEventListener("click", function() {
   if (clicked) {
     // Code to execute when the button is clicked again - to restart game
     console.log("Button clicked again! Game should end here");
+    clicked = false;
   } else {
-    // Code to execute when the button is clicked for the first time
-      // Choose a letter
-    const keyLetter = chooseLetter();
-    //Start Countdown 
-    // if (chosenTimer) {
-    //   countdownTimerA(chosenTimer);
-    // } else{
-    //   countdownTimerA()
-    // }
+
+
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60);
     clicked = true;
 
-  if (keyLetterElement) {
+    if (keyLetter == ''){
+      keyLetter = chooseLetter();
+   if (keyLetterElement) {
     keyLetterElement.innerHTML = keyLetter;
-  }
-  }});
+    }
+  }}});
 
 
 
