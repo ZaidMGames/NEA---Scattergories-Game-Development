@@ -8,10 +8,12 @@ import {countdownTimerA, chooseLetter,hydrateData} from './functions.js'
   const keyLetterElement = document.getElementById("keyLetter");
   const playButton = document.getElementById("playButton");
   const chosenTimeButton = document.getElementById('chosenTimeButton')
+  const numOfCategoriesButton = document.getElementById('changeCategorySize')
+  console.log(chosenTimeButton);
 
 
 // Event Listner for when user wants to change length of rounds
-chosenTimeButton.addEventListener('click',function() {
+chosenTimeButton?.addEventListener('click',function() {
     let chosenTimer = prompt('Choose a Timer ');
   
     while (true) {
@@ -73,3 +75,12 @@ playButton.addEventListener("click", function() {
 
 
 
+  let numOfCategories = 12; //Default number of categories unless button is pressed
+  if (numOfCategoriesButton.onclick) {
+    let input = prompt("Please input an answer"); //Category size must be higher than 5
+    while(input <5 || input > listOfCategories.length){
+        let input = prompt("Please input an answer");
+    };
+    numOfCategories = input;
+  }
+  
