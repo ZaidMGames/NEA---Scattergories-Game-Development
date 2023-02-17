@@ -29,10 +29,10 @@
               type="button" 
               class="btn btn-dark"
               data-bs-title="Chosen Letter"
-              data-mdb-toggle="popover"
-              data-mdb-content="Click here to choose a letter so you can clearly get an idea of what letter you are starting with "
-              data-mdb-trigger="hover"
-              data-mdb-html="true">Chosen Letter</button>
+              data-bs-toggle="popover"
+              data-bs-content="Click here to choose a letter so you can clearly get an idea of what letter you are starting with "
+              data-bs-trigger="hover"
+              data-bs-html="true">Chosen Letter</button>
       </div>
       <div id='Timer'class="col">
         <h1 id="timerText"></h1>
@@ -40,10 +40,10 @@
                 type="button" 
                 class="btn btn-dark" 
                 data-bs-title="Chosen Time"
-                data-mdb-toggle="popover"
-                data-mdb-content="Click here to choose the time or leave it as the default 60s"
-                data-mdb-trigger="hover"
-                data-mdb-html="true">Choose the time</button>
+                data-bs-toggle="popover"
+                data-bs-content="Click here to choose the time or leave it as the default 60s"
+                data-bs-trigger="hover"
+                data-bs-html="true">Choose the time</button>
       </div>
       <div id='Round'class="col">
         Round
@@ -53,10 +53,10 @@
                 type="button" 
                 class="btn btn-dark" 
                 data-bs-title="Play Restart Button"
-                data-mdb-toggle="popover"
-                data-mdb-content="Click here to start or restart the game "
-                data-mdb-trigger="hover"
-                data-mdb-html="true"> Play Or Restart</button>
+                data-bs-toggle="popover"
+                data-bs-content="Click here to start or restart the game "
+                data-bs-trigger="hover"
+                data-bs-html="true"> Play Or Restart</button>
       </div>
     </div>
     <div class="row">
@@ -98,7 +98,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script>
-  let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-mdb-toggle="popover"]'))
+  let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
   let popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
   })
