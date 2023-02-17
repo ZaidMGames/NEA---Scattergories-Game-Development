@@ -18,58 +18,77 @@
   <div class=".container-fluid text-center ">
     <div class="row">
       <div id='TopBar'class="col-12 "> 
-        top
-        <!-- Top <i class="fas fa-barcode"></i> -->
+        <div class='inner'>
+          top
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <h1 id='keyLetter'> </h1>
-       <button id ='changeLetterButton' 
-              type="button" 
-              class="btn btn-dark"
-              data-bs-title="Chosen Letter"
-              data-bs-toggle="popover"
-              data-bs-custom-class="custom-popover"
-              data-bs-content="Want to have a headstart understanding what letter you will have to start with? Click the button to see (or you could just click the start button and only see it then)"
-              data-bs-trigger="hover"
-              data-bs-html="true">Chosen Letter</button>
-      </div>
-      <div id='Timer'class="col">
-        <h1 id="timerText"></h1>
-        <button id="chosenTimeButton" 
+        <div class='inner'>
+          <h1 id='keyLetter'> </h1>
+        <button id ='changeLetterButton' 
                 type="button" 
-                class="btn btn-dark" 
-                data-bs-title="Chosen Time"
+                class="btn btn-dark btn-lg"
+                data-bs-title="Chosen Letter"
                 data-bs-toggle="popover"
                 data-bs-custom-class="custom-popover"
-                data-bs-animation = true
-                data-bs-content="if you want to customise the length of each round, change the time by Clicking this button. The Default Time is 60s and the Maximum time you can have is 300s"
+                data-bs-content="Want to have a headstart understanding what letter you will have to start with? Click the button to see (or you could just click the start button and only see it then)"
                 data-bs-trigger="hover"
-                data-bs-html="true">Choose the time</button>
+                data-bs-html="true">Chosen Letter</button>
+        </div>
+      </div>
+      <div id='Timer'class="col">
+        <div class='inner'>
+          <h1 id="timerText"></h1>
+          <button id="chosenTimeButton" 
+                  type="button" 
+                  class="btn btn-dark btn-lg" 
+                  data-bs-title="Chosen Time"
+                  data-bs-toggle="popover"
+                  data-bs-custom-class="custom-popover"
+                  data-bs-content="if you want to customise the length of each round, change the time by Clicking this button. The Default Time is 60s and the Maximum time you can have is 300s"
+                  data-bs-trigger="hover"
+                  data-bs-html="true">Choose the time</button>
+        </div>
       </div>
       <div id='Round'class="col">
         Round
       </div>
       <div id='PlayRestart'class="col">
-        <button id="playButton" 
+        <div class='inner'>
+          <button id="playButton" 
                 type="button" 
-                class="btn btn-dark" 
+                class="btn btn-outline-success btn-lg" 
                 data-bs-title="Play Restart Button"
                 data-bs-toggle="popover"
                 data-bs-content="Start the game by clicking this button and press it again to stop the game."
                 data-bs-trigger="hover"
                 data-bs-html="true"> Play Or Restart</button>
+        </div>
+        
       </div>
     </div>
     <div class="row">
       <div id='ListOfCategories'class="col">
-        List Of Categories 
-        <br>
-        <button id="changeCategorySize" type="button" class="btn btn-dark" >Change Number of Categories</button>
+        <div class='inner'>
+          <button id="changeCategorySize" 
+                type="button" 
+                class="btn btn-dark btn-lg"
+                data-bs-title="Category Size"
+                data-bs-toggle="popover"
+                data-bs-content="Click here to change the number of categories that will be generated once the game starts. The default value is 12"
+                data-bs-trigger="hover"
+                data-bs-html="true">Change Number of Categories</button>
+                <br>
+                List Of Categories 
+        </div>
+        
       </div>
       <div id='InputCategories'class="col">
-        Input Categories
+        <div class='inner'>
+          Input Categories
+        </div>
       </div>
       <div id='ChatRulesPlayers'class="col-6">
         <nav>
@@ -85,7 +104,9 @@
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">Chat area</div>
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+              
+            </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">Rules Area</div>
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">Players Area</div>
           </div>
