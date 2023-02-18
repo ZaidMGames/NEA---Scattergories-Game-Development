@@ -1,15 +1,15 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData,stopTimer} from './functions.js'
-
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,chosenCategories,ListOfCategories,numOfCategories} from './functions.js'
 
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
   const playButton = document.getElementById("playButton");
-  const chosenTimeButton = document.getElementById('chosenTimeButton')
-  const numOfCategoriesButton = document.getElementById('changeCategorySize')
-  const changeLetterButton = document.getElementById('changeLetterButton')
+  const ListOfCategoriesElement = document.getElementById('ListOfCategories');
+  const chosenTimeButton = document.getElementById('chosenTimeButton');
+  const numOfCategoriesButton = document.getElementById('changeCategorySize');
+  const changeLetterButton = document.getElementById('changeLetterButton');
   console.log(chosenTimeButton);
 
 
@@ -63,8 +63,6 @@ changeLetterButton.addEventListener("click", function(){
 
 
 
-
-
   //The Game will Only start when the button is clicked
 let clicked = false
 
@@ -72,6 +70,7 @@ playButton.addEventListener("click", function() {
   if (clicked) {
     // Code to execute when the button is clicked again - to restart game
     console.log("Button clicked again! Game should end here");
+    ListOfCategoriesElement.innerHTML = ''
     chosenTimeButton.disabled = false;
     numOfCategoriesButton.disabled = false;
     changeLetterButton.disabled = false;
@@ -79,7 +78,8 @@ playButton.addEventListener("click", function() {
     playButton.classList.add('btn-success');
     playButton.innerHTML = 'Play';
     clicked = false;
-    stopTimer= true; 
+    stopTimer.value= true; 
+    chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
     // stopTimer.value= true; // Set the stopTimer flag to stop the timer
   } else {
 
@@ -91,13 +91,16 @@ playButton.addEventListener("click", function() {
     playButton.classList.add('btn-danger');
     playButton.innerHTML = 'Stop';
 
+    
+    // chosenCategories = CategorySelector(ListOfCategories, numOfCategories.value);
+    displayChosenCategories()
     // Start the countdown timer
-    stopTimer= false; 
+    stopTimer.value = false;
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
       .then(() => {
           // Code to execute when the countdown finishes
           console.log("Countdown finished!");
-          document.getElementById("Timer").innerHTML = 'Timer Finished';
+          document.getElementById("timerText").innerHTML = '<br>';
           playButton.classList.remove('btn-danger');
           playButton.classList.add('btn-success');
           playButton.innerHTML = 'Play';
@@ -116,7 +119,6 @@ playButton.addEventListener("click", function() {
 
 
 
-  let numOfCategories = 12; //Default number of categories unless button is pressed
   if (numOfCategoriesButton.onclick) {
     let input = prompt("Please input an answer"); //Category size must be higher than 5
     while(input <5 || input > listOfCategories.length){

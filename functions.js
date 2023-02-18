@@ -1,7 +1,7 @@
 import {Category, Player, Inputs} from './classes.js';
 
 
-const ListOfCategories = [
+export const ListOfCategories = [
   new Category("Football Team"),
   new Category("Anime"),
   new Category("Car Brand"),
@@ -46,19 +46,34 @@ export function CategorySelector(arr, size) {
   return shuffled.slice(0, Math.min(shuffled.length, size))
 }
 
-let numOfCategories = 6;
+export let numOfCategories = 12
+// export const numOfCategories = {value : 12};
+
+export let chosenCategories;
+chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
+// export let chosenCategories = CategorySelector(ListOfCategories, numOfCategories.value);
+// console.log(chosenCategories)
+
+// for (let i = 0; i < chosenCategories.length; i++)
+//   console.log(chosenCategories[i].link)
+
+export function displayChosenCategories() {
+    const objectNamesElement = document.getElementById("ListOfCategories");
+    chosenCategories.forEach(category => {
+      const objectNameElement = document.createElement("div");
+      objectNameElement.classList.add("my-2");
+      objectNameElement.innerHTML = '<h3>' + category.name + '</h3>';
+      objectNamesElement.appendChild(objectNameElement);
+    });
+  }
 
 
-let chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
-console.log(chosenCategories)
-
-for (let i = 0; i < chosenCategories.length; i++)
-  console.log(chosenCategories[i].link)
 
 
 // chosenCategoryDiv = document.getElementById ( "ListOfCategories " ). innerHTML = shuffled.map(c=>c.name) .join ( "<br>" ); // Display all chosen categories 
 
-export let  stopTimer = false;
+export const stopTimer = { value: false };
+console.log(stopTimer)
 
 //countdown Timer Algorithm 
 export async function countdownTimerA(seconds = 60) {
@@ -68,7 +83,7 @@ export async function countdownTimerA(seconds = 60) {
     // Loop until the current time is greater than or equal to the end time
     while (Date.now() < endTime) {
       // Exit early if the stop button has been clicked
-      if (stopTimer) {
+      if (stopTimer.value) {
             console.log('Timer has now been stopped')
             return;
         }
@@ -88,7 +103,9 @@ export async function countdownTimerA(seconds = 60) {
 
     // Display a message indicating that the countdown has finished
     console.log("Countdown finished!");
-    document.getElementById("Timer").innerHTML = 'Timer Finished'
+    if (timerText) {
+      timerText.innerHTML = 'Timer Finished';
+      }
 }
 
 

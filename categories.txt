@@ -1,0 +1,13 @@
+fetch('path/to/file.txt')
+  .then(response => response.text()) // convert response to text
+  .then(data => {
+    const lines = data.split('\n'); // split text into lines
+    const array = []; // create an empty array
+    lines.forEach(line => {
+      array.push(line); // add each line to the array
+    });
+    console.log(array); // output the array
+  })
+  .catch(error => console.error(error)); // handle errors
+
+  //will be using this later
