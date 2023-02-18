@@ -67,7 +67,29 @@ export function displayChosenCategories() {
     });
   }
 
+export function createInputBoxes() {
+  console.log('Creating input boxes')
+    const inputBoxesDiv = document.getElementById('InputCategories');
+    for (let i = 0; i < numOfCategories; i++) {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.classList.add('form-control');
+      inputBoxesDiv.appendChild(input);
+      const lineBreak = document.createElement('br');
+      inputBoxesDiv.appendChild(lineBreak);
+    }
+  }
+  
 
+  const playerAnswersArray = [];
+
+export function getAnswers() {
+  const inputBoxes = document.querySelectorAll('#InputCategories input');
+  for (let i = 0; i < inputBoxes.length; i++) {
+    playerAnswersArray.push(inputBoxes[i].value);
+  }
+}
+  
 
 
 // chosenCategoryDiv = document.getElementById ( "ListOfCategories " ). innerHTML = shuffled.map(c=>c.name) .join ( "<br>" ); // Display all chosen categories 

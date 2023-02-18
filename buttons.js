@@ -1,10 +1,11 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,chosenCategories,ListOfCategories,numOfCategories} from './functions.js'
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,chosenCategories,ListOfCategories,numOfCategories,createInputBoxes,getAnswers} from './functions.js'
 
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
+  const InputCategoriesElement = document.getElementById('InputCategories')
   const playButton = document.getElementById("playButton");
   const ListOfCategoriesElement = document.getElementById('ListOfCategories');
   const chosenTimeButton = document.getElementById('chosenTimeButton');
@@ -31,6 +32,12 @@ chosenTimeButton?.addEventListener('click',function() {
 
       // Parse chosenTimer to an integer
       let number = parseInt(chosenTimer);
+
+      //check if Number is greater than 0
+      if (number < 0) {
+        chosenTimer = prompt("Time can only be a positive number. Please enter a valid number:");
+        continue;
+      }
   
       // If the number is greater than 300, prompt the user again
       if (number > 300) {
@@ -71,6 +78,7 @@ playButton.addEventListener("click", function() {
     // Code to execute when the button is clicked again - to restart game
     console.log("Button clicked again! Game should end here");
     ListOfCategoriesElement.innerHTML = ''
+    InputCategoriesElement.innerHTML = ''
     chosenTimeButton.disabled = false;
     numOfCategoriesButton.disabled = false;
     changeLetterButton.disabled = false;
@@ -94,6 +102,7 @@ playButton.addEventListener("click", function() {
     
     // chosenCategories = CategorySelector(ListOfCategories, numOfCategories.value);
     displayChosenCategories()
+    createInputBoxes();
     // Start the countdown timer
     stopTimer.value = false;
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
