@@ -57,7 +57,7 @@ chosenTimeButton.addEventListener('click',function() {
 //Change number of categories Button
 let chosenNumCategoriesInput = 12;
 numOfCategoriesButton.addEventListener('click',function() {
-  chosenNumCategoriesInput = prompt('Choose a Timer ');
+  chosenNumCategoriesInput = prompt('How many categories would you like to play with ');
 
   while (true) {
     if (chosenNumCategoriesInput == undefined) {
