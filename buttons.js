@@ -54,13 +54,52 @@ chosenTimeButton.addEventListener('click',function() {
     console.log('Timer has now been changed to '+ chosenTimer + 's')
   });
 
+//Change number of categories Button
+let chosenNumCategoriesInput = 12;
+numOfCategoriesButton.addEventListener('click',function() {
+  chosenNumCategoriesInput = prompt('Choose a Timer ');
+
+  while (true) {
+    if (chosenNumCategoriesInput == undefined) {
+      chosenNumCategoriesInput = 12;
+      return
+    }
+    // Check if chosenNumCategoriesInput is a number
+    // If chosenNumCategoriesInput is not a number, prompt the user again
+    if (isNaN(chosenNumCategoriesInput)) {
+      chosenNumCategoriesInput = prompt("The number of categories can only be set using integers. Please enter a valid number:");
+      continue;
+    }
+
+    // Parse chosenNumCategoriesInput to an integer
+    let number = parseInt(chosenNumCategoriesInput);
+
+    //check if Number is greater than 0
+    if (number < 0) {
+      chosenNumCategoriesInput = prompt("The number of categories can only be a positive number. Please enter a valid number:");
+      continue;
+    }
+
+    // If the number is greater than the number of categories we currently have, prompt the user again
+    if (number > chosenCategories.length) {
+      chosenNumCategoriesInput = prompt("WE don't currently have that many categories, slow down man");
+      continue;
+    }
+    
+    // If the number is valid, break the loop
+    break;
+}
+
+  window.chosenNumCategoriesInput = parseInt(chosenNumCategoriesInput); 
+  console.log('The number of Selected Categories has been changed to  '+ chosenNumCategoriesInput + '')
+});
+
 
 
   let keyLetter = ''
-
-  if (keyLetterElement) {
-    keyLetterElement.innerHTML = keyLetter;
-  }
+  // if (keyLetterElement) {
+  //   keyLetterElement.innerHTML = keyLetter;
+  // }
 
 changeLetterButton.addEventListener("click", function(){
    keyLetter = chooseLetter();
@@ -139,3 +178,5 @@ playButton.addEventListener("click", function() {
     numOfCategories = input;
   }
   
+
+ 
