@@ -52,7 +52,7 @@ chosenTimeButton?.addEventListener('click',function() {
     window.chosenTimer = chosenTimer; 
     chosenTimer = parseInt(chosenTimer)
     console.log('Timer has now been changed to '+ chosenTimer + 's')
-    console.log(chosenTimer)
+    console.log(typeof chosenTimer)
   });
 
 
