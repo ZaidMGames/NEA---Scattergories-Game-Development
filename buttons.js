@@ -107,6 +107,8 @@ playButton.addEventListener("click", function() {
     createInputBoxes();
     // Start the countdown timer
     stopTimer.value = false;
+    console.log(typeof chosenTimer)
+    console.log(chosenTimer)
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
       .then(() => {
           // Code to execute when the countdown finishes
