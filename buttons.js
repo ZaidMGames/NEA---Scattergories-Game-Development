@@ -20,7 +20,7 @@ chosenTimeButton.addEventListener('click',function() {
     chosenTimer = prompt('Choose a Timer ');
   
     while (true) {
-      if (!chosenTimer == '') {
+      if (!chosenTimer == undefined) {
         chosenTimer = 0;
         return
       }
@@ -50,7 +50,7 @@ chosenTimeButton.addEventListener('click',function() {
       break;
   }
   
-    // window.chosenTimer = parseInt(chosenTimer); 
+    window.chosenTimer = parseInt(chosenTimer); 
     console.log('Timer has now been changed to '+ chosenTimer + 's')
   });
 
