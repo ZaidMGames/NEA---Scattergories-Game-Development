@@ -15,14 +15,12 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
 
 
 // Event Listner for when user wants to change length of rounds
-let chosenTimer;
+let chosenTimer = 0;
 chosenTimeButton.addEventListener('click',function() {
     chosenTimer = prompt('Choose a Timer ');
   
     while (true) {
       if (!chosenTimer == null) {
-        chosenTimer = 0
-        window.chosenTimer = chosenTimer; 
         return
       }
       // Check if chosenTimer is a number
