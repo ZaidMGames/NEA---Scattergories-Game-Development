@@ -22,7 +22,7 @@ chosenTimeButton.addEventListener('click',function() {
     while (true) {
       if (!chosenTimer == undefined) {
         chosenTimer = 0;
-        return
+        break
       }
       // Check if chosenTimer is a number
       // If chosenTimer is not a number, prompt the user again
@@ -106,8 +106,8 @@ playButton.addEventListener("click", function() {
     createInputBoxes();
     // Start the countdown timer
     stopTimer.value = false;
-    console.log('The Variable type of the timer is a ' + typeof chosenTimer)
-    console.log('Confirmed Current time is'+chosenTimer)
+    console.log('The Variable type of the timer is: ' + typeof chosenTimer)
+    console.log('Confirmed Current time is '+chosenTimer)
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
       .then(() => {
           // Code to execute when the countdown finishes
