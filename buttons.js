@@ -21,7 +21,8 @@ chosenTimeButton.addEventListener('click',function() {
   
     while (true) {
       if (!chosenTimer == null) {
-        window.chosenTimer = 0; 
+        chosenTimer = 0
+        window.chosenTimer = chosenTimer; 
         return
       }
       // Check if chosenTimer is a number
