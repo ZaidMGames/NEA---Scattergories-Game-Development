@@ -51,7 +51,6 @@ chosenTimeButton?.addEventListener('click',function() {
   
     window.chosenTimer = parseInt(chosenTimer); 
     console.log('Timer has now been changed to '+ chosenTimer + 's')
-    console.log(typeof chosenTimer)
   });
 
 
@@ -106,8 +105,8 @@ playButton.addEventListener("click", function() {
     createInputBoxes();
     // Start the countdown timer
     stopTimer.value = false;
-    console.log(typeof chosenTimer)
-    console.log(chosenTimer)
+    console.log('The Variable type of the timer is a ' + typeof chosenTimer)
+    console.log('Confirmed Current time is'+chosenTimer)
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
       .then(() => {
           // Code to execute when the countdown finishes
