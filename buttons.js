@@ -22,7 +22,7 @@ chosenTimeButton.addEventListener('click',function() {
     while (true) {
       if (!chosenTimer == undefined) {
         chosenTimer = 0;
-        break
+        return
       }
       // Check if chosenTimer is a number
       // If chosenTimer is not a number, prompt the user again
