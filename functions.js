@@ -94,11 +94,12 @@ export function getAnswers() {
 
 // chosenCategoryDiv = document.getElementById ( "ListOfCategories " ). innerHTML = shuffled.map(c=>c.name) .join ( "<br>" ); // Display all chosen categories 
 
-export const stopTimer = { value: false };
-console.log(stopTimer)
+
 
 //countdown Timer Algorithm 
-export async function countdownTimerA(seconds = 60) {
+export const stopTimer = { value: false }; // variable used to stop timer when stop button is pressed
+console.log(stopTimer)
+export async function countdownTimerA(seconds) {
     // Calculate the end time
     let endTime = Date.now() + seconds * 1000;
 
@@ -139,8 +140,7 @@ export function chooseLetter() {
   }
 
 
-  //Hydrate data algorithm
-
+//Hydrate data algorithm
 export function hydrateData(players, categories) {
     for (let i = 0; i < categories.length; i++) {
       const category = categories[i]
