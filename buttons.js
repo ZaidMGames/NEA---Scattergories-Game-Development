@@ -50,7 +50,9 @@ chosenTimeButton?.addEventListener('click',function() {
   }
   
     window.chosenTimer = chosenTimer; 
+    window.number = number;
     console.log('Timer has now been changed to '+ chosenTimer + 's')
+    console.log(chosenTimer)
   });
 
 
@@ -105,7 +107,7 @@ playButton.addEventListener("click", function() {
     createInputBoxes();
     // Start the countdown timer
     stopTimer.value = false;
-    countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
+    countdownTimerA(!isNaN(number) && number > 0 ? number : 60)
       .then(() => {
           // Code to execute when the countdown finishes
           console.log("Countdown finished!");
