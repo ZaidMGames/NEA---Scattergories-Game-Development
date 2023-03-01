@@ -126,7 +126,7 @@ playButton.addEventListener("click", function() {
     playButton.innerHTML = 'Play';
     clicked = false;
     stopTimer.value= true; 
-    chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
+    chosenCategories = CategorySelector(ListOfCategories, ParseInt(chosenNumCategoriesInput));
     // stopTimer.value= true; // Set the stopTimer flag to stop the timer
   } else {
 
