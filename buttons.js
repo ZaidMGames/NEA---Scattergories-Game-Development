@@ -55,7 +55,7 @@ chosenTimeButton.addEventListener('click',function() {
   });
 
 //Change number of categories Button
-let chosenNumCategoriesInput = 12;
+export let chosenNumCategoriesInput = 12;
 let chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
 console.log(chosenCategories)
 numOfCategoriesButton.addEventListener('click',function() {

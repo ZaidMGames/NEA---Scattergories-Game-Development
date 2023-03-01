@@ -1,4 +1,5 @@
 import {Category, Player, Inputs} from './classes.js';
+import {chosenNumCategoriesInput} from './buttons.js'
 
 
 export const ListOfCategories = [
