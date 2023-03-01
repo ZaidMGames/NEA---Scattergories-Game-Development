@@ -12,7 +12,6 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const numOfCategoriesButton = document.getElementById('changeCategorySize');
   const changeLetterButton = document.getElementById('changeLetterButton');
   console.log(chosenTimeButton);
-  console.log(chosenCategories)
 
 
 // Event Listner for when user wants to change length of rounds
@@ -58,6 +57,7 @@ chosenTimeButton.addEventListener('click',function() {
 //Change number of categories Button
 let chosenNumCategoriesInput = 12;
 let chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
+console.log(chosenCategories)
 numOfCategoriesButton.addEventListener('click',function() {
   chosenNumCategoriesInput = prompt('How many categories would you like to play with ');
 
@@ -94,6 +94,7 @@ numOfCategoriesButton.addEventListener('click',function() {
 
   window.chosenNumCategoriesInput = parseInt(chosenNumCategoriesInput); 
   chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
+  console.log(chosenCategories)
   console.log('The number of Selected Categories has been changed to  '+ chosenNumCategoriesInput + '')
 });
 
