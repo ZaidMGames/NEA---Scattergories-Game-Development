@@ -61,7 +61,7 @@ export function displayChosenCategories(categories) {
 export function createInputBoxes() {
   console.log('Creating input boxes')
     const inputBoxesDiv = document.getElementById('InputCategories');
-    for (let i = 0; i < numOfCategories; i++) {
+    for (let i = 0; i < chosenNumCategoriesInput; i++) {
       const input = document.createElement('input');
       input.type = 'text';
       input.classList.add('form-control');
