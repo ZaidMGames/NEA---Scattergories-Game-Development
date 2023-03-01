@@ -47,10 +47,6 @@ export function CategorySelector(arr, size) {
 }
 
 
-export let chosenCategories;
-chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
-
-
 export function displayChosenCategories(categories) {
     const objectNamesElement = document.getElementById("ListOfCategories");
     categories.forEach(category => {
