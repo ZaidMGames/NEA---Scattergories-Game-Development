@@ -81,7 +81,7 @@ numOfCategoriesButton.addEventListener('click',function() {
     }
 
     // If the number is greater than the number of categories we currently have, prompt the user again
-    if (number > chosenCategories.length) {
+    if (number > ListOfCategories.length) {
       chosenNumCategoriesInput = prompt("WE don't currently have that many categories, slow down man");
       continue;
     }
