@@ -157,8 +157,8 @@ playButton.addEventListener("click", function() {
       });
 
     clicked = true;
-    if (keyLetter == ''){
-      keyLetter = chooseLetter();
+    if (!keyLetter){
+      let keyLetter = chooseLetter();
    if (keyLetterElement) {
     keyLetterElement.innerHTML = keyLetter;
     }
