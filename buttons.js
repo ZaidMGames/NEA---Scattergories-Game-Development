@@ -95,7 +95,7 @@ numOfCategoriesButton.addEventListener('click',function() {
 });
 
 
-
+//Change Letter Button
 let keyLetter = ''
 changeLetterButton.addEventListener("click", function(){
    let keyLetter = chooseLetter();
@@ -105,8 +105,7 @@ changeLetterButton.addEventListener("click", function(){
 
 
 
-
-  //The Game will Only start when the button is clicked
+//The Game will Only start when the button is clicked
 let clicked = false
 
 playButton.addEventListener("click", function() {
@@ -123,7 +122,7 @@ playButton.addEventListener("click", function() {
     playButton.innerHTML = 'Play';
     clicked = false;
     stopTimer.value= true; 
-    chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
+    chosenCategories = CategorySelector(ListOfCategories, numOfCatechosenNumCategoriesInputgories);
     // stopTimer.value= true; // Set the stopTimer flag to stop the timer
   } else {
 
@@ -164,15 +163,5 @@ playButton.addEventListener("click", function() {
     }
   }}});
 
-
-
-  if (numOfCategoriesButton.onclick) {
-    let input = prompt("Please input an answer"); //Category size must be higher than 5
-    while(input <5 || input > listOfCategories.length){
-        let input = prompt("Please input an answer");
-    };
-    numOfCategories = input;
-  }
-  
 
  
