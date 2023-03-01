@@ -96,11 +96,7 @@ numOfCategoriesButton.addEventListener('click',function() {
 
 
 
-  let keyLetter = ''
-  // if (keyLetterElement) {
-  //   keyLetterElement.innerHTML = keyLetter;
-  // }
-
+// let keyLetter = ''
 changeLetterButton.addEventListener("click", function(){
    keyLetter = chooseLetter();
    if (keyLetterElement) {
