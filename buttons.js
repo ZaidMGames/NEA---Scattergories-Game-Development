@@ -93,7 +93,7 @@ numOfCategoriesButton.addEventListener('click',function() {
 }
 
   window.chosenNumCategoriesInput = parseInt(chosenNumCategoriesInput); 
-  chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
+  chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput));
   console.log(chosenCategories)
   console.log('The number of Selected Categories has been changed to  '+ chosenNumCategoriesInput + '')
 });
