@@ -46,20 +46,14 @@ export function CategorySelector(arr, size) {
   return shuffled.slice(0, Math.min(shuffled.length, size))
 }
 
-export let numOfCategories = 12
-// export const numOfCategories = {value : 12};
 
 export let chosenCategories;
 chosenCategories = CategorySelector(ListOfCategories, numOfCategories);
-// export let chosenCategories = CategorySelector(ListOfCategories, numOfCategories.value);
-// console.log(chosenCategories)
 
-// for (let i = 0; i < chosenCategories.length; i++)
-//   console.log(chosenCategories[i].link)
 
-export function displayChosenCategories() {
+export function displayChosenCategories(categories) {
     const objectNamesElement = document.getElementById("ListOfCategories");
-    chosenCategories.forEach(category => {
+    categories.forEach(category => {
       const objectNameElement = document.createElement("div");
       objectNameElement.classList.add("my-2");
       objectNameElement.innerHTML = '<h3>' + category.name + '</h3>';
@@ -90,9 +84,6 @@ export function getAnswers() {
   }
 }
   
-
-
-// chosenCategoryDiv = document.getElementById ( "ListOfCategories " ). innerHTML = shuffled.map(c=>c.name) .join ( "<br>" ); // Display all chosen categories 
 
 
 
@@ -140,7 +131,7 @@ export function chooseLetter() {
   }
 
 
-//Hydrate data algorithm
+  //Hydrate data algorithm
 export function hydrateData(players, categories) {
     for (let i = 0; i < categories.length; i++) {
       const category = categories[i]

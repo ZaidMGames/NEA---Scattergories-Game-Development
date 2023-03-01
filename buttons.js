@@ -122,7 +122,7 @@ playButton.addEventListener("click", function() {
     playButton.innerHTML = 'Play';
     clicked = false;
     stopTimer.value= true; 
-    chosenCategories = CategorySelector(ListOfCategories, numOfCatechosenNumCategoriesInputgories);
+    chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
     // stopTimer.value= true; // Set the stopTimer flag to stop the timer
   } else {
 
@@ -136,7 +136,8 @@ playButton.addEventListener("click", function() {
 
     
     // chosenCategories = CategorySelector(ListOfCategories, numOfCategories.value);
-    displayChosenCategories()
+    chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
+    displayChosenCategories(chosenCategories)
     createInputBoxes();
     // Start the countdown timer
     stopTimer.value = false;
