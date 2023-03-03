@@ -150,7 +150,7 @@ playButton.addEventListener("click", function() {
     }
   }
     createInputBoxes();
-    console.log(typeof(keyLetter) + console.log(keyLetter))
+    console.log(typeof(keyLetter) + 'The chosen Key Letter is '+keyLetter)
     // Start the countdown timer
     stopTimer.value = false;
     console.log('The Variable type of the timer is: ' + typeof chosenTimer)
