@@ -149,6 +149,10 @@ playButton.addEventListener("click", function() {
     }
   }
     createInputBoxes();
+    const inputfields = document.querySelectorAll('#InputCategories input');
+    inputfields.forEach((input) => {
+    input.addEventListener('Input',ValidInput)
+    });
     // Start the countdown timer
     stopTimer.value = false;
     console.log('The Variable type of the timer is: ' + typeof chosenTimer)
