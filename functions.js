@@ -1,5 +1,5 @@
 import {Category, Player, Inputs} from './classes.js';
-import {chosenNumCategoriesInput} from './buttons.js'
+import {chosenNumCategoriesInput, chooseLetter} from './buttons.js'
 
 
 export const ListOfCategories = [
@@ -64,6 +64,7 @@ export function createInputBoxes() {
     for (let i = 0; i < chosenNumCategoriesInput; i++) {
       const input = document.createElement('input');
       input.type = 'text';
+      input.placeholder = chooseLetter + '...'
       input.classList.add('form-control');
       inputBoxesDiv.appendChild(input);
       const lineBreak = document.createElement('br');

@@ -100,9 +100,9 @@ numOfCategoriesButton.addEventListener('click',function() {
 
 
 //Change Letter Button
-let keyLetter = ''
+export let keyLetter = ''
 changeLetterButton.addEventListener("click", function(){
-   let keyLetter = chooseLetter();
+  keyLetter = chooseLetter();
    if (keyLetterElement) {
     keyLetterElement.innerHTML = keyLetter;
 }})
