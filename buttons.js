@@ -1,7 +1,7 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,inputBoxes} from './functions.js'
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers} from './functions.js'
 
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
