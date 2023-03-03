@@ -100,7 +100,7 @@ numOfCategoriesButton.addEventListener('click',function() {
 
 
 //Change Letter Button
-export let keyLetter = 'sdgsdg'
+export let keyLetter = ''
 changeLetterButton.addEventListener("click", function(){
   keyLetter = chooseLetter();
    if (keyLetterElement) {
@@ -141,6 +141,12 @@ playButton.addEventListener("click", function() {
     
     // chosenCategories = CategorySelector(ListOfCategories, numOfCategories.value);
     displayChosenCategories(chosenCategories)
+    if (keyLetter == ''){
+      keyLetter = chooseLetter();
+   if (keyLetterElement) {
+    keyLetterElement.innerHTML = keyLetter;
+    }
+  }
     createInputBoxes();
     // Start the countdown timer
     stopTimer.value = false;
@@ -160,12 +166,7 @@ playButton.addEventListener("click", function() {
       });
 
     clicked = true;
-    if (keyLetter == ''){
-      keyLetter = chooseLetter();
-   if (keyLetterElement) {
-    keyLetterElement.innerHTML = keyLetter;
-    }
-  }}});
+    }});
 
 
  
