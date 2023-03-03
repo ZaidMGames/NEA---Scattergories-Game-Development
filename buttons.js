@@ -151,7 +151,7 @@ playButton.addEventListener("click", function() {
     createInputBoxes();
     const inputfields = document.querySelectorAll('#InputCategories input');
     inputfields.forEach((input) => {
-    input.addEventListener('Input',validInput)
+    input.addEventListener('input',validInput)
     });
     // Start the countdown timer
     stopTimer.value = false;
