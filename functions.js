@@ -27,9 +27,10 @@ export const ListOfCategories = [
  * @returns {Array} - The shuffled array of categories of size `size`.
  */
 
+//Function to validate if player inputs start with keyletter
 function validInput(event) {
   const inputValue = event.target.value;
-  
+  console.log(inputValue)
   if (inputValue.length > 0 && !inputValue.startsWith('A')){
     event.preventDefault();
   }
