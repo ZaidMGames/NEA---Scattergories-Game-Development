@@ -47,7 +47,7 @@ export function CategorySelector(arr, size) {
   return shuffled.slice(0, Math.min(shuffled.length, size))
 }
 
-
+//Function to display the chosen categories from the category selector 
 export function displayChosenCategories(categories) {
     const objectNamesElement = document.getElementById("ListOfCategories");
     categories.forEach(category => {
@@ -57,7 +57,7 @@ export function displayChosenCategories(categories) {
       objectNamesElement.appendChild(objectNameElement);
     });
   }
-
+//Function to create Input boxes for players to give answers to categories
 export function createInputBoxes() {
   console.log('Creating input boxes')
     const inputBoxesDiv = document.getElementById('InputCategories');
@@ -72,15 +72,6 @@ export function createInputBoxes() {
     }
   }
   
-
-  const playerAnswersArray = [];
-
-export function getAnswers() {
-  const inputBoxes = document.querySelectorAll('#InputCategories input');
-  for (let i = 0; i < inputBoxes.length; i++) {
-    playerAnswersArray.push(inputBoxes[i].value);
-  }
-}
   
 
 
@@ -129,6 +120,16 @@ export function chooseLetter() {
   }
 
 
+
+//Function to 
+const playerAnswersArray = [];
+export function getAnswers() {
+  const inputBoxes = document.querySelectorAll('#InputCategories input');
+  for (let i = 0; i < inputBoxes.length; i++) {
+    playerAnswersArray.push(inputBoxes[i].value);
+  }
+  console.log(playerAnswersArray)
+}
   //Hydrate data algorithm
 export function hydrateData(players, categories) {
     for (let i = 0; i < categories.length; i++) {

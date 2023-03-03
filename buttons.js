@@ -163,6 +163,7 @@ playButton.addEventListener("click", function() {
           chosenTimeButton.disabled = false;
           numOfCategoriesButton.disabled = false;
           changeLetterButton.disabled = false;
+          getAnswers()
       });
 
     clicked = true;
