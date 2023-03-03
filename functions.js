@@ -73,13 +73,6 @@ export function createInputBoxes() {
   }
   
 
-export function validInput(event) {
-  const inputValue = event.target.value;
-
-  if (inputValue.length > 0 && !inputValue.startsWith('A')){
-    event.preventDefault();
-  }
-}
 
 export function roundStarter() {
   

@@ -1,7 +1,7 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,validInput} from './functions.js'
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers} from './functions.js'
 
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
@@ -12,6 +12,15 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const numOfCategoriesButton = document.getElementById('changeCategorySize');
   const changeLetterButton = document.getElementById('changeLetterButton');
   console.log(chosenTimeButton);
+
+
+function validInput(event) {
+  const inputValue = event.target.value;
+  
+  if (inputValue.length > 0 && !inputValue.startsWith('A')){
+    event.preventDefault();
+  }
+}
 
 
 // Event Listner for when user wants to change length of rounds
