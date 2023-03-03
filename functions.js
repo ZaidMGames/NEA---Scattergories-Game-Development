@@ -1,7 +1,7 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
-const inputBoxes = document.querySelectorAll('#InputCategories input');
+export const inputBoxes = document.querySelectorAll('#InputCategories input');
 
 export const ListOfCategories = [
   new Category("Football Team"),
