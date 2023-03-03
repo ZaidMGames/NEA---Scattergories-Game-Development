@@ -26,6 +26,22 @@ function gameEnding(){
   getAnswers()
 }
 
+function stopClicked() {
+      // Code to execute when the button is clicked again - to restart game
+      console.log("Button clicked again! Game should end here");
+      ListOfCategoriesElement.innerHTML = ''
+      InputCategoriesElement.innerHTML = ''
+      chosenTimeButton.disabled = false;
+      numOfCategoriesButton.disabled = false;
+      changeLetterButton.disabled = false;
+      playButton.classList.remove('btn-danger');
+      playButton.classList.add('btn-success');
+      playButton.innerHTML = 'Play';
+      clicked = false;
+      stopTimer.value= true; 
+      chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput));
+}
+
 // Event Listner for when user wants to change length of rounds
 let chosenTimer = 0;
 chosenTimeButton.addEventListener('click',function() {
@@ -127,20 +143,7 @@ let clicked = false
 
 playButton.addEventListener("click", function() {
   if (clicked) {
-    // Code to execute when the button is clicked again - to restart game
-    console.log("Button clicked again! Game should end here");
-    ListOfCategoriesElement.innerHTML = ''
-    InputCategoriesElement.innerHTML = ''
-    chosenTimeButton.disabled = false;
-    numOfCategoriesButton.disabled = false;
-    changeLetterButton.disabled = false;
-    playButton.classList.remove('btn-danger');
-    playButton.classList.add('btn-success');
-    playButton.innerHTML = 'Play';
-    clicked = false;
-    stopTimer.value= true; 
-    chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput));
-    // stopTimer.value= true; // Set the stopTimer flag to stop the timer
+    stopClicked()
   } else {
 
     chosenTimeButton.disabled = true;
