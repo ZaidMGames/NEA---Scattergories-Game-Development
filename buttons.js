@@ -141,8 +141,10 @@ changeLetterButton.addEventListener("click", function(){
 //The Game will Only start when the button is clicked
 let clicked = false
 
+//When the play Button has been pressed
 playButton.addEventListener("click", function() {
   if (clicked) {
+    //To run if the player presses the stop button
     stopClicked()
   } else {
 
@@ -163,18 +165,17 @@ playButton.addEventListener("click", function() {
     keyLetterElement.innerHTML = keyLetter;
     }
   }
-    createInputBoxes();
+    createInputBoxes(); //Creating input fields for players to answer - dependent on size of categories chosen
     console.log(typeof(keyLetter) + 'The chosen Key Letter is '+keyLetter)
+
     // Start the countdown timer
     stopTimer.value = false;
-    console.log('The Variable type of the timer is: ' + typeof chosenTimer)
-    console.log('Confirmed Current time is '+ chosenTimer)
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
-      .then(() => {
+      .then(() => { //Runs only when the timer has ended
         gameEnding()
       });
 
-    clicked = true;
+    clicked = true; // just to help if player presses this button before the timer ends
     }});
 
 
