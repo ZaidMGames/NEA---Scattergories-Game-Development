@@ -29,11 +29,7 @@ export const ListOfCategories = [
 
 //Function to validate if player inputs start with keyletter
 function validInput(event) {
-  const inputValue = event.target.value;
-  console.log(inputValue)
-  if (inputValue.length > 0 && !inputValue.startsWith('A')){
-    event.preventDefault();
-  }
+  event.target.value = event.target.value.length == 1 && event.target.value != "A" ? "" : event.target.value
 }
 
 
