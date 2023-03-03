@@ -57,7 +57,8 @@ chosenTimeButton.addEventListener('click',function() {
 //Change number of categories Button
 export let chosenNumCategoriesInput = 12;
 let chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
-console.log('The chosen Categories are '+chosenCategories)
+console.log('Categories have been chosen')
+console.log(chosenCategories)
 numOfCategoriesButton.addEventListener('click',function() {
   chosenNumCategoriesInput = prompt('How many categories would you like to play with ');
 
@@ -151,7 +152,7 @@ playButton.addEventListener("click", function() {
     // Start the countdown timer
     stopTimer.value = false;
     console.log('The Variable type of the timer is: ' + typeof chosenTimer)
-    console.log('Confirmed Current time is '+chosenTimer)
+    console.log('Confirmed Current time is '+ chosenTimer)
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
       .then(() => {
           // Code to execute when the countdown finishes
