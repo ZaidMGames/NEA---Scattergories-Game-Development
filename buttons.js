@@ -14,14 +14,6 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   console.log(chosenTimeButton);
 
 
-function validInput(event) {
-  const inputValue = event.target.value;
-  
-  if (inputValue.length > 0 && !inputValue.startsWith('A')){
-    event.preventDefault();
-  }
-}
-
 
 // Event Listner for when user wants to change length of rounds
 let chosenTimer = 0;
@@ -158,11 +150,6 @@ playButton.addEventListener("click", function() {
     }
   }
     createInputBoxes();
-    const inputfields = document.querySelectorAll('#InputCategories input');
-    console.log(inputfields)
-    inputfields.forEach((input) => {
-    input.addEventListener('input',validInput)
-    });
     // Start the countdown timer
     stopTimer.value = false;
     console.log('The Variable type of the timer is: ' + typeof chosenTimer)

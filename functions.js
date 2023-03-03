@@ -27,6 +27,15 @@ export const ListOfCategories = [
  * @returns {Array} - The shuffled array of categories of size `size`.
  */
 
+function validInput(event) {
+  const inputValue = event.target.value;
+  
+  if (inputValue.length > 0 && !inputValue.startsWith('A')){
+    event.preventDefault();
+  }
+}
+
+
 export function CategorySelector(arr, size) {
   //The code above creates a copy of the original array, then it loops through the new array and swaps each element with a random element in the array.
   if (!Array.isArray(arr)) {
@@ -63,6 +72,7 @@ export function createInputBoxes() {
     const inputBoxesDiv = document.getElementById('InputCategories');
     for (let i = 0; i < chosenNumCategoriesInput; i++) {
       const input = document.createElement('input');
+      input.addEventListener('input', validInput)
       input.type = 'text';
       input.placeholder = keyLetter + '...'
       input.classList.add('form-control');
