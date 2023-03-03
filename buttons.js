@@ -1,7 +1,7 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,ValidInput} from './functions.js'
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,validInput} from './functions.js'
 
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
@@ -151,7 +151,7 @@ playButton.addEventListener("click", function() {
     createInputBoxes();
     const inputfields = document.querySelectorAll('#InputCategories input');
     inputfields.forEach((input) => {
-    input.addEventListener('Input',ValidInput)
+    input.addEventListener('Input',validInput)
     });
     // Start the countdown timer
     stopTimer.value = false;
