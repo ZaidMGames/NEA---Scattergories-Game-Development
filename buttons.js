@@ -13,7 +13,18 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const changeLetterButton = document.getElementById('changeLetterButton');
   console.log(chosenTimeButton);
 
-
+function gameEnding(){
+  // Code to execute when the countdown finishes
+  console.log("Countdown finished!");
+  document.getElementById("timerText").innerHTML = '<br>';
+  playButton.classList.remove('btn-danger');
+  playButton.classList.add('btn-success');
+  playButton.innerHTML = 'Play';
+  chosenTimeButton.disabled = false;
+  numOfCategoriesButton.disabled = false;
+  changeLetterButton.disabled = false;
+  getAnswers()
+}
 
 // Event Listner for when user wants to change length of rounds
 let chosenTimer = 0;
@@ -157,16 +168,7 @@ playButton.addEventListener("click", function() {
     console.log('Confirmed Current time is '+ chosenTimer)
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
       .then(() => {
-          // Code to execute when the countdown finishes
-          console.log("Countdown finished!");
-          document.getElementById("timerText").innerHTML = '<br>';
-          playButton.classList.remove('btn-danger');
-          playButton.classList.add('btn-success');
-          playButton.innerHTML = 'Play';
-          chosenTimeButton.disabled = false;
-          numOfCategoriesButton.disabled = false;
-          changeLetterButton.disabled = false;
-          getAnswers()
+        gameEnding()
       });
 
     clicked = true;
