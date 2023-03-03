@@ -74,19 +74,6 @@ export function createInputBoxes() {
     }
   }
   
-inputBoxes.forEach(input => {
-  input.addEventListener('input', () => {
-    const firstChar = input.value.charAt(0);
-    if (firstChar !== 'A') {
-      input.setCustomValidity('Should start with chosen letter')
-    }
-    else {
-      input.setCustomValidity('')
-    }
-  })
-})
-
-
 
 export function roundStarter(){
 
