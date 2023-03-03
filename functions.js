@@ -121,13 +121,14 @@ export function chooseLetter() {
 
 
 
-//Function to 
+//Function to link answers placed in input fields to an array
 const playerAnswersArray = [];
 export function getAnswers() {
   const inputBoxes = document.querySelectorAll('#InputCategories input');
   for (let i = 0; i < inputBoxes.length; i++) {
     playerAnswersArray.push(inputBoxes[i].value);
   }
+  console.log('Player Answers have been appended to array')
   console.log(playerAnswersArray)
 }
   //Hydrate data algorithm
