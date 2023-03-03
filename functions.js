@@ -1,7 +1,6 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
-export const inputBoxes = document.querySelectorAll('#InputCategories input');
 
 export const ListOfCategories = [
   new Category("Football Team"),
@@ -64,7 +63,6 @@ export function createInputBoxes() {
     const inputBoxesDiv = document.getElementById('InputCategories');
     for (let i = 0; i < chosenNumCategoriesInput; i++) {
       const input = document.createElement('input');
-      input.id = 'Input Boxes'
       input.type = 'text';
       input.placeholder = keyLetter + '...'
       input.classList.add('form-control');
@@ -74,12 +72,9 @@ export function createInputBoxes() {
     }
   }
   
-
-export function roundStarter(){
-
+export function roundStarter() {
+  
 }
-
-
 
 
 
@@ -131,6 +126,7 @@ export function chooseLetter() {
 //Function to link answers placed in input fields to an array
 const playerAnswersArray = [];
 export function getAnswers() {
+  const inputBoxes = document.querySelectorAll('#InputCategories input');
   for (let i = 0; i < inputBoxes.length; i++) {
     playerAnswersArray.push(inputBoxes[i].value);
   }
