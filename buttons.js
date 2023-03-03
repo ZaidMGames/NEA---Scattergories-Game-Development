@@ -159,6 +159,7 @@ playButton.addEventListener("click", function() {
   }
     createInputBoxes();
     const inputfields = document.querySelectorAll('#InputCategories input');
+    console.log(inputfields)
     inputfields.forEach((input) => {
     input.addEventListener('input',validInput)
     });
