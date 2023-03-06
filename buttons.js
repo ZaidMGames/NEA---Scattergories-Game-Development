@@ -17,7 +17,7 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
 
 
 function categoriesDisplayed(num){
-  chosenCategories = CategorySelector(ListOfCategories, num);
+  window.chosenCategories = CategorySelector(ListOfCategories, num);
   console.log('Categories have been chosen')
   console.log(chosenCategories)
 }
