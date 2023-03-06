@@ -1,13 +1,21 @@
-fetch('path/to/file.txt')
-  .then(response => response.text()) // convert response to text
-  .then(data => {
-    const lines = data.split('\n'); // split text into lines
-    const array = []; // create an empty array
-    lines.forEach(line => {
-      array.push(line); // add each line to the array
-    });
-    console.log(array); // output the array
-  })
-  .catch(error => console.error(error)); // handle errors
-
-  //will be using this later
+Football Team
+Anime
+Capital City
+Animal
+Cartoon Character
+Four Letter Word
+Brand
+Things on a beach
+Website
+Fruit
+Pet Peeve
+Ice Cream Flavor
+Job Tittle
+Language
+Celebrity name
+Fear
+Things in a classroom
+Song title
+Item within eyesight
+A Common Lie
+Video Game

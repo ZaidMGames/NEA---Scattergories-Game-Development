@@ -1,31 +1,47 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
+const fs = require('fs');
+
+//This function reads the categories from the categories.txt file
+function readCategoriesFromFile() {
+  const categories = [];
+  const fileContents = fs.readFileSync('categories.txt', 'utf8');
+  const lines = fileContents.split('\n');
+  for (const line of lines) {
+    categories.push(new Category(line.trim()));
+  }
+  return categories;
+}
+
+export const ListOfCategories = readCategoriesFromFile();
 
 
-export const ListOfCategories = [
-  new Category("Football Team"),
-  new Category("Anime"),
-  new Category("Capital City"),
-  new Category("Animal"),
-  new Category("Cartoon Character"),
-  new Category("Four Letter Word"),
-  new Category("Brand"),
-  new Category("Things on a beach"),
-  new Category("Website"),
-  new Category("Fruit"),
-  new Category("Pet Peeve"),
-  new Category("Ice Cream Flavor"),
-  new Category("Job Tittle"),
-  new Category("Language"),
-  new Category("Celebrity name"),
-  new Category("Fear"),
-  new Category("Things in a classroom"),
-  new Category("Song title"),
-  new Category("Item within eyesight"),
-  new Category("A Common Lie"),
-  new Category("Video Game"),
+
+
+// export const ListOfCategories = [
+//   new Category("Football Team"),
+//   new Category("Anime"),
+//   new Category("Capital City"),
+//   new Category("Animal"),
+//   new Category("Cartoon Character"),
+//   new Category("Four Letter Word"),
+//   new Category("Brand"),
+//   new Category("Things on a beach"),
+//   new Category("Website"),
+//   new Category("Fruit"),
+//   new Category("Pet Peeve"),
+//   new Category("Ice Cream Flavor"),
+//   new Category("Job Tittle"),
+//   new Category("Language"),
+//   new Category("Celebrity name"),
+//   new Category("Fear"),
+//   new Category("Things in a classroom"),
+//   new Category("Song title"),
+//   new Category("Item within eyesight"),
+//   new Category("A Common Lie"),
+//   new Category("Video Game"),
   
-]
+// ]
 
 /**
  * Shuffles an array of categories and returns a subset of a specified size.
