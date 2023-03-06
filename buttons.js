@@ -141,13 +141,15 @@ changeLetterButton.addEventListener("click", function(){
 //The Game will Only start when the button is clicked
 let clicked = false
 
+//to keep track of rounds
+let roundNumber = 0;
 //When the play Button has been pressed
 playButton.addEventListener("click", function() {
   if (clicked) {
     //To run if the player presses the stop button
     stopClicked()
   } else {
-
+    while (roundNumber < 10) {
     chosenTimeButton.disabled = true;
     numOfCategoriesButton.disabled = true;
     changeLetterButton.disabled = true;
@@ -173,9 +175,11 @@ playButton.addEventListener("click", function() {
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
       .then(() => { //Runs only when the timer has ended
         gameEnding()
-      });
+        roundNumber += 1;
+      })};
 
     clicked = true; // just to help if player presses this button before the timer ends
+    
     }});
 
 
