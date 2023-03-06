@@ -85,7 +85,7 @@ addCustomCategoryButton.addEventListener('click',function() {
       console.log(`New category added: ${customPrompt}`);
       break
     } else {
-      console.log(`The category "${categoryName}" already exists in the list.`);
+      console.log(`The category "${customPrompt}" already exists in the list.`);
       continue
     }
 
