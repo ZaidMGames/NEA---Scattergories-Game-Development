@@ -20,7 +20,7 @@
   
   .neumorphic-input {
     background: #F2F3F7;
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
     box-shadow: 5px 5px 10px #BFC7D1, -5px -5px 10px #FFFFFF;
     padding: 10px;
@@ -40,7 +40,7 @@
   
   .neumorphic-category h3 {
     margin: 0;
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
     color: #666;
   }
