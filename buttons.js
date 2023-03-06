@@ -76,12 +76,12 @@ addCustomCategoryButton.addEventListener('click',function() {
     if (customPrompt == undefined) {
       return
     }
-    // Check if customPrompt is a number
-    // If customPrompt is not a number, prompt the user again
-    if (!isString(customPrompt)) {
-      customPrompt = prompt("A category can only be a string lol");
-      continue;
-    }
+    // Check if customPrompt is a string
+    // If customPrompt is not a string, prompt the user again
+    // if (!isString(customPrompt)) {
+    //   customPrompt = prompt("A category can only be a string lol");
+    //   continue;
+    // }
     ListOfCategories.push(new Category(customPrompt, true));
     console.log(`New category added: ${customPrompt}`);
     break;
