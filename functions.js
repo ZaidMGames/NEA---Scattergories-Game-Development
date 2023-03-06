@@ -65,7 +65,7 @@ export function displayChosenCategories(categories) {
   categories.forEach(category => {
     const objectNameElement = document.createElement("div");
     objectNameElement.classList.add("neumorphic-category");
-    objectNameElement.innerHTML = '<a href ='+ category.link +'target="_blank">' + 'click </a>' +
+    objectNameElement.innerHTML = '<a href = {category.link}' +'target="_blank">' + 'click </a>' +
                                   '<h3>' + category.name + '</h3>';
     objectNamesElement.appendChild(objectNameElement);
   });
