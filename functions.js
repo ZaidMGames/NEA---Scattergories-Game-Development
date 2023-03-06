@@ -1,15 +1,16 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
+export let ListOfCategories
+
 const xhr = new XMLHttpRequest();
 xhr.open('GET', 'categories.txt');
 xhr.onload = () => {
   if (xhr.status === 200) {
     const lines = xhr.responseText.split('\n');
-    const categories = lines.map((line) => {
+    ListOfCategories = lines.map((line) => {
       return new Category(line.trim());
     });
-    export const ListOfCategories = categories;
   } else {
     console.error(`Failed to load categories.txt: ${xhr.status} ${xhr.statusText}`);
   }
