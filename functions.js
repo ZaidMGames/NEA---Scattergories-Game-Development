@@ -64,14 +64,12 @@ export function displayChosenCategories(categories) {
   const objectNamesElement = document.getElementById("ListOfCategories");
   categories.forEach(category => {
     const objectNameElement = document.createElement("div");
-    objectNameElement.classList.add("my-2");
-    objectNameElement.style.boxShadow = "4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.5)";
-    objectNameElement.style.padding = "20px";
-    objectNameElement.style.marginBottom = "20px";
+    objectNameElement.classList.add("neumorphic-category");
     objectNameElement.innerHTML = '<h3>' + category.name + '</h3>';
     objectNamesElement.appendChild(objectNameElement);
   });
 }
+
 
 export function createInputBoxes() {
   console.log('Creating input boxes');
