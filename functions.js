@@ -70,21 +70,42 @@ export function displayChosenCategories(categories) {
     });
   }
 //Function to create Input boxes for players to give answers to categories
-export function createInputBoxes() {
-  console.log('Creating input boxes')
-    const inputBoxesDiv = document.getElementById('InputCategories');
-    for (let i = 0; i < chosenNumCategoriesInput; i++) {
-      const input = document.createElement('input');
-      input.addEventListener('input', validInput)
-      input.type = 'text';
-      input.placeholder = keyLetter + '...'
-      input.classList.add('form-control');
-      inputBoxesDiv.appendChild(input);
-      const lineBreak = document.createElement('br');
-      inputBoxesDiv.appendChild(lineBreak);
-    }
-  }
+// export function createInputBoxes() {
+//   console.log('Creating input boxes')
+//     const inputBoxesDiv = document.getElementById('InputCategories');
+//     for (let i = 0; i < chosenNumCategoriesInput; i++) {
+//       const input = document.createElement('input');
+//       input.addEventListener('input', validInput)
+//       input.type = 'text';
+//       input.placeholder = keyLetter + '...'
+//       input.classList.add('form-control');
+//       inputBoxesDiv.appendChild(input);
+//       const lineBreak = document.createElement('br');
+//       inputBoxesDiv.appendChild(lineBreak);
+//     }
+//   }
   
+
+export function createInputBoxes() {
+  console.log('Creating input boxes');
+  const inputBoxesDiv = document.getElementById('InputCategories');
+  for (let i = 0; i < chosenNumCategoriesInput; i++) {
+    const inputContainer = document.createElement('div');
+    inputContainer.classList.add('input-container');
+
+    const input = document.createElement('input');
+    input.addEventListener('input', validInput);
+    input.type = 'text';
+    input.placeholder = keyLetter + '...';
+    input.classList.add('form-control', 'neumorphic-input');
+    
+    inputContainer.appendChild(input);
+    inputBoxesDiv.appendChild(inputContainer);
+  }
+}
+
+
+
 
 
 export function roundStarter() {
