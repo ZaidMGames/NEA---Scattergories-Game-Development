@@ -76,18 +76,26 @@ addCustomCategoryButton.addEventListener('click',function() {
   customPrompt = prompt('Enter a custom category ');
 
   while (true) {
+    const categoryExists = ListOfCategories.some(category => category.name === categoryName);
     if (customPrompt == undefined) {
       return
     }
+    if (!categoryExists) {
+      ListOfCategories.push(new Category(customPrompt, true));
+      console.log(`New category added: ${customPrompt}`);
+      break
+    } else {
+      console.log(`The category "${categoryName}" already exists in the list.`);
+      continue
+    }
+
     // Check if customPrompt is a string
     // If customPrompt is not a string, prompt the user again
     // if (!isString(customPrompt)) {
     //   customPrompt = prompt("A category can only be a string lol");
     //   continue;
     // }
-    ListOfCategories.push(new Category(customPrompt, true));
-    console.log(`New category added: ${customPrompt}`);
-    break;
+
 }
 
   window.chosenTimer = parseInt(chosenTimer); 
