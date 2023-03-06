@@ -19,6 +19,7 @@ xhr.onerror = () => {
   console.error(`Failed to load categories.txt: ${xhr.status} ${xhr.statusText}`);
 };
 xhr.send();
+console.log(ListOfCategories)
 
 
 // export const ListOfCategories = [
