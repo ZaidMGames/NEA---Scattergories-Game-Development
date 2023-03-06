@@ -86,7 +86,6 @@ addCustomCategoryButton.addEventListener('click',function() {
       break
     } else {
       console.log(`The category "${customPrompt}" already exists in the list.`);
-      continue
     }
 
     // Check if customPrompt is a string
