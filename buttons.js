@@ -13,6 +13,29 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const changeLetterButton = document.getElementById('changeLetterButton');
   console.log(chosenTimeButton);
 
+
+function gameStarting(){
+  //code to execute when the game is starting
+  chosenTimeButton.disabled = true;
+    numOfCategoriesButton.disabled = true;
+    changeLetterButton.disabled = true;
+    // To change the play button
+    playButton.classList.remove('btn-success');
+    playButton.classList.add('btn-danger');
+    playButton.innerHTML = 'Stop';
+    //To display the categories
+    displayChosenCategories(chosenCategories)
+    //to choose a key letter
+    if (keyLetter == ''){
+      keyLetter = chooseLetter();
+   if (keyLetterElement) {
+    keyLetterElement.innerHTML = keyLetter;
+    }
+  }
+    createInputBoxes(); //Creating input fields for players to answer - dependent on size of categories chosen
+
+}
+
 function gameEnding(){
   // Code to execute when the countdown finishes
   console.log("Countdown finished!");
@@ -147,27 +170,7 @@ playButton.addEventListener("click", function() {
     //To run if the player presses the stop button
     stopClicked()
   } else {
-
-    chosenTimeButton.disabled = true;
-    numOfCategoriesButton.disabled = true;
-    changeLetterButton.disabled = true;
-
-    playButton.classList.remove('btn-success');
-    playButton.classList.add('btn-danger');
-    playButton.innerHTML = 'Stop';
-
-    
-    // chosenCategories = CategorySelector(ListOfCategories, numOfCategories.value);
-    displayChosenCategories(chosenCategories)
-    if (keyLetter == ''){
-      keyLetter = chooseLetter();
-   if (keyLetterElement) {
-    keyLetterElement.innerHTML = keyLetter;
-    }
-  }
-    createInputBoxes(); //Creating input fields for players to answer - dependent on size of categories chosen
-    console.log(typeof(keyLetter) + 'The chosen Key Letter is '+keyLetter)
-
+    gameStarting()
     // Start the countdown timer
     stopTimer.value = false;
     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
