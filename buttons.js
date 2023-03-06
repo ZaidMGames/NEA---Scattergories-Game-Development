@@ -11,6 +11,7 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const chosenTimeButton = document.getElementById('chosenTimeButton');
   const numOfCategoriesButton = document.getElementById('changeCategorySize');
   const changeLetterButton = document.getElementById('changeLetterButton');
+  const addCustomCategoryButton = document.getElementById('addCustomCategory')
   console.log(chosenTimeButton);
 
 
@@ -66,6 +67,36 @@ function stopClicked() {
       stopTimer.value= true; 
       chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput));
 }
+
+let customPrompt = ''
+addCustomCategoryButton.addEventListener('click',function() {
+  customPrompt = prompt('Enter a custom category ');
+
+  while (true) {
+    if (customPrompt == undefined) {
+      return
+    }
+    // Check if customPrompt is a number
+    // If customPrompt is not a number, prompt the user again
+    if (!isString(customPrompt)) {
+      customPrompt = prompt("A category can only be a string lol");
+      continue;
+    }
+    ListOfCategories.push(new Category(customPrompt, true));
+    console.log(`New category added: ${customPrompt}`);
+    break;
+}
+
+  window.chosenTimer = parseInt(chosenTimer); 
+  console.log('Timer has now been changed to '+ chosenTimer + 's')
+});
+
+
+
+
+
+
+
 
 // Event Listner for when user wants to change length of rounds
 let chosenTimer = 0;
