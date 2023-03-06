@@ -16,7 +16,11 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   console.log(chosenTimeButton);
 
 
-
+function categoriesDisplayed(num){
+  chosenCategories = CategorySelector(ListOfCategories, num);
+  console.log('Categories have been chosen')
+  console.log(chosenCategories)
+}
 
 function toggleButtonsDisabledState(disabled) {
   chosenTimeButton.disabled = disabled;
@@ -160,9 +164,8 @@ chosenTimeButton.addEventListener('click',function() {
 
 //Change number of categories Button
 export let chosenNumCategoriesInput = 12;
-let chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
-console.log('Categories have been chosen')
-console.log(chosenCategories)
+let chosenCategories ;
+
 numOfCategoriesButton.addEventListener('click',function() {
   chosenNumCategoriesInput = prompt('How many categories would you like to play with ');
 
@@ -204,9 +207,9 @@ numOfCategoriesButton.addEventListener('click',function() {
 }
 
   window.chosenNumCategoriesInput = parseInt(chosenNumCategoriesInput); 
-  chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput));
-  console.log(chosenCategories)
-  console.log('The number of Selected Categories has been changed to  '+ chosenNumCategoriesInput + '')
+  // chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput));
+  // console.log(chosenCategories)
+  // console.log('The number of Selected Categories has been changed to  '+ chosenNumCategoriesInput + '')
 });
 
 
@@ -227,6 +230,7 @@ let clicked = false
 playButton.addEventListener("click", function() {
   if (clicked) {
     //To run if the player presses the stop button
+    categoriesDisplayed(chosenNumCategoriesInput)
     stopClicked()
   } else {
     gameStarting()
