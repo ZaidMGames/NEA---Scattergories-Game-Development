@@ -15,12 +15,19 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   console.log(chosenTimeButton);
 
 
+
+
+function toggleButtonsDisabledState(disabled) {
+  chosenTimeButton.disabled = disabled;
+  numOfCategoriesButton.disabled = disabled;
+  changeLetterButton.disabled = disabled;
+  addCustomCategoryButton.disabled = disabled;
+}
+
 function gameStarting(){
   //code to execute when the game is starting
     //Disabiling ability to use buttons during game
-    chosenTimeButton.disabled = true;
-    numOfCategoriesButton.disabled = true;
-    changeLetterButton.disabled = true;
+    toggleButtonsDisabledState(true)
     // To change the play button
     playButton.classList.remove('btn-success');
     playButton.classList.add('btn-danger');
@@ -46,9 +53,7 @@ function gameEnding(){
   playButton.classList.remove('btn-danger');
   playButton.classList.add('btn-success');
   playButton.innerHTML = 'Play';
-  chosenTimeButton.disabled = false;
-  numOfCategoriesButton.disabled = false;
-  changeLetterButton.disabled = false;
+  toggleButtonsDisabledState(false)
   getAnswers()
 }
 
@@ -57,9 +62,7 @@ function stopClicked() {
       console.log("Button clicked again! Game should end here");
       ListOfCategoriesElement.innerHTML = ''
       InputCategoriesElement.innerHTML = ''
-      chosenTimeButton.disabled = false;
-      numOfCategoriesButton.disabled = false;
-      changeLetterButton.disabled = false;
+      toggleButtonsDisabledState(false)
       playButton.classList.remove('btn-danger');
       playButton.classList.add('btn-success');
       playButton.innerHTML = 'Play';
