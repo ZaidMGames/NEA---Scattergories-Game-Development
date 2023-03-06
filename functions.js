@@ -59,16 +59,32 @@ export function CategorySelector(arr, size) {
   return shuffled.slice(0, Math.min(shuffled.length, size))
 }
 
-//Function to display the chosen categories from the category selector 
+
 export function displayChosenCategories(categories) {
-    const objectNamesElement = document.getElementById("ListOfCategories");
-    categories.forEach(category => {
-      const objectNameElement = document.createElement("div");
-      objectNameElement.classList.add("my-2");
-      objectNameElement.innerHTML = '<h3>' + category.name + '</h3>';
-      objectNamesElement.appendChild(objectNameElement);
-    });
-  }
+  const objectNamesElement = document.getElementById("ListOfCategories");
+  categories.forEach(category => {
+    const objectNameElement = document.createElement("div");
+    objectNameElement.classList.add("my-2");
+    objectNameElement.style.boxShadow = "4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.5)";
+    objectNameElement.style.padding = "20px";
+    objectNameElement.style.marginBottom = "20px";
+    objectNameElement.innerHTML = '<h3>' + category.name + '</h3>';
+    objectNamesElement.appendChild(objectNameElement);
+  });
+}
+
+
+
+//Function to display the chosen categories from the category selector 
+// export function displayChosenCategories(categories) {
+//     const objectNamesElement = document.getElementById("ListOfCategories");
+//     categories.forEach(category => {
+//       const objectNameElement = document.createElement("div");
+//       objectNameElement.classList.add("my-2");
+//       objectNameElement.innerHTML = '<h3>' + category.name + '</h3>';
+//       objectNamesElement.appendChild(objectNameElement);
+//     });
+//   }
 //Function to create Input boxes for players to give answers to categories
 // export function createInputBoxes() {
 //   console.log('Creating input boxes')
