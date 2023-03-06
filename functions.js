@@ -1,22 +1,23 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
-const fs = require('fs');
-
-//This function reads the categories from the categories.txt file
-function readCategoriesFromFile() {
-  const categories = [];
-  const fileContents = fs.readFileSync('categories.txt', 'utf8');
-  const lines = fileContents.split('\n');
-  for (const line of lines) {
-    categories.push(new Category(line.trim()));
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'categories.txt');
+xhr.onload = () => {
+  if (xhr.status === 200) {
+    const lines = xhr.responseText.split('\n');
+    const categories = lines.map((line) => {
+      return new Category(line.trim());
+    });
+    export const ListOfCategories = categories;
+  } else {
+    console.error(`Failed to load categories.txt: ${xhr.status} ${xhr.statusText}`);
   }
-  return categories;
-}
-
-export const ListOfCategories = readCategoriesFromFile();
-
-
+};
+xhr.onerror = () => {
+  console.error(`Failed to load categories.txt: ${xhr.status} ${xhr.statusText}`);
+};
+xhr.send();
 
 
 // export const ListOfCategories = [
