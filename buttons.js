@@ -76,7 +76,7 @@ addCustomCategoryButton.addEventListener('click',function() {
   customPrompt = prompt('Enter a custom category ');
 
   while (true) {
-    const categoryExists = ListOfCategories.some(category => category.name === categoryName);
+    const categoryExists = ListOfCategories.some(category => category.name === customPrompt);
     if (customPrompt == undefined) {
       return
     }
