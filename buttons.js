@@ -12,7 +12,7 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const numOfCategoriesButton = document.getElementById('changeCategorySize');
   const changeLetterButton = document.getElementById('changeLetterButton');
   const addCustomCategoryButton = document.getElementById('addCustomCategory')
-  const wholeDiv = doucment.getElementById('wholeDiv')
+  const wholeDiv = document.getElementById('wholeDiv')
   console.log(chosenTimeButton);
 
 
