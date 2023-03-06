@@ -88,7 +88,7 @@ chosenTimeButton.addEventListener('click',function() {
       let number = parseInt(chosenTimer);
 
       //check if Number is greater than 0
-      if (number < 0) {
+      if (number <= 0) {
         chosenTimer = prompt("Time can only be a positive number. Please enter a valid number:");
         continue;
       }
@@ -131,7 +131,7 @@ numOfCategoriesButton.addEventListener('click',function() {
     let number = parseInt(chosenNumCategoriesInput);
 
     //check if Number is greater than 0
-    if (number < 0) {
+    if (number <= 0) {
       chosenNumCategoriesInput = prompt("The number of categories can only be a positive number. Please enter a valid number:");
       continue;
     }
