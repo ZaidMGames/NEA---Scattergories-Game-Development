@@ -94,7 +94,7 @@ chosenTimeButton.addEventListener('click',function() {
       }
 
       //If number == 0
-      if (number = 0) {
+      if (number == 0) {
         chosenTimer = prompt("You can't possibly answer all the categories in 0s, you're not the flash mate");
         continue;
       }
