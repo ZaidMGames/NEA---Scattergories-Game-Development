@@ -73,6 +73,33 @@ export function displayChosenCategories(categories) {
   });
 }
 
+export function createInputBoxes() {
+  console.log('Creating input boxes');
+  const inputBoxesDiv = document.getElementById('InputCategories');
+  for (let i = 0; i < chosenNumCategoriesInput; i++) {
+    const inputContainer = document.createElement('div');
+    inputContainer.classList.add('input-container');
+
+    const input = document.createElement('input');
+    input.addEventListener('input', validInput);
+    input.type = 'text';
+    input.placeholder = keyLetter + '...';
+    input.classList.add('form-control', 'neumorphic-input');
+    
+    inputContainer.appendChild(input);
+    inputBoxesDiv.appendChild(inputContainer);
+  }
+}
+
+const containerDiv = document.createElement("div");
+containerDiv.style.display = "flex";
+containerDiv.style.flexWrap = "wrap";
+containerDiv.style.justifyContent = "space-between";
+containerDiv.appendChild(document.getElementById("ListOfCategories"));
+containerDiv.appendChild(document.getElementById("InputCategories"));
+
+//add the container div to the body of the HTML document
+document.body.appendChild(containerDiv);
 
 
 //Function to display the chosen categories from the category selector 
@@ -102,23 +129,7 @@ export function displayChosenCategories(categories) {
 //   }
   
 
-export function createInputBoxes() {
-  console.log('Creating input boxes');
-  const inputBoxesDiv = document.getElementById('InputCategories');
-  for (let i = 0; i < chosenNumCategoriesInput; i++) {
-    const inputContainer = document.createElement('div');
-    inputContainer.classList.add('input-container');
 
-    const input = document.createElement('input');
-    input.addEventListener('input', validInput);
-    input.type = 'text';
-    input.placeholder = keyLetter + '...';
-    input.classList.add('form-control', 'neumorphic-input');
-    
-    inputContainer.appendChild(input);
-    inputBoxesDiv.appendChild(inputContainer);
-  }
-}
 
 
 
