@@ -16,7 +16,8 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
 
 function gameStarting(){
   //code to execute when the game is starting
-  chosenTimeButton.disabled = true;
+    //Disabiling ability to use buttons during game
+    chosenTimeButton.disabled = true;
     numOfCategoriesButton.disabled = true;
     changeLetterButton.disabled = true;
     // To change the play button
@@ -25,13 +26,14 @@ function gameStarting(){
     playButton.innerHTML = 'Stop';
     //To display the categories
     displayChosenCategories(chosenCategories)
-    //to choose a key letter
+    //To display chosen letter
     if (keyLetter == ''){
       keyLetter = chooseLetter();
-   if (keyLetterElement) {
+    }
+    if (keyLetterElement) {
     keyLetterElement.innerHTML = keyLetter;
     }
-  }
+    
     createInputBoxes(); //Creating input fields for players to answer - dependent on size of categories chosen
 
 }
