@@ -1,51 +1,31 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
-export let ListOfCategories
 
-const xhr = new XMLHttpRequest();
-xhr.open('GET', 'categories.txt');
-xhr.onload = () => {
-  if (xhr.status === 200) {
-    const lines = xhr.responseText.split('\n');
-    ListOfCategories = lines.map((line) => {
-      return new Category(line.trim());
-    });
-  } else {
-    console.error(`Failed to load categories.txt: ${xhr.status} ${xhr.statusText}`);
-  }
-};
-xhr.onerror = () => {
-  console.error(`Failed to load categories.txt: ${xhr.status} ${xhr.statusText}`);
-};
-xhr.send();
-console.log(ListOfCategories)
-
-
-// export const ListOfCategories = [
-//   new Category("Football Team"),
-//   new Category("Anime"),
-//   new Category("Capital City"),
-//   new Category("Animal"),
-//   new Category("Cartoon Character"),
-//   new Category("Four Letter Word"),
-//   new Category("Brand"),
-//   new Category("Things on a beach"),
-//   new Category("Website"),
-//   new Category("Fruit"),
-//   new Category("Pet Peeve"),
-//   new Category("Ice Cream Flavor"),
-//   new Category("Job Tittle"),
-//   new Category("Language"),
-//   new Category("Celebrity name"),
-//   new Category("Fear"),
-//   new Category("Things in a classroom"),
-//   new Category("Song title"),
-//   new Category("Item within eyesight"),
-//   new Category("A Common Lie"),
-//   new Category("Video Game"),
+export const ListOfCategories = [
+  new Category("Football Team"),
+  new Category("Anime"),
+  new Category("Capital City"),
+  new Category("Animal"),
+  new Category("Cartoon Character"),
+  new Category("Four Letter Word"),
+  new Category("Brand"),
+  new Category("Things on a beach"),
+  new Category("Website"),
+  new Category("Fruit"),
+  new Category("Pet Peeve"),
+  new Category("Ice Cream Flavor"),
+  new Category("Job Tittle"),
+  new Category("Language"),
+  new Category("Celebrity name"),
+  new Category("Fear"),
+  new Category("Things in a classroom"),
+  new Category("Song title"),
+  new Category("Item within eyesight"),
+  new Category("A Common Lie"),
+  new Category("Video Game"),
   
-// ]
+]
 
 /**
  * Shuffles an array of categories and returns a subset of a specified size.
