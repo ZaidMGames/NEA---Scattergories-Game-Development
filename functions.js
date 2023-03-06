@@ -91,15 +91,6 @@ export function createInputBoxes() {
   }
 }
 
-const containerDiv = document.createElement("div");
-containerDiv.style.display = "flex";
-containerDiv.style.flexWrap = "wrap";
-containerDiv.style.justifyContent = "space-between";
-containerDiv.appendChild(document.getElementById("ListOfCategories"));
-containerDiv.appendChild(document.getElementById("InputCategories"));
-
-//add the container div to the body of the HTML document
-document.body.appendChild(containerDiv);
 
 
 //Function to display the chosen categories from the category selector 
