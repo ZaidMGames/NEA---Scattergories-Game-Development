@@ -13,7 +13,7 @@
     padding:10px;
   }
 
-
+/* For the input */
   .input-container {
     margin-bottom: 10px;
   }
@@ -22,12 +22,14 @@
     background: #F2F3F7;
     border-radius: 10px;
     border: none;
-    box-shadow: 5px 5px 15px #BFC7D1, -5px -5px 15px #FFFFFF;
+    box-shadow: 5px 5px 15px #BFC7D1, 
+                -5px -5px 15px #FFFFFF;
     padding: 10px;
+    margin-bottom: 10px;
     font-size: 18px;
   }
   
-
+/* For the generated categories */
   .neumorphic-category {
     background: #f0f0f0;
     border-radius: 10px;
