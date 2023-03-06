@@ -35,7 +35,7 @@
                 -5px -5px 15px #ffffff;
     padding: 10px;
     margin-bottom: 10px;
-    display: inline-block;
+    display: block;
   }
   
   .neumorphic-category h3 {
