@@ -12,6 +12,7 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const numOfCategoriesButton = document.getElementById('changeCategorySize');
   const changeLetterButton = document.getElementById('changeLetterButton');
   const addCustomCategoryButton = document.getElementById('addCustomCategory')
+  const wholeDiv = doucment.getElementById('wholeDiv')
   console.log(chosenTimeButton);
 
 
@@ -55,6 +56,7 @@ function gameEnding(){
   playButton.innerHTML = 'Play';
   toggleButtonsDisabledState(false)
   getAnswers()
+  wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
 }
 
 function stopClicked() {
