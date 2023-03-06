@@ -1,5 +1,6 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
+
 const fs = require('fs');
 
 //This function reads the categories from the categories.txt file
