@@ -88,8 +88,14 @@ chosenTimeButton.addEventListener('click',function() {
       let number = parseInt(chosenTimer);
 
       //check if Number is greater than 0
-      if (number <= 0) {
+      if (number < 0) {
         chosenTimer = prompt("Time can only be a positive number. Please enter a valid number:");
+        continue;
+      }
+
+      //If number == 0
+      if (number = 0) {
+        chosenTimer = prompt("You can't possibly answer all the categories in 0s, you're not the flash mate");
         continue;
       }
   
@@ -131,8 +137,14 @@ numOfCategoriesButton.addEventListener('click',function() {
     let number = parseInt(chosenNumCategoriesInput);
 
     //check if Number is greater than 0
-    if (number <= 0) {
+    if (number < 0) {
       chosenNumCategoriesInput = prompt("The number of categories can only be a positive number. Please enter a valid number:");
+      continue;
+    }
+
+    //If number is = 0
+    if (number == 0) {
+      chosenNumCategoriesInput = prompt("The number of categories Must be greater than 0, Come on now, you can't play the category game without any categories");
       continue;
     }
 
