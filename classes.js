@@ -10,7 +10,7 @@ export class Inputs {
 export class Category {
   constructor(name, custom = false) {
     this.name = name;
-    this.link = 'https://www.google.com/search?q=' + name.replace(" ","+");  
+    this.link = 'https://www.google.com/search?q=' + name.replace(" ","+") + '+names';  
     this.answers = {}
     this.custom = custom
   }
