@@ -11,8 +11,9 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const chosenTimeButton = document.getElementById('chosenTimeButton');
   const numOfCategoriesButton = document.getElementById('changeCategorySize');
   const changeLetterButton = document.getElementById('changeLetterButton');
-  const addCustomCategoryButton = document.getElementById('addCustomCategory')
-  const wholeDiv = document.getElementById('wholeDiv')
+  const addCustomCategoryButton = document.getElementById('addCustomCategory');
+  const wholeDiv = document.getElementById('wholeDiv');
+  const RoundDiv = document.getElementById('Round');
   console.log(chosenTimeButton);
 
 
@@ -35,6 +36,7 @@ function gameStarting(){
     playButton.innerHTML = 'Stop';
     //To display the categories
     displayChosenCategories(chosenCategories)
+    RoundDiv.innerHTML = '<h1> 1 </h1>'
     //To display chosen letter
     if (keyLetter == ''){
       keyLetter = chooseLetter();
@@ -104,11 +106,6 @@ addCustomCategoryButton.addEventListener('click',function() {
   window.chosenTimer = parseInt(chosenTimer); 
   console.log('Timer has now been changed to '+ chosenTimer + 's')
 });
-
-
-
-
-
 
 
 
