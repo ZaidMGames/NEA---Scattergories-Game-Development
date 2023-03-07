@@ -58,7 +58,7 @@ function gameEnding(){
   playButton.innerHTML = 'Play';
   toggleButtonsDisabledState(false)
   getAnswers()
-  wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
+  // wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
 }
 
 function stopClicked() {
