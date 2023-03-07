@@ -3,7 +3,7 @@
 	--w: #dcdcd2;
 }
 
-body {
+#loader  {
 	margin: 0;
 	padding: 0;
 	width: 100vw;
@@ -21,7 +21,7 @@ body {
 	100% { transform: rotate(360deg); }
 }
 
-body:before, body:after {
+#loader:before, body:after {
 	content: "";
 	position: absolute;
 	width: 50vmin;
@@ -48,7 +48,7 @@ body:before, body:after {
 		var(--b);
 }
 
-body:after {
+#loader:after {
 	transform: rotate(180deg);
 	margin-top: 25vmin;
 }
