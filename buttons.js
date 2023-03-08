@@ -79,7 +79,7 @@ function stopClicked() {
     chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
 }
 
-let customPrompt = ''
+let customPrompt;
 addCustomCategoryButton.addEventListener('click',function() {
   customPrompt = prompt('Enter a custom category ');
 
@@ -101,11 +101,7 @@ addCustomCategoryButton.addEventListener('click',function() {
       customPrompt = prompt('Enter a custom category, I already have it '+ customPrompt);
       continue
     }
-}
-
-  window.chosenTimer = parseInt(chosenTimer); 
-  console.log('Timer has now been changed to '+ chosenTimer + 's')
-});
+}});
 
 let customCategories = false;
 
