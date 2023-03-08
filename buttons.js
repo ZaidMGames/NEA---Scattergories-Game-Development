@@ -90,12 +90,12 @@ addCustomCategoryButton.addEventListener('click',function() {
     // if (customPrompt ==''){
     //   customPrompt = prompt('You can\' have a category with no letters, come on now mate');
     //   return
-    }
+    // }
     const categoryExists = ListOfCategories.some(category => category.name.toLowerCase() === customPrompt.toLowerCase());
     if (!categoryExists) {
       ListOfCategories.push(new Category(customPrompt.charAt(0).toUpperCase() + customPrompt.slice(1).toLowerCase(), true));
       console.log(`New category added: ${customPrompt.charAt(0).toUpperCase() + customPrompt.slice(1).toLowerCase()}`);
-      customPrompt = prompt('Enter another custom category');
+      continue
     } else {
       console.log(`The category "${customPrompt}" already exists in the list.`);
       customPrompt = prompt('Enter a custom category, I already have it '+ customPrompt);
