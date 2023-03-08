@@ -59,7 +59,7 @@ export function CategorySelector(arr, size, custom) {
 let numberOfCategoriesDisplayed;
 export function displayChosenCategories(categoriesArray) {
   const ListOfCategoriesDiv = document.getElementById("ListOfCategories");
-  categories.forEach(category => {
+  categoriesArray.forEach(category => {
     const objectNameElement = document.createElement("div");
     objectNameElement.classList.add("neumorphic-category");
     objectNameElement.innerHTML = `<h3>
