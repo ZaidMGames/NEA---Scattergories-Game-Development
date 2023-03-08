@@ -107,8 +107,8 @@ let customCategories = false;
 
 customCategoriesToggle.addEventListener('change', function() {
   if (this.checked) {
-    var count = 0;
-    for (var i = 0; i < ListOfCategories.length; i++) {
+    let count = 0;
+    for (let i = 0; i < ListOfCategories.length; i++) {
       if (ListOfCategories[i].custom === true) {
         count++;
       }
