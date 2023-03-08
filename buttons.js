@@ -84,10 +84,10 @@ addCustomCategoryButton.addEventListener('click',function() {
   customPrompt = prompt('Enter a custom category ');
 
   while (true) {
-    const categoryExists = ListOfCategories.some(category => category.name.toLowerCase() === customPrompt.toLowerCase());
     if (customPrompt == undefined) {
       return
     }
+    const categoryExists = ListOfCategories.some(category => category.name.toLowerCase() === customPrompt.toLowerCase());
     if (!categoryExists) {
       ListOfCategories.push(new Category(customPrompt.charAt(0).toUpperCase() + customPrompt.slice(1).toLowerCase(), true));
       console.log(`New category added: ${customPrompt.charAt(0).toUpperCase() + customPrompt.slice(1).toLowerCase()}`);
