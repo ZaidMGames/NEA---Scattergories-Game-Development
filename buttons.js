@@ -95,7 +95,7 @@ addCustomCategoryButton.addEventListener('click',function() {
     if (!categoryExists) {
       ListOfCategories.push(new Category(customPrompt.charAt(0).toUpperCase() + customPrompt.slice(1).toLowerCase(), true));
       console.log(`New category added: ${customPrompt.charAt(0).toUpperCase() + customPrompt.slice(1).toLowerCase()}`);
-      continue
+      customPrompt = prompt('Enter another custom category');
     } else {
       console.log(`The category "${customPrompt}" already exists in the list.`);
       customPrompt = prompt('Enter a custom category, I already have it '+ customPrompt);
