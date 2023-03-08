@@ -3,7 +3,7 @@ import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
 import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers} from './functions.js'
 
-    let customCategories = false;
+
 
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
@@ -110,6 +110,26 @@ addCustomCategoryButton.addEventListener('click',function() {
   console.log('Timer has now been changed to '+ chosenTimer + 's')
 });
 
+let customCategories = false;
+
+$('#customCategoriesToggle').on('change', function() {
+  if ($(this).is(':checked')) {
+    var count = 0;
+    for (var i = 0; i < ListOfCategories.length; i++) {
+      if (ListOfCategories[i].custom == true) {
+        count++;
+      }
+    }
+    if (count >= 5) {
+      customCategories = true;
+    } else {
+      $(this).prop('checked', false);
+      alert('You must have at least 5 custom categories.');
+    }
+  } else {
+    customCategories = false;
+  }
+});
 
 
 // Event Listner for when user wants to change length of rounds
