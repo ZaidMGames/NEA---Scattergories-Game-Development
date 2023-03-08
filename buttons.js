@@ -75,7 +75,6 @@ function stopClicked() {
       playButton.innerHTML = 'Play';
       clicked = false;
       stopTimer.value= true; 
-    let customCategories = false;
     chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
 }
 
