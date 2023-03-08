@@ -39,26 +39,6 @@ function validInput(event) {
 }
 
 
-// export function CategorySelector(arr, size) {
-//   //The code above creates a copy of the original array, then it loops through the new array and swaps each element with a random element in the array.
-//   if (!Array.isArray(arr)) {
-//     throw new TypeError('Input parameter `arr` must be an array.')
-//   }
-
-//   if (typeof size !== 'number' || size < 0) {
-//     throw new TypeError('Input parameter `size` must be a non-negative number.')
-//   }
-
-//   const shuffled = arr.slice(0, arr.length)
-//   for (let i = shuffled.length - 1; i > 0; i--) {
-//     let j = Math.floor(Math.random() * (i + 1))
-//     const temp = shuffled[i];
-//     shuffled[i] = shuffled[j];
-//     shuffled[j] = temp;
-//   }
-//   return shuffled.slice(0, Math.min(shuffled.length, size))
-// }
-
 
 export function CategorySelector(arr, size, custom) {   
   if (!Array.isArray(arr)) {     
@@ -76,17 +56,20 @@ export function CategorySelector(arr, size, custom) {
 
 
 
-
-export function displayChosenCategories(categories) {
-  const objectNamesElement = document.getElementById("ListOfCategories");
+let numberOfCategoriesDisplayed;
+export function displayChosenCategories(categoriesArray) {
+  const ListOfCategoriesDiv = document.getElementById("ListOfCategories");
   categories.forEach(category => {
     const objectNameElement = document.createElement("div");
     objectNameElement.classList.add("neumorphic-category");
     objectNameElement.innerHTML = `<h3>
                                     <img src="./Icons/magnifying.svg" alt="search" class="search-icon img-fluid" onclick="window.open('${category.link}', '_blank').focus()"/>
                                     ${category.name}</h3>`;      
-    objectNamesElement.appendChild(objectNameElement);
+    ListOfCategoriesDiv.appendChild(objectNameElement);
   });
+  let h3Tags = ListOfCategoriesDiv.getElementsByTagName("h3")
+  numberOfCategoriesDisplayed = h3Tags.length
+  console.log('The Number of categories displayed overall is '+ numberOfCategoriesDisplayed)
 }
 
 
