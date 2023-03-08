@@ -87,10 +87,10 @@ addCustomCategoryButton.addEventListener('click',function() {
     if (customPrompt == undefined) {
       return
     }
-    // if (customPrompt ==''){
-    //   customPrompt = prompt('You can\' have a category with no letters, come on now mate');
-    //   return
-    // }
+    if (customPrompt ==''){
+      customPrompt = prompt('You can\' have a category with no letters, come on now mate');
+      return
+    }
     const categoryExists = ListOfCategories.some(category => category.name.toLowerCase() === customPrompt.toLowerCase());
     if (!categoryExists) {
       ListOfCategories.push(new Category(customPrompt.charAt(0).toUpperCase() + customPrompt.slice(1).toLowerCase(), true));
