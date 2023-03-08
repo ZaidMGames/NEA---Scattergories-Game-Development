@@ -104,9 +104,6 @@ addCustomCategoryButton.addEventListener('click',function() {
 
 let customCategories = false;
 
-const toastContainer = document.querySelector('.toast-container');
-const toast = new bootstrap.Toast(toastContainer);
-
 customCategoriesToggle.addEventListener('change', function() {
   if (this.checked) {
     let count = 0;
@@ -118,52 +115,15 @@ customCategoriesToggle.addEventListener('change', function() {
     if (count >= 5) {
       customCategories = true;
       chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
+      
     } else {
       this.checked = false;
-      const toastBody = document.createElement('div');
-      toastBody.classList.add('toast-body');
-      toastBody.innerText = `You must have at least 5 custom categories. You currently only have ${count} custom added categories.`;
-      const toastHeader = document.createElement('div');
-      toastHeader.classList.add('toast-header');
-      const toastTitle = document.createElement('strong');
-      toastTitle.classList.add('me-auto');
-      toastTitle.innerText = 'Error';
-      const toastBtn = document.createElement('button');
-      toastBtn.classList.add('btn-close');
-      toastBtn.setAttribute('type', 'button');
-      toastBtn.setAttribute('data-bs-dismiss', 'toast');
-      toastHeader.appendChild(toastTitle);
-      toastHeader.appendChild(toastBtn);
-      toastContainer.appendChild(toastHeader);
-      toastContainer.appendChild(toastBody);
-      toast.show();
+      alert('You must have at least 5 custom categories.' + 'You Currently Only Have: ' + count + ' Custom Added Categories' );
     }
   } else {
     customCategories = false;
   }
 });
-
-
-// customCategoriesToggle.addEventListener('change', function() {
-//   if (this.checked) {
-//     let count = 0;
-//     for (let i = 0; i < ListOfCategories.length; i++) {
-//       if (ListOfCategories[i].custom === true) {
-//         count++;
-//       }
-//     }
-//     if (count >= 5) {
-//       customCategories = true;
-//       chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
-      
-//     } else {
-//       this.checked = false;
-//       alert('You must have at least 5 custom categories.' + 'You Currently Only Have: ' + count + ' Custom Added Categories' );
-//     }
-//   } else {
-//     customCategories = false;
-//   }
-// });
 
 
 
