@@ -125,7 +125,7 @@ customCategoriesToggle.addEventListener('change', function() {
       customCategories = true;
     } else {
       this.checked = false;
-      alert('You must have at least 5 custom categories.' + 'You Currently Only Have: ' + count + 'Categories' );
+      alert('You must have at least 5 custom categories.' + 'You Currently Only Have: ' + count + ' Categories' );
     }
   } else {
     customCategories = false;
