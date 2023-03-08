@@ -76,7 +76,7 @@ export function displayChosenCategories(categoriesArray) {
 export function createInputBoxes() {
   console.log('Creating input boxes');
   const inputBoxesDiv = document.getElementById('InputCategories');
-  for (let i = 0; i < chosenNumCategoriesInput; i++) {
+  for (let i = 0; i < numberOfCategoriesDisplayed; i++) {
     const inputContainer = document.createElement('div');
     inputContainer.classList.add('input-container');
 
