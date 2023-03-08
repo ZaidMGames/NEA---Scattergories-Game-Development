@@ -3,6 +3,8 @@ import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
 import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers} from './functions.js'
 
+    let customCategories = false;
+
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
   const InputCategoriesElement = document.getElementById('InputCategories')
@@ -72,7 +74,8 @@ function stopClicked() {
       playButton.innerHTML = 'Play';
       clicked = false;
       stopTimer.value= true; 
-      chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput));
+    let customCategories = false;
+    chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
 }
 
 let customPrompt = ''
@@ -157,7 +160,7 @@ chosenTimeButton.addEventListener('click',function() {
 
 //Change number of categories Button
 export let chosenNumCategoriesInput = 12;
-let chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput);
+let chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput,customCategories);
 console.log('Categories have been chosen')
 console.log(chosenCategories)
 numOfCategoriesButton.addEventListener('click',function() {
@@ -201,7 +204,7 @@ numOfCategoriesButton.addEventListener('click',function() {
 }
 
   window.chosenNumCategoriesInput = parseInt(chosenNumCategoriesInput); 
-  chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput));
+  chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
   console.log(chosenCategories)
   console.log('The number of Selected Categories has been changed to  '+ chosenNumCategoriesInput + '')
 });

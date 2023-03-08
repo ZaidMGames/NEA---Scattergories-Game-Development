@@ -39,25 +39,42 @@ function validInput(event) {
 }
 
 
-export function CategorySelector(arr, size) {
-  //The code above creates a copy of the original array, then it loops through the new array and swaps each element with a random element in the array.
-  if (!Array.isArray(arr)) {
-    throw new TypeError('Input parameter `arr` must be an array.')
-  }
+// export function CategorySelector(arr, size) {
+//   //The code above creates a copy of the original array, then it loops through the new array and swaps each element with a random element in the array.
+//   if (!Array.isArray(arr)) {
+//     throw new TypeError('Input parameter `arr` must be an array.')
+//   }
 
-  if (typeof size !== 'number' || size < 0) {
-    throw new TypeError('Input parameter `size` must be a non-negative number.')
-  }
+//   if (typeof size !== 'number' || size < 0) {
+//     throw new TypeError('Input parameter `size` must be a non-negative number.')
+//   }
 
-  const shuffled = arr.slice(0, arr.length)
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
-    const temp = shuffled[i];
-    shuffled[i] = shuffled[j];
-    shuffled[j] = temp;
-  }
-  return shuffled.slice(0, Math.min(shuffled.length, size))
-}
+//   const shuffled = arr.slice(0, arr.length)
+//   for (let i = shuffled.length - 1; i > 0; i--) {
+//     let j = Math.floor(Math.random() * (i + 1))
+//     const temp = shuffled[i];
+//     shuffled[i] = shuffled[j];
+//     shuffled[j] = temp;
+//   }
+//   return shuffled.slice(0, Math.min(shuffled.length, size))
+// }
+
+
+export function CategorySelector(arr, size, custom) {   
+  if (!Array.isArray(arr)) {     
+    throw new TypeError('Input parameter `arr` must be an array.')   
+  } 
+  if (typeof size !== 'number' || size < 0) {     
+    throw new TypeError('Input parameter `size` must be a non-negative number.')   
+  } 
+  const filteredArr = custom ? arr.filter(obj => obj.custom === true) : arr;  const shuffled = filteredArr.slice(0, filteredArr.length);
+  for (let i = shuffled.length - 1; i > 0; i--) {     let j = Math.floor(Math.random() * (i + 1))     
+    const temp = shuffled[i];     
+    shuffled[i] = shuffled[j];     
+    shuffled[j] = temp;   } 
+  return shuffled.slice(0, Math.min(shuffled.length, size)) }
+
+
 
 
 export function displayChosenCategories(categories) {
