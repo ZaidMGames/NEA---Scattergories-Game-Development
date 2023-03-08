@@ -53,8 +53,8 @@
   }
 
 
-
-  .neumorphic-toggle {
+/* This is specific to the custom categories Toggle */
+  /* .neumorphic-toggle {
     background-color: #f3f3f3;
     border-radius: 20px;
     box-shadow: 5px 5px 10px #c9c9c9, -5px -5px 10px #ffffff;
@@ -110,4 +110,4 @@
   .neumorphic-toggle input[type="checkbox"]:checked + .form-check-label::after {
     transform: translateX(14px);
   }
-  
+   */
