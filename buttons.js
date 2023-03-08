@@ -14,6 +14,7 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const numOfCategoriesButton = document.getElementById('changeCategorySize');
   const changeLetterButton = document.getElementById('changeLetterButton');
   const addCustomCategoryButton = document.getElementById('addCustomCategory');
+  const customCategoriesToggle = document.getElementById('customCategoriesToggle');
   const wholeDiv = document.getElementById('wholeDiv');
   const RoundDiv = document.getElementById('Round');
   console.log(chosenTimeButton);
@@ -112,24 +113,25 @@ addCustomCategoryButton.addEventListener('click',function() {
 
 let customCategories = false;
 
-$('#customCategoriesToggle').on('change', function() {
-  if ($(this).is(':checked')) {
+customCategoriesToggle.addEventListener('change', function() {
+  if (this.checked) {
     var count = 0;
     for (var i = 0; i < ListOfCategories.length; i++) {
-      if (ListOfCategories[i].custom == true) {
+      if (ListOfCategories[i].custom === true) {
         count++;
       }
     }
     if (count >= 5) {
       customCategories = true;
     } else {
-      $(this).prop('checked', false);
+      this.checked = false;
       alert('You must have at least 5 custom categories.');
     }
   } else {
     customCategories = false;
   }
 });
+
 
 
 // Event Listner for when user wants to change length of rounds
