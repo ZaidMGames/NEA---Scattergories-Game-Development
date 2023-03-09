@@ -16,7 +16,7 @@
 	100% { transform: rotate(360deg); }
 }
 
-#loader:before, body:after {
+#loader:before, #loader:after {
 	content: "";
 	position: absolute;
 	width: 50vmin;
