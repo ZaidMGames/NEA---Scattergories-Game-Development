@@ -25,11 +25,19 @@ export const ListOfCategories = [
   new Category("Video Game"),
   
 ]
-
-
 const form = document.querySelector('form');        
 const input = document.querySelector('input');        
-const chatMessages = document.getElementById('chatMessages');        
+const chatMessages = document.getElementById('chatMessages');      
+
+function renderMessages() {            
+  chatMessages.innerHTML = '';            
+  messages.forEach(message => {                
+  const li = document.createElement('li');                
+  li.textContent = message;                
+  chatMessages.appendChild(li);            
+  });        
+  }    
+    
 let messages = [];
         form.addEventListener('submit', e => {            
 e.preventDefault();            
@@ -41,14 +49,6 @@ input.value = '';
 }        
 });
         
-function renderMessages() {            
-chatMessages.innerHTML = '';            
-messages.forEach(message => {                
-const li = document.createElement('li');                
-li.textContent = message;                
-chatMessages.appendChild(li);            
-});        
-}    
 
 
 
