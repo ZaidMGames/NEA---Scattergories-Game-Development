@@ -25,36 +25,6 @@ export const ListOfCategories = [
   new Category("Video Game"),
   
 ]
-const form = document.querySelector('form');        
-const input = document.querySelector('input');        
-const chatMessages = document.getElementById('chatMessages');      
-
-function renderMessages() {            
-  chatMessages.innerHTML = '';            
-  messages.forEach(message => {                
-  const li = document.createElement('li');                
-  li.textContent = message;                
-  chatMessages.appendChild(li);            
-  });        
-  }    
-    
-let messages = [];
-        form.addEventListener('submit', e => {            
-e.preventDefault();            
-const message = input.value.trim();            
-if (message) {                
-messages.push(message);                
-renderMessages();                
-input.value = '';            
-}        
-});
-        
-
-
-
-
-
-
 
 /**
  * Shuffles an array of categories and returns a subset of a specified size.
