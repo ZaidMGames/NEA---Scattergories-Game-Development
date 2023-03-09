@@ -104,6 +104,28 @@ addCustomCategoryButton.addEventListener('click',function() {
 
 let customCategories = false;
 
+// customCategoriesToggle.addEventListener('change', function() {
+//   if (this.checked) {
+//     let count = 0;
+//     for (let i = 0; i < ListOfCategories.length; i++) {
+//       if (ListOfCategories[i].custom === true) {
+//         count++;
+//       }
+//     }
+//     if (count >= 5) {
+//       customCategories = true;
+//       chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
+      
+//     } else {
+//       this.checked = false;
+//       alert('You must have at least 5 custom categories.' + 'You Currently Only Have: ' + count + ' Custom Added Categories' );
+//     }
+//   } else {
+//     customCategories = false;
+//   }
+// });
+
+
 customCategoriesToggle.addEventListener('change', function() {
   if (this.checked) {
     let count = 0;
@@ -115,10 +137,18 @@ customCategoriesToggle.addEventListener('change', function() {
     if (count >= 5) {
       customCategories = true;
       chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
-      
     } else {
       this.checked = false;
-      alert('You must have at least 5 custom categories.' + 'You Currently Only Have: ' + count + ' Custom Added Categories' );
+      let alertContainer = document.getElementById("alertContainer");
+      let alertMessage = 'You must have at least 5 custom categories. You currently have ' + count + ' custom added categories.';
+      let alertElement = document.createElement("div");
+      alertElement.classList.add("alert", "alert-danger", "alert-dismissible", "fade", "show");
+      alertElement.setAttribute("role", "alert");
+      alertElement.innerHTML = `
+        ${alertMessage}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      `;
+      alertContainer.appendChild(alertElement);
     }
   } else {
     customCategories = false;
