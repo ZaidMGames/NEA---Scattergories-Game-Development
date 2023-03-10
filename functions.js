@@ -202,6 +202,7 @@ export function getAnswers(roundNum) {
   }
   console.log('Player Answers have been appended to array')
   playerDictionary[roundNum] = playerAnswersArray
+  console.log(playerDictionary)
   console.log(playerAnswersArray)
 }
   //Hydrate data algorithm
