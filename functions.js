@@ -1,6 +1,8 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
+let playerDictionary = {}
+
 export const ListOfCategories = [
   new Category("Football Team"),
   new Category("Anime"),
@@ -199,6 +201,7 @@ export function getAnswers() {
     playerAnswersArray.push(inputBoxes[i].value);
   }
   console.log('Player Answers have been appended to array')
+  playerDictionary[roundNumber] = playerAnswersArray
   console.log(playerAnswersArray)
 }
   //Hydrate data algorithm
