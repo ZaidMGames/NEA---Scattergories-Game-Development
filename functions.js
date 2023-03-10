@@ -194,7 +194,7 @@ export function chooseLetter() {
 
 
 //Function to link answers placed in input fields to an array
-const playerAnswersArray = [];
+let playerAnswersArray = [];
 export function getAnswers(roundNum) {
   const inputBoxes = document.querySelectorAll('#InputCategories input');
   for (let i = 0; i < inputBoxes.length; i++) {
