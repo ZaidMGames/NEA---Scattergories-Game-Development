@@ -163,7 +163,7 @@ const alertB = (message,type) => {
       alertElement.classList.add("alert", "alert-${type}", "alert-dismissible", "fade", "show");
       alertElement.setAttribute("role", "alert");
       alertElement.innerHTML = `
-        ${alertMessage}
+        ${message}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       `;
       alertContainer.appendChild(alertElement);
