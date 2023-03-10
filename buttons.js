@@ -40,7 +40,8 @@ function gameStarting(){
     playButton.innerHTML = 'Stop';
     //To display the categories
     displayChosenCategories(chosenCategories)
-    RoundDiv.innerHTML = `<h1> Round ${roundNumber + 1} </h1>`
+    roundNumber += 1;s
+    RoundDiv.innerHTML = `<h1> Round ${roundNumber} </h1>`
     //To display chosen letter
     if (keyLetter == ''){
       keyLetter = chooseLetter();
