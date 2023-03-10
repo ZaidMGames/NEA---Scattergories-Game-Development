@@ -142,7 +142,7 @@ customCategoriesToggle.addEventListener('change', function() {
       let alertContainer = document.getElementById("alertContainer");
       let alertMessage = 'You must have at least 5 custom categories. You currently have ' + count + ' custom added categories.';
       let alertElement = document.createElement("div");
-      alertElement.classList.add("alert", "alert-danger", "alert-dismissible", "fade in", "show");
+      alertElement.classList.add("alert", "alert-danger", "alert-dismissible", "fade-in", "show");
       alertElement.setAttribute("role", "alert");
       alertElement.innerHTML = `
         ${alertMessage}
