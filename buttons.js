@@ -55,6 +55,8 @@ function gameStarting(){
 function gameEnding(){
   // Code to execute when the countdown finishes
   console.log("Countdown finished!");
+  ListOfCategoriesElement.innerHTML = ''
+  InputCategoriesElement.innerHTML = ''
   document.getElementById("timerText").innerHTML = '<br>';
   playButton.classList.remove('btn-danger');
   playButton.classList.add('btn-success');
