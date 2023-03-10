@@ -139,14 +139,14 @@ customCategoriesToggle.addEventListener('change', function() {
       chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
     } else {
       this.checked = false;
-      alertB('You must have at <strong>least 5 custom categories</strong>. You currently have ' + count + ' custom added categories.','danger')
+      alert('You must have at <strong>least 5 custom categories</strong>. You currently have ' + count + ' custom added categories.','danger')
     }
   } else {
     customCategories = false;
   }
 });
 
-const alertB = (message,type) => {
+const alert = (message,type) => {
   let alertContainer = document.getElementById("alertContainer");
   const alertElement = document.createElement('div')
       alertElement.classList.add("alert", `alert-${type}`, "alert-dismissible", "fade", "show");
