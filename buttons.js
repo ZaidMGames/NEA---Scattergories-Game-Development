@@ -145,7 +145,7 @@ customCategoriesToggle.addEventListener('change', function() {
       alertElement.classList.add("alert", "alert-danger", "alert-dismissible", "fade in", "show");
       alertElement.setAttribute("role", "alert");
       alertElement.innerHTML = `
-        ${<strong>alertMessage</strong>}
+        ${alertMessage}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       `;
       alertContainer.appendChild(alertElement);
