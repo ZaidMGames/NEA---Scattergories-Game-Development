@@ -204,6 +204,7 @@ export function getAnswers(roundNum) {
   playerDictionary[roundNum] = playerAnswersArray
   console.log(playerDictionary)
   console.log(playerAnswersArray)
+  playerAnswersArray = []
 }
   //Hydrate data algorithm
 export function hydrateData(players, categories) {
