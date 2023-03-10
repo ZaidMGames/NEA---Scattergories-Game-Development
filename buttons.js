@@ -160,7 +160,7 @@ customCategoriesToggle.addEventListener('change', function() {
 const alertB = (message,type) => {
   let alertContainer = document.getElementById("alertContainer");
   const alertElement = document.createElement('div')
-      alertElement.classList.add("alert", "alert-"${type}, "alert-dismissible", "fade", "show");
+      alertElement.classList.add("alert", "alert-",$,{type}, "alert-dismissible", "fade", "show");
       alertElement.setAttribute("role", "alert");
       alertElement.innerHTML = `
         ${message}
