@@ -205,7 +205,7 @@ chosenTimeButton.addEventListener('click',function() {
   
     window.chosenTimer = parseInt(chosenTimer); 
     console.log(`Timer has now been changed to ${chosenTimer}s`)
-    alert(`Timer has now been changed to ${chosenTimer}s`,'info')
+    alert(`Timer has now been changed to ${chosenTimer}s`,'dark')
   });
 
 //Change number of categories Button
