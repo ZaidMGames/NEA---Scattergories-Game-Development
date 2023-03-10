@@ -160,7 +160,7 @@ customCategoriesToggle.addEventListener('change', function() {
 const alertB = (message,type) => {
   let alertContainer = document.getElementById("alertContainer");
   const alertElement = document.createElement('div')
-      alertElement.classList.add("alert", "alert-",$,{type}, "alert-dismissible", "fade", "show");
+      alertElement.classList.add("alert", `alert-${type}`, "alert-dismissible", "fade", "show");
       alertElement.setAttribute("role", "alert");
       alertElement.innerHTML = `
         ${message}
@@ -169,6 +169,17 @@ const alertB = (message,type) => {
       alertContainer.appendChild(alertElement);
 }
 
+const alert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
 
 
 
