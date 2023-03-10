@@ -139,16 +139,18 @@ customCategoriesToggle.addEventListener('change', function() {
       chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
     } else {
       this.checked = false;
-      let alertContainer = document.getElementById("alertContainer");
-      let alertMessage = 'You must have at least 5 custom categories. You currently have ' + count + ' custom added categories.';
-      let alertElement = document.createElement("div");
-      alertElement.classList.add("alert", "alert-danger", "alert-dismissible", "fade", "show");
-      alertElement.setAttribute("role", "alert");
-      alertElement.innerHTML = `
-        ${alertMessage}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      `;
-      alertContainer.appendChild(alertElement);
+      // let alertMessage = 'You must have at least 5 custom categories. You currently have ' + count + ' custom added categories.';
+      alertB('You must have at least 5 custom categories. You currently have ' + count + ' custom added categories.','danger')
+      // let alertContainer = document.getElementById("alertContainer");
+      // let alertMessage = 'You must have at least 5 custom categories. You currently have ' + count + ' custom added categories.';
+      // let alertElement = document.createElement("div");
+      // alertElement.classList.add("alert", "alert-danger", "alert-dismissible", "fade", "show");
+      // alertElement.setAttribute("role", "alert");
+      // alertElement.innerHTML = `
+      //   ${alertMessage}
+      //   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      // `;
+      // alertContainer.appendChild(alertElement);
     }
   } else {
     customCategories = false;
@@ -156,13 +158,15 @@ customCategoriesToggle.addEventListener('change', function() {
 });
 
 const alertB = (message,type) => {
-  wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    '</div>'
-  ].join('')
-
-  alertPlaceholder.append(wrapper)
+  let alertContainer = document.getElementById("alertContainer");
+  const alertElement = document.createElement('div')
+      alertElement.classList.add("alert", "alert-${type}", "alert-dismissible", "fade", "show");
+      alertElement.setAttribute("role", "alert");
+      alertElement.innerHTML = `
+        ${alertMessage}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      `;
+      alertContainer.appendChild(alertElement);
 }
 
 
