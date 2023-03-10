@@ -55,6 +55,7 @@ function gameStarting(){
 function gameEnding(){
   // Code to execute when the countdown finishes
   console.log("Countdown finished!");
+  getAnswers()
   ListOfCategoriesElement.innerHTML = ''
   InputCategoriesElement.innerHTML = ''
   document.getElementById("timerText").innerHTML = '<br>';
@@ -62,7 +63,6 @@ function gameEnding(){
   playButton.classList.add('btn-success');
   playButton.innerHTML = 'Play';
   toggleButtonsDisabledState(false)
-  getAnswers()
   // wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
 }
 
