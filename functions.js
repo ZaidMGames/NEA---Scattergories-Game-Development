@@ -38,6 +38,20 @@ function validInput(event) {
   event.target.value = event.target.value.length == 1 && event.target.value.toLowerCase() != keyLetter.toLowerCase() ? "" : event.target.value
 }
 
+export const alert = (message,type) => {
+  let alertContainer = document.getElementById("alertContainer");
+  const alertElement = document.createElement('div')
+      alertElement.classList.add("alert", `alert-${type}`, "alert-dismissible", "fade", "show");
+      alertElement.setAttribute("role", "alert");
+      alertElement.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      `;
+      alertContainer.appendChild(alertElement);
+}
+
+
+
 
 
 export function CategorySelector(arr, size, custom) {   

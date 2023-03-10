@@ -1,7 +1,7 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers} from './functions.js'
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,alert} from './functions.js'
 
 
 
@@ -147,19 +147,6 @@ customCategoriesToggle.addEventListener('change', function() {
     customCategories = false;
   }
 });
-
-const alert = (message,type) => {
-  let alertContainer = document.getElementById("alertContainer");
-  const alertElement = document.createElement('div')
-      alertElement.classList.add("alert", `alert-${type}`, "alert-dismissible", "fade", "show");
-      alertElement.setAttribute("role", "alert");
-      alertElement.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      `;
-      alertContainer.appendChild(alertElement);
-}
-
 
 
 
