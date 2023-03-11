@@ -292,7 +292,7 @@ playButton.addEventListener("click", handlePlayButtonClick);
 
 
 showAnswersButton.addEventListener('click', () => {
-  displayRoundInputs()
+  displayRoundInputs(chosenCategories)
   // wholeDiv.style.display = 'none'
   // answersContainer.style.display = 'block';
 });
