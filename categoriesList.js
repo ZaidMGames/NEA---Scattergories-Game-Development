@@ -1,3 +1,5 @@
+import {Category} from './classes.js';
+
 export const ListOfCategories = [
     new Category("Actor/Actress"),
     new Category("Artwork"),
