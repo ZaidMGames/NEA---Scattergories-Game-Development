@@ -284,8 +284,8 @@ playButton.addEventListener("click", handlePlayButtonClick);
 
 
 
-// JavaScript file
-const answersContainer = document.getElementById('answersContainer');
+
+const showAnswersButton = document.getElementById('showAnswersButton');
 
 if (roundNumber > 2) {
   showAnswersButton.style.display = 'block';
