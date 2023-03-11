@@ -258,7 +258,7 @@ function displayRoundInputs() {
   container.appendChild(buttonContainer);
 
   const button = document.createElement('button');
-  button.textContent = 'Go Back';
+  button.textContent = 'Next Round';
   button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
   button.addEventListener('click', () => {
     wholeDiv.style.display = 'block';
