@@ -7,6 +7,10 @@ let Zaid = new Player("Zaid")
 let players = [Zaid]
 
 
+
+export let chosenNumCategoriesInput = 12;
+let chosenCategories;
+
   //Storing all ElementIDs
   const keyLetterElement = document.getElementById("keyLetter");
   const InputCategoriesElement = document.getElementById('InputCategories')
@@ -184,10 +188,6 @@ chosenTimeButton.addEventListener('click',function() {
   });
 
 //Change number of categories Button
-export let chosenNumCategoriesInput = 12;
-let chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput,customCategories);
-console.log('Categories have been chosen')
-console.log(chosenCategories)
 numOfCategoriesButton.addEventListener('click',function() {
   chosenNumCategoriesInput = prompt('How many categories would you like to play with ');
 
