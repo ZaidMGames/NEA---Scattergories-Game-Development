@@ -287,7 +287,7 @@ playButton.addEventListener("click", handlePlayButtonClick);
 
 const showAnswersButton = document.getElementById('showAnswersButton');
 
-if (roundNumber > 2) {
+if (roundNumber > 1) {
   showAnswersButton.style.display = 'block';
   console.log('ShowAnswersButton should pop up now')
 }
