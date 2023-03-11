@@ -183,7 +183,7 @@ export function getAnswers(roundNum) {
   //     wholeBottomRow.innerHTML += `For roaund ${round}, the following was inputed: ${inputsString}<br>`;
   //   }
   // }
-  if (roundNum == 3){
+  if (roundNum == 1){
   displayRoundInputs()
   }
   playerAnswersArray = []
@@ -196,7 +196,7 @@ function displayRoundInputs() {
 
   // Clear any existing content in the container
   wholeDiv.style.display = 'none'
-  container.innerHTML = '';
+  // container.innerHTML = '';
 
   // Create a heading for the cards with Bootstrap styling
   const headingContainer = document.createElement('div');
