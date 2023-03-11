@@ -25,12 +25,18 @@ let players = [Zaid]
   let roundNumber = 0;
 
 
+  if (roundNumber > 1) {
+    showAnswersButton.style.display = "block";
+  }
+  
+
 function toggleButtonsDisabledState(disabled) {
   chosenTimeButton.disabled = disabled;
   numOfCategoriesButton.disabled = disabled;
   changeLetterButton.disabled = disabled;
   addCustomCategoryButton.disabled = disabled;
   showAnswersButton.disabled = disabled;
+  console.log(roundNumber)
 }
 
 function gameStarting(){
@@ -288,11 +294,6 @@ playButton.addEventListener("click", handlePlayButtonClick);
 
 
 
-
-
-if (roundNumber > 1) {
-  showAnswersButton.style.display = "block";
-}
 
 showAnswersButton.addEventListener('click', () => {
   displayRoundInputs()
