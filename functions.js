@@ -30,18 +30,18 @@ export const ListOfCategories = [
   
 ]
 
-/**
- * Shuffles an array of categories and returns a subset of a specified size.
- * @param {Array} arr - The input array of categories to shuffle.
- * @param {Number} size - The number of categories to select from the shuffled array.
- * @returns {Array} - The shuffled array of categories of size `size`.
- */
+
 
 //Function to validate if player inputs start with keyletter
 function validInput(event) {
   event.target.value = event.target.value.length == 1 && event.target.value.toLowerCase() != keyLetter.toLowerCase() ? "" : event.target.value
 }
 
+/**
+ * To create an Alert At the top of the game at all times
+ * @param {string} message - The Alert Message to be displayed
+ * @param {string} type - The specified type of bootstrap 5.3 alert to display from danger, warning etc
+ */
 export const alert = (message,type) => {
   let alertContainer = document.getElementById("alertContainer");
   const alertElement = document.createElement('div')
@@ -56,8 +56,12 @@ export const alert = (message,type) => {
 
 
 
-
-
+/**
+ * Shuffles an array of categories and returns a subset of a specified size.
+ * @param {Array} arr - The input array of categories to shuffle.
+ * @param {Number} size - The number of categories to select from the shuffled array.
+ * @returns {Array} - The shuffled array of categories of size `size`.
+ */
 export function CategorySelector(arr, size, custom) {   
   if (!Array.isArray(arr)) {     
     throw new TypeError('Input parameter `arr` must be an array.')   
@@ -73,7 +77,10 @@ export function CategorySelector(arr, size, custom) {
   return shuffled.slice(0, Math.min(shuffled.length, size)) }
 
 
-
+/**
+ * Displays the chosen Categories
+ * @param {Array} categoriesArray - The chosen categories list
+ */
 let numberOfCategoriesDisplayed;
 export function displayChosenCategories(categoriesArray) {
   const ListOfCategoriesDiv = document.getElementById("ListOfCategories");
@@ -91,6 +98,7 @@ export function displayChosenCategories(categoriesArray) {
 }
 
 
+//Creates Input fields for when the round starts
 export function createInputBoxes() {
   console.log('Creating input boxes');
   const inputBoxesDiv = document.getElementById('InputCategories');
@@ -112,13 +120,10 @@ export function createInputBoxes() {
 
 
 
-
-export function roundStarter() {
-  
-}
-
-
-
+/**
+ * CountDown Timer Algorithm
+ * @param {boolean} stopTimer - variable used to stop timer when stop button is pressed
+ */
 //countdown Timer Algorithm 
 export const stopTimer = { value: false }; // variable used to stop timer when stop button is pressed
 console.log(stopTimer)
@@ -189,7 +194,7 @@ export function getAnswers(roundNum) {
   playerAnswersArray = []
 }
 
-// Function to iterate over the dictionary and display the inputs in a Bootstrap card
+// Function to iterate over the dictionary and display the inputs after the rounds are over
 function displayRoundInputs() {
   const wholeDiv = document.getElementById('wholeDiv');
   const container = document.getElementById('wholeBottomRow');
