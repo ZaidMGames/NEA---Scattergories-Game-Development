@@ -109,37 +109,6 @@ export function createInputBoxes() {
 
 
 
-//Function to display the chosen categories from the category selector 
-// export function displayChosenCategories(categories) {
-//     const objectNamesElement = document.getElementById("ListOfCategories");
-//     categories.forEach(category => {
-//       const objectNameElement = document.createElement("div");
-//       objectNameElement.classList.add("my-2");
-//       objectNameElement.innerHTML = '<h3>' + category.name + '</h3>';
-//       objectNamesElement.appendChild(objectNameElement);
-//     });
-//   }
-//Function to create Input boxes for players to give answers to categories
-// export function createInputBoxes() {
-//   console.log('Creating input boxes')
-//     const inputBoxesDiv = document.getElementById('InputCategories');
-//     for (let i = 0; i < chosenNumCategoriesInput; i++) {
-//       const input = document.createElement('input');
-//       input.addEventListener('input', validInput)
-//       input.type = 'text';
-//       input.placeholder = keyLetter + '...'
-//       input.classList.add('form-control');
-//       inputBoxesDiv.appendChild(input);
-//       const lineBreak = document.createElement('br');
-//       inputBoxesDiv.appendChild(lineBreak);
-//     }
-//   }
-  
-
-
-
-
-
 
 
 export function roundStarter() {

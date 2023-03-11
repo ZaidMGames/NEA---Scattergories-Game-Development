@@ -107,29 +107,6 @@ addCustomCategoryButton.addEventListener('click',function() {
 }});
 
 let customCategories = false;
-
-// customCategoriesToggle.addEventListener('change', function() {
-//   if (this.checked) {
-//     let count = 0;
-//     for (let i = 0; i < ListOfCategories.length; i++) {
-//       if (ListOfCategories[i].custom === true) {
-//         count++;
-//       }
-//     }
-//     if (count >= 5) {
-//       customCategories = true;
-//       chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
-      
-//     } else {
-//       this.checked = false;
-//       alert('You must have at least 5 custom categories.' + 'You Currently Only Have: ' + count + ' Custom Added Categories' );
-//     }
-//   } else {
-//     customCategories = false;
-//   }
-// });
-
-
 customCategoriesToggle.addEventListener('change', function() {
   if (this.checked) {
     let count = 0;
