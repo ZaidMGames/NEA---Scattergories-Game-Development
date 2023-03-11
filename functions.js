@@ -166,6 +166,7 @@ export function chooseLetter() {
 
 //Function to link answers placed in input fields to an array
 let playerAnswersArray = [];
+const wholeBottomRow = document.getElementById('wholeBottomRow')
 export function getAnswers(roundNum) {
   const inputBoxes = document.querySelectorAll('#InputCategories input');
   for (let i = 0; i < inputBoxes.length; i++) {
@@ -175,6 +176,13 @@ export function getAnswers(roundNum) {
   playerDictionary[roundNum] = playerAnswersArray
   console.log(playerDictionary)
   console.log(playerAnswersArray)
+  if (roundNum ==3){
+    for (let round in playerDictionary) {
+      let inputs = playerDictionary[round];
+      let inputsString = inputs.join(', ');
+      wholeBottomRow.innerHTML += `For round ${round}, the following was inputed: ${inputsString}<br>`;
+    }
+  }
   playerAnswersArray = []
 }
   //Hydrate data algorithm
