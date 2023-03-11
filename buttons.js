@@ -63,7 +63,7 @@ function gameEnding(){
   // Code to execute when the countdown finishes
   console.log("Countdown finished!");
   clicked = false;
-  getAnswers(roundNumber)
+  getAnswers(roundNumber,chosenCategories)
   ListOfCategoriesElement.innerHTML = ''
   InputCategoriesElement.innerHTML = ''
   document.getElementById("timerText").innerHTML = '<br>';

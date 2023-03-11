@@ -172,7 +172,7 @@ export function chooseLetter() {
 //Function to link answers placed in input fields to an array
 let playerAnswersArray = [];
 const wholeBottomRow = document.getElementById('wholeBottomRow')
-export function getAnswers(roundNum) {
+export function getAnswers(roundNum,roundCategories) {
   const inputBoxes = document.querySelectorAll('#InputCategories input');
   for (let i = 0; i < inputBoxes.length; i++) {
     playerAnswersArray.push(inputBoxes[i].value);
@@ -188,12 +188,12 @@ export function getAnswers(roundNum) {
   //     wholeBottomRow.innerHTML += `For roaund ${round}, the following was inputed: ${inputsString}<br>`;
   //   }
   // }
-  displayRoundInputs()
+  displayRoundInputs(roundCategories)
   playerAnswersArray = []
 }
 
 // Function to iterate over the dictionary and display the inputs after the rounds are over
-export function displayRoundInputs() {
+export function displayRoundInputs(categoriesList) {
   const wholeDiv = document.getElementById('wholeDiv');
   const answersContainer = document.getElementById('wholeBottomRow');
 
@@ -235,12 +235,21 @@ export function displayRoundInputs() {
     card.appendChild(listGroup);
 
     // Add each input in the round to the list group
-    roundInputsArray.forEach(input => {
+    roundInputArray.forEach((input, index) => {
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
-      listItem.textContent = input;
+      listItem.textContent = `${input} - ${categoriesList[index]}`;
       listGroup.appendChild(listItem);
     });
+
+
+
+    // roundInputsArray.forEach(input => {
+    //   const listItem = document.createElement('li');
+    //   listItem.classList.add('list-group-item');
+    //   listItem.textContent = input;
+    //   listGroup.appendChild(listItem);
+    // });
 
     // Add the completed card to the container
     answersContainer.appendChild(card);
