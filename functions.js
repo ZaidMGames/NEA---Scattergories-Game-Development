@@ -242,6 +242,15 @@ function displayRoundInputs() {
     // Add the completed card to the container
     container.appendChild(card);
   }
+  const button = document.createElement('button');
+  button.textContent = 'Go Back';
+  button.classList.add('btn', 'btn-primary', 'my-3', 'p-3', 'rounded-pill', 'neumorphic-style');
+  button.addEventListener('click', () => {
+    wholeDiv.style.display = 'block';
+    container.innerHTML = '';
+  });
+  container.appendChild(button);
+
 }
 
 
