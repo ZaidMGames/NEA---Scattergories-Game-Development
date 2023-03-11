@@ -48,6 +48,7 @@ function gameStarting(){
     playButton.classList.add('btn-danger');
     playButton.innerHTML = 'Stop';
     //To display the categories
+    chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
     displayChosenCategories(chosenCategories)
     roundNumber += 1;
     RoundDiv.innerHTML = `<h1> Round ${roundNumber} </h1>`
@@ -75,7 +76,6 @@ function gameEnding(){
   playButton.classList.add('btn-success');
   playButton.innerHTML = 'Play';
   toggleButtonsDisabledState(false)
-  chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
   // wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
 }
 
