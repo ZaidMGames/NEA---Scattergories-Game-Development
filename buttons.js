@@ -25,7 +25,7 @@ let players = [Zaid]
   let roundNumber = 0;
 
 
-  if (roundNumber > 1) {
+  while (roundNumber > 1) {
     showAnswersButton.style.display = "block";
   }
   
@@ -36,7 +36,6 @@ function toggleButtonsDisabledState(disabled) {
   changeLetterButton.disabled = disabled;
   addCustomCategoryButton.disabled = disabled;
   showAnswersButton.disabled = disabled;
-  console.log(roundNumber)
 }
 
 function gameStarting(){
