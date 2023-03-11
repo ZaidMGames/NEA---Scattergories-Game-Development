@@ -195,7 +195,7 @@ export function getAnswers(roundNum) {
 // Function to iterate over the dictionary and display the inputs after the rounds are over
 function displayRoundInputs() {
   const wholeDiv = document.getElementById('wholeDiv');
-  const container = document.getElementById('wholeBottomRow');
+  const answersContainer = document.getElementById('wholeBottomRow');
 
   // Clear any existing content in the container
   wholeDiv.style.display = 'none'
@@ -204,7 +204,7 @@ function displayRoundInputs() {
   // Create a heading for the cards with Bootstrap styling
   const headingContainer = document.createElement('div');
   headingContainer.classList.add('container', 'mb-5');
-  container.appendChild(headingContainer);
+  answersContainer.appendChild(headingContainer);
 
   const headingCard = document.createElement('div');
   headingCard.classList.add('card', 'bg-white', 'rounded', 'shadow-sm', 'p-3');
@@ -243,7 +243,7 @@ function displayRoundInputs() {
     });
 
     // Add the completed card to the container
-    container.appendChild(card);
+    answersContainer.appendChild(card);
   }
   // const button = document.createElement('button');
   // button.textContent = 'Go Back';
@@ -255,18 +255,18 @@ function displayRoundInputs() {
   // Create a centered button with neumorphic design
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('d-flex', 'justify-content-center', 'my-3');
-  container.appendChild(buttonContainer);
+  answersContainer.appendChild(buttonContainer);
 
   const button = document.createElement('button');
   button.textContent = 'Next Round';
   button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
   button.addEventListener('click', () => {
     wholeDiv.style.display = 'block';
-    container.innerHTML = '';
+    answersContainer.innerHTML = '';
   });
   buttonContainer.appendChild(button);
   
-  container.appendChild(button);
+  answersContainer.appendChild(button);
 
 }
 

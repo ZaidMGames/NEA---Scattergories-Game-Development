@@ -17,6 +17,7 @@ let players = [Zaid]
   const changeLetterButton = document.getElementById('changeLetterButton');
   const addCustomCategoryButton = document.getElementById('addCustomCategory');
   const customCategoriesToggle = document.getElementById('customCategoriesToggle');
+  const answersContainer = document.getElementById('wholeBottomRow');
   const wholeDiv = document.getElementById('wholeDiv');
   const RoundDiv = document.getElementById('Round');
   console.log(chosenTimeButton);
@@ -280,3 +281,17 @@ function startTimer() {
 
 
 playButton.addEventListener("click", handlePlayButtonClick);
+
+
+
+// JavaScript file
+const answersContainer = document.getElementById('answersContainer');
+
+if (roundNumber > 2) {
+  showAnswersButton.style.display = 'block';
+}
+
+showAnswersButton.addEventListener('click', () => {
+  answersContainer.style.display = 'block';
+});
+
