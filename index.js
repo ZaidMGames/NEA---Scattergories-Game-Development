@@ -11,9 +11,3 @@ import {Category, Player, Inputs} from './classes.js';
 
 
 
-
-
-let Zaid = new Player("Zaid", 50, ["Salmon", "Football"]);
-console.log(Zaid.name);
-
-

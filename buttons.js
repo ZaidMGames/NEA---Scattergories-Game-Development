@@ -3,6 +3,8 @@ import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
 import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,alert} from './functions.js'
 
+let players = [Zaid]
+let Zaid = new Player("Zaid")
 
 
   //Storing all ElementIDs
@@ -19,8 +21,6 @@ import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategor
   const RoundDiv = document.getElementById('Round');
   console.log(chosenTimeButton);
   let roundNumber = 0;
-
-
 
 
 function toggleButtonsDisabledState(disabled) {

@@ -3,6 +3,8 @@ import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
 let playerDictionary = {}
 
+
+
 export const ListOfCategories = [
   new Category("Football Team"),
   new Category("Anime"),
