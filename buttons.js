@@ -243,22 +243,40 @@ changeLetterButton.addEventListener("click", function(){
 //The Game will Only start when the button is clicked
 let clicked = false
 
-//When the play Button has been pressed
-playButton.addEventListener("click", function() {
+// //When the play Button has been pressed
+// playButton.addEventListener("click", function() {
+//   if (clicked) {
+//     //To run if the player presses the stop button
+//     stopClicked()
+//   } else {
+//     gameStarting()
+//     // Start the countdown timer
+//     stopTimer.value = false;
+//     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
+//       .then(() => { //Runs only when the timer has ended
+//         gameEnding()
+//       });
+
+//     clicked = true; // just to help if player presses this button before the timer ends
+//     }});
+
+function handlePlayButtonClick() {
   if (clicked) {
-    //To run if the player presses the stop button
     stopClicked()
   } else {
-    gameStarting()
-    // Start the countdown timer
-    stopTimer.value = false;
-    countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
-      .then(() => { //Runs only when the timer has ended
-        gameEnding()
-      });
+    startGame()
+    startTimer()
+    clicked = true;
+  }
+}
 
-    clicked = true; // just to help if player presses this button before the timer ends
-    }});
+function startTimer() {
+  stopTimer.value = false;
+  countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
+    .then(() => {
+      gameEnding()
+    });
+}
 
 
- 
+playButton.addEventListener("click", handlePlayButtonClick);
