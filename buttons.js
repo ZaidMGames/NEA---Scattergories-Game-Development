@@ -71,6 +71,7 @@ function gameEnding(){
   playButton.classList.add('btn-success');
   playButton.innerHTML = 'Play';
   toggleButtonsDisabledState(false)
+  chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
   // wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
 }
 
