@@ -183,9 +183,8 @@ export function getAnswers(roundNum) {
   //     wholeBottomRow.innerHTML += `For round ${round}, the following was inputed: ${inputsString}<br>`;
   //   }
   // }
-  if (roundNum == 3){
-  // Call the displayRoundInputs function when the page has finished loading
-  document.addEventListener('DOMContentLoaded', displayRoundInputs);
+  if (roundNum == 1){
+  displayRoundInputs()
   }
   playerAnswersArray = []
 }
