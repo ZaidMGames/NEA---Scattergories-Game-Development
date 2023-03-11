@@ -264,7 +264,7 @@ function handlePlayButtonClick() {
   if (clicked) {
     stopClicked()
   } else {
-    startGame()
+    gameStarting()
     startTimer()
     clicked = true;
   }
