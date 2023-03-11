@@ -247,13 +247,27 @@ function displayRoundInputs() {
     // Add the completed card to the container
     container.appendChild(card);
   }
+  // const button = document.createElement('button');
+  // button.textContent = 'Go Back';
+  // button.classList.add('btn', 'btn-primary', 'my-3', 'p-3', 'rounded-pill', 'neumorphic-style');
+  // button.addEventListener('click', () => {
+  //   wholeDiv.style.display = 'block';
+  //   container.innerHTML = '';
+  // });
+  // Create a centered button with neumorphic design
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('d-flex', 'justify-content-center', 'my-3');
+  container.appendChild(buttonContainer);
+
   const button = document.createElement('button');
   button.textContent = 'Go Back';
-  button.classList.add('btn', 'btn-primary', 'my-3', 'p-3', 'rounded-pill', 'neumorphic-style');
+  button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
   button.addEventListener('click', () => {
     wholeDiv.style.display = 'block';
     container.innerHTML = '';
   });
+  buttonContainer.appendChild(button);
+  
   container.appendChild(button);
 
 }
