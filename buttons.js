@@ -286,6 +286,7 @@ playButton.addEventListener("click", handlePlayButtonClick);
 
 
 const showAnswersButton = document.getElementById('showAnswersButton');
+showAnswersButton.style.display = "none";
 
 if (roundNumber > 1) {
   showAnswersButton.style.display = 'block';
