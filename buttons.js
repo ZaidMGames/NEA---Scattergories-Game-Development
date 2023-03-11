@@ -1,7 +1,8 @@
 //Importing All Classes from the classes file
 import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
-import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,alert,displayRoundInputs} from './functions.js'
+import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,createInputBoxes,getAnswers,alert,displayRoundInputs} from './functions.js'
+import {ListOfCategories} from './categoriesList.js'
 
 let Zaid = new Player("Zaid")
 let players = [Zaid]
