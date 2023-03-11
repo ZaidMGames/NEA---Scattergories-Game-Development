@@ -25,10 +25,7 @@ let players = [Zaid]
   let roundNumber = 0;
 
 
-  while (roundNumber > 1) {
-    showAnswersButton.style.display = "block";
-  }
-  
+
 
 function toggleButtonsDisabledState(disabled) {
   chosenTimeButton.disabled = disabled;
