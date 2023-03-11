@@ -198,6 +198,7 @@ function displayRoundInputs() {
 
   // Create a heading for the cards
   const heading = document.createElement('h2');
+  heading.classList.add('fw-bold', 'text-center', 'mb-5');
   heading.textContent = 'Here are your answers to the last couple rounds';
   container.appendChild(heading);
 
