@@ -176,15 +176,64 @@ export function getAnswers(roundNum) {
   playerDictionary[roundNum] = playerAnswersArray
   console.log(playerDictionary)
   console.log(playerAnswersArray)
-  if (roundNum ==3){
-    for (let round in playerDictionary) {
-      let inputs = playerDictionary[round];
-      let inputsString = inputs.join(', ');
-      wholeBottomRow.innerHTML += `For round ${round}, the following was inputed: ${inputsString}<br>`;
-    }
+  // if (roundNum ==3){
+  //   for (let round in playerDictionary) {
+  //     let inputs = playerDictionary[round];
+  //     let inputsString = inputs.join(', ');
+  //     wholeBottomRow.innerHTML += `For round ${round}, the following was inputed: ${inputsString}<br>`;
+  //   }
+  // }
+  if (roundNum == 3){
+  // Call the displayRoundInputs function when the page has finished loading
+  document.addEventListener('DOMContentLoaded', displayRoundInputs);
   }
   playerAnswersArray = []
 }
+
+// Function to iterate over the dictionary and display the inputs in a Bootstrap card
+function displayRoundInputs() {
+  const container = document.getElementById('wholeBottomRow');
+
+  // Clear any existing content in the container
+  container.innerHTML = '';
+
+  // Loop through each round in the dictionary
+  for (const roundNumber in playerDictionary) {
+    const roundInputsArray = playerDictionary[roundNumber];
+
+    // Create a Bootstrap card for the round
+    const card = document.createElement('div');
+    card.classList.add('card', 'mb-3');
+
+    // Add the card header with the round number
+    const header = document.createElement('div');
+    header.classList.add('card-header');
+    header.textContent = `Round ${roundNumber}`;
+    card.appendChild(header);
+
+    // Create a list group for the inputs in the round
+    const listGroup = document.createElement('ul');
+    listGroup.classList.add('list-group', 'list-group-flush');
+    card.appendChild(listGroup);
+
+    // Add each input in the round to the list group
+    roundInputsArray.forEach(input => {
+      const listItem = document.createElement('li');
+      listItem.classList.add('list-group-item');
+      listItem.textContent = input;
+      listGroup.appendChild(listItem);
+    });
+
+    // Add the completed card to the container
+    container.appendChild(card);
+  }
+}
+
+
+
+
+
+
   //Hydrate data algorithm
 export function hydrateData(players, categories) {
     for (let i = 0; i < categories.length; i++) {
