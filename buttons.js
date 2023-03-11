@@ -71,6 +71,7 @@ function gameEnding(){
   playButton.classList.add('btn-success');
   playButton.innerHTML = 'Play';
   toggleButtonsDisabledState(false)
+  chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput,customCategories);
   // wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
 }
 
@@ -85,7 +86,7 @@ function stopClicked() {
       playButton.innerHTML = 'Play';
       clicked = false;
       stopTimer.value= true; 
-    chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
+      chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput,customCategories);
 }
 
 let customPrompt;
@@ -123,7 +124,7 @@ customCategoriesToggle.addEventListener('change', function() {
     }
     if (count >= 5) {
       customCategories = true;
-      chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
+      chosenCategories = CategorySelector(ListOfCategories, chosenNumCategoriesInput,customCategories);
     } else {
       this.checked = false;
       alert('You must have at <strong>least 5 custom categories</strong>. You currently have ' + count + ' custom added categories.','danger')
