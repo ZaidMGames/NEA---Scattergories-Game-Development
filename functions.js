@@ -180,10 +180,10 @@ export function getAnswers(roundNum) {
   //   for (let round in playerDictionary) {
   //     let inputs = playerDictionary[round];
   //     let inputsString = inputs.join(', ');
-  //     wholeBottomRow.innerHTML += `For round ${round}, the following was inputed: ${inputsString}<br>`;
+  //     wholeBottomRow.innerHTML += `For roaund ${round}, the following was inputed: ${inputsString}<br>`;
   //   }
   // }
-  if (roundNum == 3){
+  if (roundNum == 1){
   displayRoundInputs()
   }
   playerAnswersArray = []
