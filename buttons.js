@@ -3,8 +3,8 @@ import {Category, Player, Inputs} from './classes.js';
 //Importing all Functions from the functions file
 import {countdownTimerA, chooseLetter,hydrateData,stopTimer,displayChosenCategories,CategorySelector,ListOfCategories,createInputBoxes,getAnswers,alert} from './functions.js'
 
-let players = [Zaid]
 let Zaid = new Player("Zaid")
+let players = [Zaid]
 
 
   //Storing all ElementIDs
