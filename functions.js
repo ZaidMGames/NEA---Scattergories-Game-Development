@@ -262,7 +262,7 @@ function displayRoundInputs() {
   button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
   button.addEventListener('click', () => {
     wholeDiv.style.display = 'block';
-    answersContainer.style.display = 'none';
+    answersContainer.innerHTML = '';
   });
   buttonContainer.appendChild(button);
   
