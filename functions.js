@@ -220,7 +220,7 @@ function displayRoundInputs() {
 
     // Add the card header with the round number
     const header = document.createElement('div');
-    header.classList.add('card-header', 'bg-white', 'border-0', 'text-center', 'fw-bold', 'fs-4', 'rounded', 'shadow-sm', 'py-3', 'text-dark');
+    header.classList.add('card-header');
     header.textContent = `Round ${roundNumber}`;
     card.appendChild(header);
 
