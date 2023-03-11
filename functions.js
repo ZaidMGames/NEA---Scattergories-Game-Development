@@ -191,9 +191,11 @@ export function getAnswers(roundNum) {
 
 // Function to iterate over the dictionary and display the inputs in a Bootstrap card
 function displayRoundInputs() {
+  const wholeDiv = document.getElementById('wholeDiv');
   const container = document.getElementById('wholeBottomRow');
 
   // Clear any existing content in the container
+  wholeDiv.style.display = 'none'
   container.innerHTML = '';
 
   // Create a heading for the cards with Bootstrap styling
