@@ -183,7 +183,7 @@ export function getAnswers(roundNum) {
   //     wholeBottomRow.innerHTML += `For round ${round}, the following was inputed: ${inputsString}<br>`;
   //   }
   // }
-  if (roundNum == 1){
+  if (roundNum == 3){
   displayRoundInputs()
   }
   playerAnswersArray = []
@@ -195,6 +195,11 @@ function displayRoundInputs() {
 
   // Clear any existing content in the container
   container.innerHTML = '';
+
+  // Create a heading for the cards
+  const heading = document.createElement('h2');
+  heading.textContent = 'Here are your answers to the last couple rounds';
+  container.appendChild(heading);
 
   // Loop through each round in the dictionary
   for (const roundNumber in playerDictionary) {
@@ -227,6 +232,7 @@ function displayRoundInputs() {
     container.appendChild(card);
   }
 }
+
 
 
 
