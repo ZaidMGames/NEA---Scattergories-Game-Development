@@ -18,6 +18,7 @@ let players = [Zaid]
   const addCustomCategoryButton = document.getElementById('addCustomCategory');
   const customCategoriesToggle = document.getElementById('customCategoriesToggle');
   const answersContainer = document.getElementById('wholeBottomRow');
+  const showAnswersButton = document.getElementById('showAnswersButton');
   const wholeDiv = document.getElementById('wholeDiv');
   const RoundDiv = document.getElementById('Round');
   console.log(chosenTimeButton);
@@ -29,6 +30,7 @@ function toggleButtonsDisabledState(disabled) {
   numOfCategoriesButton.disabled = disabled;
   changeLetterButton.disabled = disabled;
   addCustomCategoryButton.disabled = disabled;
+  showAnswersButton.disabled = disabled;
 }
 
 function gameStarting(){
@@ -285,8 +287,8 @@ playButton.addEventListener("click", handlePlayButtonClick);
 
 
 
-const showAnswersButton = document.getElementById('showAnswersButton');
-showAnswersButton.style.display = "none";
+
+
 
 if (roundNumber > 1) {
   showAnswersButton.style.display = "block";
