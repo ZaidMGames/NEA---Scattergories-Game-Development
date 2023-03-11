@@ -293,7 +293,8 @@ if (roundNumber > 1) {
 }
 
 showAnswersButton.addEventListener('click', () => {
-  wholeDiv.style.display = 'none'
-  answersContainer.style.display = 'block';
+  displayRoundInputs()
+  // wholeDiv.style.display = 'none'
+  // answersContainer.style.display = 'block';
 });
 
