@@ -193,7 +193,7 @@ export function getAnswers(roundNum) {
 }
 
 // Function to iterate over the dictionary and display the inputs after the rounds are over
-function displayRoundInputs() {
+export function displayRoundInputs() {
   const wholeDiv = document.getElementById('wholeDiv');
   const answersContainer = document.getElementById('wholeBottomRow');
 
