@@ -245,20 +245,23 @@ let clicked = false
 
 //When the play Button has been pressed
 playButton.addEventListener("click", function() {
-  if (clicked) {
-    //To run if the player presses the stop button
-    stopClicked()
-  } else {
-    gameStarting()
-    // Start the countdown timer
-    stopTimer.value = false;
-    countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
-      .then(() => { //Runs only when the timer has ended
-        gameEnding()
-      });
+  while (roundNumber < 3) {
+    if (clicked) {
+      //To run if the player presses the stop button
+      stopClicked()
+    } else {
+      gameStarting()
+      // Start the countdown timer
+      stopTimer.value = false;
+      countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
+        .then(() => { //Runs only when the timer has ended
+          gameEnding()
+        });
 
-    clicked = true; // just to help if player presses this button before the timer ends
-    }});
-
+      clicked = true; // just to help if player presses this button before the timer ends
+      }
+    }
+  }
+  );
 
  
