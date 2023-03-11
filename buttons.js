@@ -196,7 +196,7 @@ chosenTimeButton.addEventListener('click',function() {
   
     window.chosenTimer = parseInt(chosenTimer); 
     console.log(`Timer has now been changed to ${chosenTimer}s`)
-    alert(`Timer has now been changed to ${chosenTimer}s`,'dark')
+    alert(`Timer has now been changed to <strong>${chosenTimer}s</strong>`,'dark')
   });
 
 //Change number of categories Button
@@ -248,7 +248,7 @@ numOfCategoriesButton.addEventListener('click',function() {
   chosenCategories = CategorySelector(ListOfCategories,  parseInt(chosenNumCategoriesInput),customCategories);
   console.log(chosenCategories)
   console.log('The number of Selected Categories has been changed to  '+ chosenNumCategoriesInput + '')
-  alert(`The number of Selected Categories has now been changed to ${chosenNumCategoriesInput}`,'info')
+  alert(`The number of Selected Categories has now been changed to <strong>${chosenNumCategoriesInput}</strong>`,'info')
 });
 
 
