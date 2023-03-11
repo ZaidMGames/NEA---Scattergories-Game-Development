@@ -289,6 +289,7 @@ const showAnswersButton = document.getElementById('showAnswersButton');
 
 if (roundNumber > 2) {
   showAnswersButton.style.display = 'block';
+  console.log('ShowAnswersButton should pop up now')
 }
 
 showAnswersButton.addEventListener('click', () => {
