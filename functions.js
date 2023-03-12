@@ -267,7 +267,7 @@ export function hydrateData(players, categories) {
 
 
 
-// Get HTML elements
+
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 const chatMessages = document.getElementById("chat-messages");
