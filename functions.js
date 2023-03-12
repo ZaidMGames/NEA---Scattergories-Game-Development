@@ -279,17 +279,40 @@ let messages = [];
 function displayMessages() {
   // Clear chat-messages div
   chatMessages.innerHTML = "";
-  // Loop through last 5 messages and append to chat-messages div
-  for (let i = Math.max(messages.length - 5, 0); i < messages.length; i++) {
+  
+  // Loop through messages and append to chat-messages div
+  for (let i = 0; i < messages.length; i++) {
     const message = messages[i];
     const messageDiv = document.createElement("div");
     messageDiv.textContent = message;
     chatMessages.appendChild(messageDiv);
   }
+  
   // Scroll to bottom of chat-messages div
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 // Function to handle user input
-function handleInput
+function handleInput() {
+  const message = userInput.value.trim();
+  
+  if (message !== "") {
+    messages.push(message);
+    displayMessages();
+    userInput.value = "";
+  }
+}
+
+// Event listener for send button click
+sendBtn.addEventListener("click", handleInput);
+
+// Event listener for user pressing Enter key
+userInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    handleInput();
+  }
+});
+
+// Display initial messages
+displayMessages();
 
