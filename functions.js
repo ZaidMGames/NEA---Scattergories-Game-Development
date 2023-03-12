@@ -194,6 +194,7 @@ export function displayRoundInputs(categoriesList) {
   // Loop through each round in the dictionary
   for (const roundNumber in playerDictionary) {
     const roundInputsArray = playerDictionary[roundNumber];
+  }
   for (const roundNumber in chosenRoundCategoriesDic){
     const roundCategories = chosenRoundCategoriesDic[roundNumber];
   }
