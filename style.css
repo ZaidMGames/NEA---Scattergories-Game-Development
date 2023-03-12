@@ -176,3 +176,11 @@
     background-color: #0c7cd5;
   }
   
+
+  .message-box {
+    background-color: #F5F5F5; /* light gray background */
+    border-radius: 10px; /* rounded corners */
+    padding: 10px; /* add some padding for spacing */
+    margin-bottom: 10px; /* add some margin to separate messages */
+  }
+  

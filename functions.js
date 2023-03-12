@@ -279,18 +279,20 @@ let messages = [];
 function displayMessages() {
   // Clear chat-messages div
   chatMessages.innerHTML = "";
-  
+
   // Loop through messages and append to chat-messages div
   for (let i = 0; i < messages.length; i++) {
     const message = messages[i];
     const messageDiv = document.createElement("div");
+    messageDiv.className = "message-box"; // add class for styling
     messageDiv.textContent = message;
     chatMessages.appendChild(messageDiv);
   }
-  
+
   // Scroll to bottom of chat-messages div
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
+
 
 // Function to handle user input
 function handleInput() {
