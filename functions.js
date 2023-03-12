@@ -2,7 +2,7 @@ import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
 let playerDictionary = {}
-
+let chosenRoundCategoriesDic = {}
 
 
 
@@ -152,7 +152,8 @@ export function getAnswers(roundNum,roundCategories) {
     playerAnswersArray.push(inputBoxes[i].value);
   }
   console.log('Player Answers have been appended to array')
-  playerDictionary[roundNum] = playerAnswersArray
+  chosenRoundCategoriesDic[roundNum] = roundCategories;
+  playerDictionary[roundNum] = playerAnswersArray;
   console.log(playerDictionary)
   console.log(playerAnswersArray)
   // if (roundNum ==3){
@@ -192,6 +193,9 @@ export function displayRoundInputs(categoriesList) {
   // Loop through each round in the dictionary
   for (const roundNumber in playerDictionary) {
     const roundInputsArray = playerDictionary[roundNumber];
+  for (const roundNumber in chosenRoundCategoriesDic){
+    const roundCategories = chosenRoundCategoriesDic[roundNumber];
+  }
 
     // Create a Bootstrap card for the round
     const card = document.createElement('div');
@@ -217,14 +221,11 @@ export function displayRoundInputs(categoriesList) {
     // });
 
     roundInputsArray.forEach((input, index) => {
-      const category = categoriesList[index].name;
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
-      listItem.innerHTML = `<strong>${category}</strong> - <em>${input}</em> `;
+      listItem.innerHTML = `<strong>${roundCategories[index]}</strong><em>${input}</em> `;
       listGroup.appendChild(listItem);
     });
-
-
 
 
     // roundInputsArray.forEach(input => {
