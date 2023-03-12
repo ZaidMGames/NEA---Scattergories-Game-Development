@@ -155,6 +155,7 @@ export function getAnswers(roundNum,roundCategories) {
   chosenRoundCategoriesDic[roundNum] = roundCategories;
   playerDictionary[roundNum] = playerAnswersArray;
   console.log(playerDictionary)
+  console.log(chosenRoundCategoriesDic)
   console.log(playerAnswersArray)
   // if (roundNum ==3){
   //   for (let round in playerDictionary) {
