@@ -209,7 +209,7 @@ export function displayRoundInputs(categoriesList) {
       const category = chosenRoundCategoriesArray[index].name;
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
-      listItem.innerHTML = `<strong>${category}</strong><em>${input}</em> `;
+      listItem.innerHTML = `<strong>${category}</strong> <em>${input}</em> `;
       listGroup.appendChild(listItem);
     });
     // Add the completed card to the container
