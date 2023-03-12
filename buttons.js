@@ -69,6 +69,7 @@ function gameEnding(){
   // Code to execute when the countdown finishes
   console.log("Countdown finished!");
   clicked = false;
+  console.log(`these should be the shown categories ${chosenCategories}`)
   getAnswers(roundNumber,chosenCategories)
   ListOfCategoriesElement.innerHTML = ''
   InputCategoriesElement.innerHTML = ''
@@ -77,8 +78,6 @@ function gameEnding(){
   playButton.classList.add('btn-success');
   playButton.innerHTML = 'Play';
   toggleButtonsDisabledState(false)
-  chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
-  // wholeDiv.innerHTML = '<h1>"You have now finished the game lol. byeeeee"</h1>'
 }
 
 function stopClicked() {
