@@ -315,7 +315,7 @@ export function displayRoundInputs(categoriesList) {
     roundInputsArray.forEach((input, index) => {
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
-      listItem.textContent = `${input} - ${categoriesList[index]}`;
+      listItem.innerHTML = `<strong>${roundCategories[index]}</strong><em>${input}</em> `;
       listGroup.appendChild(listItem);
     });
 
