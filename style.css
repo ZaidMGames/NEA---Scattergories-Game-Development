@@ -118,7 +118,7 @@
 
 
   /* for the chat interface */
-  .chat-container {
+  /* .chat-container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -175,4 +175,4 @@
   .chat-input button:hover {
     background-color: #0c7cd5;
   }
-  
+   */
