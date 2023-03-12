@@ -226,24 +226,24 @@ export function displayRoundInputs(categoriesList) {
     // Add the completed card to the container
     answersContainer.appendChild(card);
   }
-  // const button = document.createElement('button');
-  // button.textContent = 'Go Back';
-  // button.classList.add('btn', 'btn-primary', 'my-3', 'p-3', 'rounded-pill', 'neumorphic-style');
-  // button.addEventListener('click', () => {
-  //   wholeDiv.style.display = 'block';
-  //   container.innerHTML = '';
-  // });
-  // Create a centered button with neumorphic design
-  const buttonContainer = document.createElement('div');
-  buttonContainer.classList.add('d-flex', 'justify-content-center', 'my-3');
-  answersContainer.appendChild(buttonContainer);
   const button = document.createElement('button');
-  button.textContent = 'Next Round';
-  button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
+  button.textContent = 'Go Back';
+  button.classList.add('btn', 'btn-primary', 'my-3', 'p-3', 'rounded-pill', 'neumorphic-style');
   button.addEventListener('click', () => {
     wholeDiv.style.display = 'block';
-    answersContainer.innerHTML = '';
+    container.innerHTML = '';
   });
+  // Create a centered button with neumorphic design
+  // const buttonContainer = document.createElement('div');
+  // buttonContainer.classList.add('d-flex', 'justify-content-center', 'my-3');
+  // answersContainer.appendChild(buttonContainer);
+  // const button = document.createElement('button');
+  // button.textContent = 'Next Round';
+  // button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
+  // button.addEventListener('click', () => {
+  //   wholeDiv.style.display = 'block';
+  //   answersContainer.innerHTML = '';
+  // });
   buttonContainer.appendChild(button);
   
   answersContainer.appendChild(button);
