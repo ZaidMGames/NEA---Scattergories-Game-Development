@@ -164,7 +164,7 @@ export function getAnswers(roundNum,roundCategories) {
   //     wholeBottomRow.innerHTML += `For roaund ${round}, the following was inputed: ${inputsString}<br>`;
   //   }
   // }
-  displayRoundInputs(roundCategories)
+  displayRoundInputs(roundNum)
   playerAnswersArray = []
 }
 
@@ -277,7 +277,7 @@ export function getAnswers(roundNum,roundCategories) {
 
 
 // Function to iterate over the dictionary and display the inputs after the rounds are over
-export function displayRoundInputs(categoriesList) {
+export function displayRoundInputs(roundNum) {
   const wholeDiv = document.getElementById('wholeDiv');
   const answersContainer = document.getElementById('wholeBottomRow');
 
@@ -315,7 +315,7 @@ export function displayRoundInputs(categoriesList) {
     roundInputsArray.forEach((input, index) => {
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
-      listItem.innerHTML = `<strong>${categoriesList[index].name}</strong><em>${input}</em> `;
+      listItem.innerHTML = `<strong>${chosenRoundCategoriesDic.roundNum[index].name}</strong><em>${input}</em> `;
       listGroup.appendChild(listItem);
     });
 
