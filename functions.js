@@ -296,7 +296,7 @@ function displayMessages() {
 function handleInput() {
   const message = userInput.value.trim();
   
-  if (message ) {
+  if (message !== "") {
     messages.push(message);
     displayMessages();
     userInput.value = "";
