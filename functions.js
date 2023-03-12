@@ -176,7 +176,6 @@ export function displayRoundInputs(categoriesList) {
 
   // Clear any existing content in the container
   wholeDiv.style.display = 'none'
-  // container.innerHTML = '';
   // Create a heading for the cards with Bootstrap styling
   const headingContainer = document.createElement('div');
   headingContainer.classList.add('container', 'mb-5');
@@ -213,37 +212,21 @@ export function displayRoundInputs(categoriesList) {
       listItem.innerHTML = `<strong>${category}</strong><em>${input}</em> `;
       listGroup.appendChild(listItem);
     });
-
-
-
-    // roundInputsArray.forEach(input => {
-    //   const listItem = document.createElement('li');
-    //   listItem.classList.add('list-group-item');
-    //   listItem.textContent = input;
-    //   listGroup.appendChild(listItem);
-    // });
-
     // Add the completed card to the container
     answersContainer.appendChild(card);
   }
+
+  // Create a centered button with neumorphic design
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('d-flex', 'justify-content-center', 'my-3');
+  answersContainer.appendChild(buttonContainer);
   const button = document.createElement('button');
-  button.textContent = 'Go Back';
-  button.classList.add('btn', 'btn-primary', 'my-3', 'p-3', 'rounded-pill', 'neumorphic-style');
+  button.textContent = 'Next Round';
+  button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
   button.addEventListener('click', () => {
     wholeDiv.style.display = 'block';
-    container.innerHTML = '';
+    answersContainer.innerHTML = '';
   });
-  // Create a centered button with neumorphic design
-  // const buttonContainer = document.createElement('div');
-  // buttonContainer.classList.add('d-flex', 'justify-content-center', 'my-3');
-  // answersContainer.appendChild(buttonContainer);
-  // const button = document.createElement('button');
-  // button.textContent = 'Next Round';
-  // button.classList.add('btn', 'btn-primary', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
-  // button.addEventListener('click', () => {
-  //   wholeDiv.style.display = 'block';
-  //   answersContainer.innerHTML = '';
-  // });
   buttonContainer.appendChild(button);
   
   answersContainer.appendChild(button);
