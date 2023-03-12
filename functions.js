@@ -175,7 +175,6 @@ export function displayRoundInputs(categoriesList) {
 
   // Clear any existing content in the container
   wholeDiv.style.display = 'none'
-  // container.innerHTML = '';
 
   // Create a heading for the cards with Bootstrap styling
   const headingContainer = document.createElement('div');
