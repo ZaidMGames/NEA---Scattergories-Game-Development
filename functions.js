@@ -205,21 +205,21 @@ export function displayRoundInputs(categoriesList) {
     card.appendChild(listGroup);
 
     // Add each input in the round to the list group
-    roundInputsArray.forEach((input, index) => {
-      const listItem = document.createElement('li');
-      listItem.classList.add('list-group-item');
-      listItem.innerHTML = `<strong>${categoriesList[index].name}</strong><em>${input}</em> `;
-      listGroup.appendChild(listItem);
-    });
-
-
-
-    // roundInputsArray.forEach(input => {
+    // roundInputsArray.forEach((input, index) => {
     //   const listItem = document.createElement('li');
     //   listItem.classList.add('list-group-item');
-    //   listItem.textContent = input;
+    //   listItem.innerHTML = `<strong>${categoriesList[index].name}</strong><em>${input}</em> `;
     //   listGroup.appendChild(listItem);
     // });
+
+
+
+    roundInputsArray.forEach(input => {
+      const listItem = document.createElement('li');
+      listItem.classList.add('list-group-item');
+      listItem.textContent = input;
+      listGroup.appendChild(listItem);
+    });
 
     // Add the completed card to the container
     answersContainer.appendChild(card);
