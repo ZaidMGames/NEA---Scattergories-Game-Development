@@ -297,6 +297,18 @@ export function displayRoundInputs(categoriesList) {
   headingCard.appendChild(heading);
   // Loop through each round in the dictionary
   for (const roundNumber in playerDictionary) {
+    const roundInputsArray = playerDictionary[roundNumber];
+    // Create a Bootstrap card for the round
+    const card = document.createElement('div');
+    card.classList.add('card', 'mb-3');
+    // Add the card header with the round number
+    const header = document.createElement('div');
+    header.classList.add('card-header');
+    header.textContent = `Round ${roundNumber}`;
+    card.appendChild(header);
+    // Create a list group for the inputs in the round
+    const listGroup = document.createElement('ul');
+    listGroup.classList.add('list-group', 'list-group-flush');
     card.appendChild(listGroup);
 
     // Add each input in the round to the list group
