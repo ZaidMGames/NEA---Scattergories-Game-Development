@@ -207,7 +207,7 @@ export function displayRoundInputs(categoriesList) {
 
     // Add each input in the round to the list group
     roundInputsArray.forEach((input, index) => {
-      const category = chosenRoundCategoriesArray[index];
+      const category = chosenRoundCategoriesArray[index].name;
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
       listItem.innerHTML = `<strong>${category}</strong><em>${input}</em> `;
