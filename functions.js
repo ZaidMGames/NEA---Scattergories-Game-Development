@@ -270,6 +270,7 @@ export function displayRoundInputs(categoriesList,roundNumber) {
 
 
 
+
   //Hydrate data algorithm
 export function hydrateData(players, categories) {
     for (let i = 0; i < categories.length; i++) {
