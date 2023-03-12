@@ -268,27 +268,3 @@ export function hydrateData(players, categories) {
 
 
 
-const input = document.getElementById("message-input");
-const button = document.getElementById("send-button");
-const messagesContainer = document.getElementById("messages-container");
-
-button.addEventListener("click", () => {
-  if (input.value.trim() !== "") {
-    const message = document.createElement("div");
-    message.classList.add("message");
-    message.textContent = input.value;
-    messagesContainer.appendChild(message);
-    input.value = "";
-    if (messagesContainer.childNodes.length > 3) {
-      messagesContainer.removeChild(messagesContainer.firstChild);
-    }
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }
-});
-
-input.addEventListener("keyup", (event) => {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    button.click();
-  }
-});
