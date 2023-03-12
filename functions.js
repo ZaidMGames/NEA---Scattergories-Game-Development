@@ -191,6 +191,7 @@ export function displayRoundInputs(categoriesList) {
   // Loop through each round in the dictionary
   for (const roundNumber in playerDictionary) {
     const roundInputsArray = playerDictionary[roundNumber];
+    const chosenRoundCategoriesArray = chosenRoundCategoriesDic[roundNumber];
     // Create a Bootstrap card for the round
     const card = document.createElement('div');
     card.classList.add('card', 'mb-3');
@@ -206,9 +207,10 @@ export function displayRoundInputs(categoriesList) {
 
     // Add each input in the round to the list group
     roundInputsArray.forEach((input, index) => {
+      const category = chosenRoundCategoriesArray[index];
       const listItem = document.createElement('li');
       listItem.classList.add('list-group-item');
-      listItem.innerHTML = `<strong>${categoriesList[index].name}</strong><em>${input}</em> `;
+      listItem.innerHTML = `<strong>${category}</strong><em>${input}</em> `;
       listGroup.appendChild(listItem);
     });
 
