@@ -263,7 +263,7 @@ export function displayRoundInputs(categoriesList) {
   
   answersContainer.appendChild(button);
 
-}
+
 
 
 
