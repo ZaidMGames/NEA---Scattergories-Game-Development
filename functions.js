@@ -164,12 +164,12 @@ export function getAnswers(roundNum,roundCategories) {
   //     wholeBottomRow.innerHTML += `For roaund ${round}, the following was inputed: ${inputsString}<br>`;
   //   }
   // }
-  displayRoundInputs(roundCategories)
+  displayRoundInputs(roundCategories,roundNum)
   playerAnswersArray = []
 }
 
 // Function to iterate over the dictionary and display the inputs after the rounds are over
-export function displayRoundInputs(categoriesList) {
+export function displayRoundInputs(categoriesList,roundNumber) {
   const wholeDiv = document.getElementById('wholeDiv');
   const answersContainer = document.getElementById('wholeBottomRow');
 
