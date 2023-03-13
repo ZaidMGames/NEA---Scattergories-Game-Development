@@ -293,10 +293,7 @@ function displayMessages() {
     const message = messages[i];
     const messageDiv = document.createElement("div");
     messageDiv.className = "message-box"; // add class for styling
-    // Append message content and a random reply to messageDiv
-    const reply = replies[Math.floor(Math.random() * replies.length)];
-    messageDiv.textContent = message + "\n" + reply;
-    
+    messageDiv.textContent = message;
     chatMessages.appendChild(messageDiv);
   }
 
