@@ -280,10 +280,6 @@ const replies = [
   "I'm here to assist you.",
   "What's on your mind?",
 ];
-
-// Index of the last reply that was generated
-let lastReplyIndex = -1;
-
 // Create array to store messages
 let messages = [];
 
@@ -295,27 +291,20 @@ function displayMessages() {
   // Loop through messages and append to chat-messages div
   for (let i = 0; i < messages.length; i++) {
     const message = messages[i];
-
-    // Create message div and add class for styling
     const messageDiv = document.createElement("div");
-    messageDiv.className = "message-box";
+    messageDiv.className = "message-box"; // add class for styling
     messageDiv.textContent = message;
-
-    // Generate and add a reply div with new or last generated reply
-    lastReplyIndex = (lastReplyIndex + 1) % replies.length; // increment index and wrap around
-    const reply = replies[lastReplyIndex];
-    const replyDiv = document.createElement("div");
-    replyDiv.className = "message-box reply-box";
-    replyDiv.textContent = reply;
-
     chatMessages.appendChild(messageDiv);
-    chatMessages.appendChild(replyDiv);
   }
-
+  // Generate and append a replydiv
+  const reply = replies[Math.floor(Math.random() * replies.length)];
+  const replyDiv = document.createElement("div");
+  replyDiv.className = "message-box reply-box"; // add class for styling
+  replyDiv.textContent = reply;
+  chatMessages.appendChild(replyDiv);
   // Scroll to bottom of chat-messages div
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-
 
 
 // Function to handle user input
