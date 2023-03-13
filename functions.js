@@ -305,7 +305,7 @@ function displayMessages() {
     lastReplyIndex = (lastReplyIndex + 1) % replies.length; // increment index and wrap around
     const reply = replies[lastReplyIndex];
     const replyDiv = document.createElement("div");
-    replyDiv.className = "message-box reply-box";
+    replyDiv.className = "reply-box";
     replyDiv.textContent = reply;
 
     chatMessages.appendChild(messageDiv);

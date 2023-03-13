@@ -184,3 +184,11 @@
     margin-bottom: 10px; /* add some margin to separate messages */
   }
   
+
+  .reply-box{
+    background-color: #2188fd; 
+    color:white;
+    border-radius: 10px; /* rounded corners */
+    padding: 10px; /* add some padding for spacing */
+    margin-bottom: 10px; /* add some margin to separate messages */
+  }
