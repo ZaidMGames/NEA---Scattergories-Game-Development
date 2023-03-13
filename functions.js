@@ -272,6 +272,14 @@ const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 const chatMessages = document.getElementById("chat-messages");
 
+//Possible replies
+const replies = [
+  "Hello there!",
+  "How can I help you?",
+  "Nice to meet you!",
+  "I'm here to assist you.",
+  "What's on your mind?",
+];
 // Create array to store messages
 let messages = [];
 
@@ -285,7 +293,10 @@ function displayMessages() {
     const message = messages[i];
     const messageDiv = document.createElement("div");
     messageDiv.className = "message-box"; // add class for styling
-    messageDiv.textContent = message;
+    // Append message content and a random reply to messageDiv
+    const reply = replies[Math.floor(Math.random() * replies.length)];
+    messageDiv.textContent = message + "\n" + reply;
+    
     chatMessages.appendChild(messageDiv);
   }
 
