@@ -158,8 +158,10 @@
     padding: 10px;
     border: none;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #cbcbcb, -5px -5px 10px #ffffff;
+    background: linear-gradient(135deg, #575757, #383838);
+    box-shadow: 5px 5px 10px #2e2e2e, -5px -5px 10px #6a6a6a;
   }
+  
   
   .chat-input button {
     margin-left: 10px;
