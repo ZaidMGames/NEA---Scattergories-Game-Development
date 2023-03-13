@@ -296,7 +296,12 @@ function displayMessages() {
     messageDiv.textContent = message;
     chatMessages.appendChild(messageDiv);
   }
-
+  // Generate and append a replydiv
+  const reply = replies[Math.floor(Math.random() * replies.length)];
+  const replyDiv = document.createElement("div");
+  replyDiv.className = "message-box reply-box"; // add class for styling
+  replyDiv.textContent = reply;
+  chatMessages.appendChild(replyDiv);
   // Scroll to bottom of chat-messages div
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
