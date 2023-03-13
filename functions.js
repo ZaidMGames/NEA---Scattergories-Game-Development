@@ -299,10 +299,10 @@ function displayMessages() {
     // Create message div and add class for styling
     const messageDiv = document.createElement("div");
     messageDiv.className = "message-box";
-    messageDiv.textContent = message;
-
     // Generate and add a reply div with new or last generated reply
-    lastReplyIndex = (lastReplyIndex + 1) % replies.length; // increment index and wrap around
+    if (i === messages.length - 1) { // if this is the latest message, generate a new reply
+      lastReplyIndex = (lastReplyIndex + 1) % replies.length; // increment index and wrap around
+    }
     const reply = replies[lastReplyIndex];
     const replyDiv = document.createElement("div");
     replyDiv.className = "reply-box";
