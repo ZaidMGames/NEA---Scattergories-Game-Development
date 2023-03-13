@@ -301,12 +301,17 @@ function displayMessages() {
     messageDiv.className = "message-box";
     messageDiv.textContent = message;
 
-    // Generate and add a reply div with new or last generated reply
-    lastReplyIndex = (lastReplyIndex + 1) % replies.length; // increment index and wrap around
-    const reply = replies[lastReplyIndex];
-    const replyDiv = document.createElement("div");
-    replyDiv.className = "reply-box";
-    replyDiv.textContent = reply;
+    // Check if there is already a reply for this message
+    let replyDiv = messageReplies[message];
+    if (!replyDiv) {
+      // Generate a new reply for this message and store it in messageReplies
+      lastReplyIndex = (lastReplyIndex + 1) % replies.length; // increment index and wrap around
+      const reply = replies[lastReplyIndex];
+      replyDiv = document.createElement("div");
+      replyDiv.className = "reply-box";
+      replyDiv.textContent = reply;
+      messageReplies[message] = replyDiv;
+    }
 
     chatMessages.appendChild(messageDiv);
     chatMessages.appendChild(replyDiv);
@@ -315,6 +320,7 @@ function displayMessages() {
   // Scroll to bottom of chat-messages div
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
+
 
 
 
