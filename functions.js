@@ -222,7 +222,7 @@ export function displayRoundInputs(categoriesList) {
   answersContainer.appendChild(buttonContainer);
   const button = document.createElement('button');
   button.textContent = 'Next Round';
-  button.classList.add('btn', 'btn-dark-bg-subtle', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
+  button.classList.add('btn', 'btn-dark', 'p-3', 'rounded-pill', 'neumorphic-style', 'w-100');
   button.addEventListener('click', () => {
     wholeDiv.style.display = 'block';
     answersContainer.innerHTML = '';
