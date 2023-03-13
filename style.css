@@ -178,7 +178,8 @@
   
 
   .message-box {
-    background-color: #F5F5F5; /* light gray background */
+    background-color: #2188fd; /* light gray background */
+    color:white;
     border-radius: 10px; /* rounded corners */
     padding: 10px; /* add some padding for spacing */
     margin-bottom: 10px; /* add some margin to separate messages */
@@ -186,7 +187,7 @@
   
 
   .reply-box{
-    background-color: #2188fd; 
+    background-color: #33a53c; 
     color:white;
     border-radius: 10px; /* rounded corners */
     padding: 10px; /* add some padding for spacing */
