@@ -287,6 +287,9 @@ let lastReplyIndex = -1;
 // Create array to store messages
 let messages = [];
 
+// Define messageReplies object to store reply divs for each message
+const messageReplies = {};
+
 // Function to display messages
 function displayMessages() {
   // Clear chat-messages div
@@ -305,8 +308,8 @@ function displayMessages() {
     let replyDiv = messageReplies[message];
     if (!replyDiv) {
       // Generate a new reply for this message and store it in messageReplies
-      lastReplyIndex = (lastReplyIndex + 1) % replies.length; // increment index and wrap around
-      const reply = replies[lastReplyIndex];
+      const replyIndex = Math.floor(Math.random() * replies.length);
+      const reply = replies[replyIndex];
       replyDiv = document.createElement("div");
       replyDiv.className = "reply-box";
       replyDiv.textContent = reply;
