@@ -14,7 +14,7 @@
     padding:10px;
   }
 
-/* For the input */
+/* For the Player input -  where they place their answers */
   .input-container {
     margin-bottom: 5px;
   }
@@ -30,7 +30,7 @@
     font-size: 18px;
   }
   
-/* For the generated categories */
+/* For the generated categories once the round has started */
   .neumorphic-category {
     background: #f0f0f0;
     border-radius: 10px;
@@ -111,11 +111,6 @@
   .neumorphic-toggle input[type="checkbox"]:checked + .form-check-label::after {
     transform: translateX(14px);
   }
-  
-
-
-
-
 
   /* for the chat interface */
   .chat-container {
