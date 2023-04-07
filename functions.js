@@ -110,6 +110,8 @@ export async function countdownTimerA(seconds) {
       // Exit early if the stop button has been clicked
       if (stopTimer.value) {
             console.log('Timer has now been stopped')
+            timerSound.pause();
+            timerSound.currentTime = 0;
             return;
         }
       // Calculate the number of seconds remaining
