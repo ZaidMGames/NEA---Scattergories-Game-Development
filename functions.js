@@ -116,11 +116,15 @@ export async function countdownTimerA(seconds) {
       let secondsRemaining = Math.round((endTime - Date.now()) / 1000);
 
       // Display the number of seconds remaining
-      let timerText = document.getElementById("timerText")
+      let timerText = document.getElementById("timerText");
       if (timerText) {
         timerText.innerHTML = secondsRemaining + 's';
+        if (secondsRemaining < 10) {
+          timerText.style.color = 'red'; // change color to red
         }
+      }
       console.log(secondsRemaining);
+
 
       // Pause for one second
       await new Promise(resolve => setTimeout(resolve, 1000));
