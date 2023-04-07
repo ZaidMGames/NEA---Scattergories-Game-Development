@@ -102,8 +102,6 @@ export function createInputBoxes() {
 export const stopTimer = { value: false }; // variable used to stop timer when stop button is pressed
 console.log(stopTimer)
 export async function countdownTimerA(seconds) {
-    
-    let timerSound = new Audio('/timerSound.mp3'); //timer audio imported
     // Calculate the end time
     let endTime = Date.now() + seconds * 1000;
 
@@ -127,7 +125,7 @@ export async function countdownTimerA(seconds) {
           timerText.style.color = 'orange'; // change color to red
         }
         if (secondsRemaining == 15) {
-          timerSound.play();
+          playTimerSound()
         }
         if (secondsRemaining < 6) {
           timerText.style.color = 'red'; // change color to red
@@ -140,6 +138,10 @@ export async function countdownTimerA(seconds) {
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
+    function playTimerSound() {
+      let timerSound = new Audio('/timerSound.mp3'); 
+      timerSound.play();
+    }
 
 
     // Display a message indicating that the countdown has finished
