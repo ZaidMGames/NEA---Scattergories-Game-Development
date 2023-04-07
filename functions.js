@@ -121,11 +121,10 @@ export async function countdownTimerA(seconds) {
         timerText.innerHTML = secondsRemaining + 's';
         if (secondsRemaining < 11) {
           timerText.style.color = 'orange'; // change color to red
-          playTimerSound(11)
+          playTimerSound(10)
         }
         if (secondsRemaining < 6) {
           timerText.style.color = 'red'; // change color to red
-          playTimerSound(6)
         }
       }
       console.log(secondsRemaining);
