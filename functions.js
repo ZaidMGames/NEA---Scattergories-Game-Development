@@ -101,6 +101,8 @@ export function createInputBoxes() {
 //countdown Timer Algorithm 
 export const stopTimer = { value: false }; // variable used to stop timer when stop button is pressed
 console.log(stopTimer)
+let isTimerSoundPlaying = false; 
+
 export async function countdownTimerA(seconds) {
     // Calculate the end time
     let endTime = Date.now() + seconds * 1000;
@@ -110,8 +112,11 @@ export async function countdownTimerA(seconds) {
       // Exit early if the stop button has been clicked
       if (stopTimer.value) {
             console.log('Timer has now been stopped')
-            timerSound.pause();
-            timerSound.currentTime = 0;
+            if (isTimerSoundPlaying) {
+              timerSound.pause();
+              timerSound.currentTime = 0;
+              isTimerSoundPlaying = false;
+            }
             return;
         }
       // Calculate the number of seconds remaining
@@ -126,6 +131,7 @@ export async function countdownTimerA(seconds) {
         }
         if (secondsRemaining == 15) {
           playTimerSound()
+          isTimerSoundPlaying = true;
         }
         if (secondsRemaining < 6) {
           timerText.style.color = 'red'; // change color to red
@@ -138,12 +144,6 @@ export async function countdownTimerA(seconds) {
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
 
-    function playTimerSound() {
-      let timerSound = new Audio('/timerSound.mp3'); 
-      timerSound.play();
-    }
-
-
     // Display a message indicating that the countdown has finished
     console.log("Countdown finished!");
     if (timerText) {
@@ -151,6 +151,10 @@ export async function countdownTimerA(seconds) {
       }
 }
 
+function playTimerSound() {
+  let timerSound = new Audio('/timerSound.mp3'); 
+  timerSound.play();
+}
 
 //Chosen Letter Algorithm
 export function chooseLetter() {
