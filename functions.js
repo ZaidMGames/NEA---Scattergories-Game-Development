@@ -119,6 +119,10 @@ export async function countdownTimerA(seconds) {
       let timerText = document.getElementById("timerText")
       if (timerText) {
         timerText.innerHTML = secondsRemaining + 's';
+        if (secondsRemaining < 10) {
+          timerText.style.color = 'red'; // change color to red
+        } else {
+          timerText.style.color = ''; // reset color to default
         }
       console.log(secondsRemaining);
 
