@@ -121,6 +121,8 @@ export async function countdownTimerA(seconds) {
         timerText.innerHTML = secondsRemaining + 's';
         if (secondsRemaining < 11) {
           timerText.style.color = 'orange'; // change color to red
+        }
+        if (secondsRemaining == 10) {
           playTimerSound(10)
         }
         if (secondsRemaining < 6) {
