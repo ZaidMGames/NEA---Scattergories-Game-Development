@@ -122,8 +122,8 @@ export async function countdownTimerA(seconds) {
         if (secondsRemaining < 11) {
           timerText.style.color = 'orange'; // change color to red
         }
-        if (secondsRemaining == 10) {
-          playTimerSound(10)
+        if (secondsRemaining == 15) {
+          playTimerSound(15)
         }
         if (secondsRemaining < 6) {
           timerText.style.color = 'red'; // change color to red
@@ -138,9 +138,6 @@ export async function countdownTimerA(seconds) {
 
     function playTimerSound(givenTime) {
       let timerSound = new Audio('/timerSound.mp3'); 
-      if (timerSound.duration >= givenTime) {
-        timerSound.currentTime = timerSound.duration - givenTime; //plays the sound from the given time - as in the last 10s of the audio
-      }
       timerSound.play();
     }
 
