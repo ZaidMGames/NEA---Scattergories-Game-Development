@@ -120,6 +120,9 @@ export async function countdownTimerA(seconds) {
       if (timerText) {
         timerText.innerHTML = secondsRemaining + 's';
         if (secondsRemaining < 10) {
+          timerText.style.color = 'orange'; // change color to red
+        }
+        if (secondsRemaining < 5) {
           timerText.style.color = 'red'; // change color to red
         }
       }
