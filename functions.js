@@ -119,11 +119,13 @@ export async function countdownTimerA(seconds) {
       let timerText = document.getElementById("timerText");
       if (timerText) {
         timerText.innerHTML = secondsRemaining + 's';
-        if (secondsRemaining < 10) {
+        if (secondsRemaining < 11) {
           timerText.style.color = 'orange'; // change color to red
+          playTimerSound(11)
         }
-        if (secondsRemaining < 5) {
+        if (secondsRemaining < 6) {
           timerText.style.color = 'red'; // change color to red
+          playTimerSound(6)
         }
       }
       console.log(secondsRemaining);
@@ -132,6 +134,15 @@ export async function countdownTimerA(seconds) {
       // Pause for one second
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
+
+    function playTimerSound(givenTime) {
+      let timerSound = new Audio('/timerSound.mp3'); 
+      if (timerSound.duration >= givenTime) {
+        timerSound.currentTime = timerSound.duration - givenTime; //plays the sound from the given time - as in the last 10s of the audio
+      }
+      timerSound.play();
+    }
+
 
     // Display a message indicating that the countdown has finished
     console.log("Countdown finished!");
