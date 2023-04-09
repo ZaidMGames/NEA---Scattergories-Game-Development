@@ -13,25 +13,25 @@ export let chosenNumCategoriesInput = 12;
 let chosenCategories;
 
   //Storing all ElementIDs
-  const keyLetterElement = document.getElementById("keyLetter");
-  const InputCategoriesElement = document.getElementById('InputCategories')
-  const playButton = document.getElementById("playButton");
-  const ListOfCategoriesElement = document.getElementById('ListOfCategories');
-  const chosenTimeButton = document.getElementById('chosenTimeButton');
-  const numOfCategoriesButton = document.getElementById('changeCategorySize');
-  const changeLetterButton = document.getElementById('changeLetterButton');
+  const keyLetterElement = document.getElementById("keyLetter"); //where key letter is displayed
+  const InputCategoriesElement = document.getElementById('InputCategories') // contianer where input boxes are displayed
+  const playButton = document.getElementById("playButton"); //containter where play button is shown
+  const ListOfCategoriesElement = document.getElementById('ListOfCategories'); //container where categories are displayed 
+  const chosenTimeButton = document.getElementById('chosenTimeButton'); //container with change time button
+  const numOfCategoriesButton = document.getElementById('changeCategorySize'); //contianer where the number of categories is displayed
+  const changeLetterButton = document.getElementById('changeLetterButton'); //container where the chagne letter button is displayed
   const addCustomCategoryButton = document.getElementById('addCustomCategory');
-  const customCategoriesToggle = document.getElementById('customCategoriesToggle');
+  const customCategoriesToggle = document.getElementById('customCategoriesToggle'); //container with custom categories button
   const answersContainer = document.getElementById('wholeBottomRow');
   const showAnswersButton = document.getElementById('showAnswersButton');
-  const wholeDiv = document.getElementById('wholeDiv');
-  const RoundDiv = document.getElementById('Round');
+  const wholeDiv = document.getElementById('wholeDiv'); // this div contains everything on the main screen
+  const RoundDiv = document.getElementById('Round'); //just the container with the round number
   console.log(chosenTimeButton);
   let roundNumber = 0;
 
 
 
-
+//function used for disabling buttons or activating them during round and outside round respectfully 
 function toggleButtonsDisabledState(disabled) {
   chosenTimeButton.disabled = disabled;
   numOfCategoriesButton.disabled = disabled;
@@ -94,6 +94,7 @@ function stopClicked() {
     chosenCategories = CategorySelector(ListOfCategories, parseInt(chosenNumCategoriesInput),customCategories);
 }
 
+// This is the function for adding a new custom category
 let customPrompt;
 addCustomCategoryButton.addEventListener('click',function() {
   customPrompt = prompt('Enter a custom category ');
@@ -118,6 +119,7 @@ addCustomCategoryButton.addEventListener('click',function() {
     }
 }});
 
+//Function to toggle custom categories only
 let customCategories = false;
 customCategoriesToggle.addEventListener('change', function() {
   if (this.checked) {
@@ -277,6 +279,7 @@ function handlePlayButtonClick() {
   }
 }
 
+//function to validate starting the timer
 function startTimer() {
   stopTimer.value = false;
   countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
