@@ -20,7 +20,6 @@ let Zaid = new Player("Zaid")
 let players = [Zaid]
 
 
-
 export let chosenNumCategoriesInput = 12;
 let chosenCategories;
 
