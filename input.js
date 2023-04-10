@@ -1,3 +1,11 @@
+import {Category, Player, Inputs} from './classes.js';
+import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
+
+let playerDictionary = {}
+let chosenRoundCategoriesDic = {}
+
+
+
 //Creates Input fields for when the round starts
 export function createInputBoxes() {
     console.log('Creating input boxes');

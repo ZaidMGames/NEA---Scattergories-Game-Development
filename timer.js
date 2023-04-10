@@ -1,3 +1,11 @@
+import {Category, Player, Inputs} from './classes.js';
+import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
+
+let playerDictionary = {}
+let chosenRoundCategoriesDic = {}
+
+
+
 /**
  * CountDown Timer Algorithm
  * @param {boolean} stopTimer - variable used to stop timer when stop button is pressed
