@@ -7,7 +7,7 @@ let chosenRoundCategoriesDic = {}
 
 
 //Function to validate if player inputs start with keyletter
-function validInput(event) {
+export function validInput(event) {
   event.target.value = event.target.value.length == 1 && event.target.value.toLowerCase() != keyLetter.toLowerCase() ? "" : event.target.value
 }
 
