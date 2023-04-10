@@ -173,13 +173,7 @@ export function getAnswers(roundNum,roundCategories) {
   console.log(playerDictionary)
   console.log(chosenRoundCategoriesDic)
   console.log(playerAnswersArray)
-  // if (roundNum ==3){
-  //   for (let round in playerDictionary) {
-  //     let inputs = playerDictionary[round];
-  //     let inputsString = inputs.join(', ');
-  //     wholeBottomRow.innerHTML += `For roaund ${round}, the following was inputed: ${inputsString}<br>`;
-  //   }
-  // }
+
   displayRoundInputs(roundCategories)
   playerAnswersArray = []
 }

@@ -104,7 +104,7 @@ addCustomCategoryButton.addEventListener('click',function() {
       return
     }
     if (customPrompt ==''){
-      customPrompt = prompt('You can\' have a category with no letters, come on now mate');
+      customPrompt = prompt('You can\'t have a category with no letters, come on now mate');
       return
     }
     const categoryExists = ListOfCategories.some(category => category.name.toLowerCase() === customPrompt.toLowerCase());
@@ -125,7 +125,7 @@ customCategoriesToggle.addEventListener('change', function() {
   if (this.checked) {
     let count = 0;
     for (let i = 0; i < ListOfCategories.length; i++) {
-      if (ListOfCategories[i].custom === true) {
+      if (ListOfCategories[i].isCustomCategory === true) {
         count++;
       }
     }
@@ -253,21 +253,6 @@ changeLetterButton.addEventListener("click", function(){
 let clicked = false
 
 // //When the play Button has been pressed
-// playButton.addEventListener("click", function() {
-//   if (clicked) {
-//     //To run if the player presses the stop button
-//     stopClicked()
-//   } else {
-//     gameStarting()
-//     // Start the countdown timer
-//     stopTimer.value = false;
-//     countdownTimerA(!isNaN(chosenTimer) && chosenTimer > 0 ? chosenTimer : 60)
-//       .then(() => { //Runs only when the timer has ended
-//         gameEnding()
-//       });
-
-//     clicked = true; // just to help if player presses this button before the timer ends
-//     }});
 
 function handlePlayButtonClick() {
   if (clicked) {
@@ -298,7 +283,5 @@ playButton.addEventListener("click", handlePlayButtonClick);
 
 showAnswersButton.addEventListener('click', () => {
   displayRoundInputs(chosenCategories)
-  // wholeDiv.style.display = 'none'
-  // answersContainer.style.display = 'block';
 });
 
