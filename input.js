@@ -25,23 +25,23 @@ export function createInputBoxes() {
     }
   }
 
-//Creates Input fields for when the round starts
-export function createInputBoxes() {
-  console.log('Creating input boxes');
-  const inputBoxesDiv = document.getElementById('InputCategories');
-  for (let i = 0; i < numberOfCategoriesDisplayed; i++) {
-    const inputContainer = document.createElement('div');
-    inputContainer.classList.add('input-container');
-
-    const input = document.createElement('input');
-    input.addEventListener('input', validInput);
-    input.type = 'text';
-    input.placeholder = keyLetter + '...';
-    input.classList.add('form-control', 'neumorphic-input');
-    
-    inputContainer.appendChild(input);
-    inputBoxesDiv.appendChild(inputContainer);
+//Function to link answers placed in input fields to an array
+let playerAnswersArray = [];
+const wholeBottomRow = document.getElementById('wholeBottomRow')
+export function getAnswers(roundNum,roundCategories) {
+  const inputBoxes = document.querySelectorAll('#InputCategories input');
+  for (let i = 0; i < inputBoxes.length; i++) {
+    playerAnswersArray.push(inputBoxes[i].value);
   }
+  console.log('Player Answers have been appended to array')
+  chosenRoundCategoriesDic[roundNum] = roundCategories;
+  playerDictionary[roundNum] = playerAnswersArray;
+  console.log(playerDictionary)
+  console.log(chosenRoundCategoriesDic)
+  console.log(playerAnswersArray)
+
+  displayRoundInputs(roundCategories)
+  playerAnswersArray = []
 }
 
 // Function to iterate over the dictionary and display the inputs after the rounds are over

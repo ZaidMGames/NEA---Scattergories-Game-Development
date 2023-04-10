@@ -1,9 +1,6 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
-let playerDictionary = {}
-let chosenRoundCategoriesDic = {}
-
 
 
 /**

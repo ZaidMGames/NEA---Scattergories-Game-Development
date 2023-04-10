@@ -1,11 +1,6 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
 
-let playerDictionary = {}
-let chosenRoundCategoriesDic = {}
-
-
-
 //Chosen Letter Algorithm
 export function chooseLetter() {
     const asciiCode = Math.floor(Math.random() * 26) + 97;
