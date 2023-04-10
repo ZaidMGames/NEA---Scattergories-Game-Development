@@ -1,6 +1,6 @@
 import {Category, Player, Inputs} from './classes.js';
 import {chosenNumCategoriesInput, keyLetter} from './buttons.js'
-import {validInput} from '.functions.js'
+import {validInput} from './functions.js'
 
 let playerDictionary = {}
 let chosenRoundCategoriesDic = {}
