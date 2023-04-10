@@ -34,7 +34,7 @@ export function CategorySelector(arr, size, custom) {
  * Displays the chosen Categories
  * @param {Array} categoriesArray - The chosen categories list
  */
-let numberOfCategoriesDisplayed;
+export let numberOfCategoriesDisplayed;
 export function displayChosenCategories(categoriesArray) {
   const ListOfCategoriesDiv = document.getElementById("ListOfCategories");
   categoriesArray.forEach(category => {
