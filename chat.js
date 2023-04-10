@@ -1,3 +1,4 @@
+
 //These are all for the chat interface
 
 const userInput = document.getElementById("user-input");
@@ -107,3 +108,4 @@ userInput.addEventListener("keydown", function(event) {
 
 // Display initial messages
 displayMessages();
+
